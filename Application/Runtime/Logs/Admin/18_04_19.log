@@ -1,0 +1,49 @@
+[ 2018-04-19T14:11:41+08:00 ] ::1 /blog/index.php/Admin/Index/index.html
+ERR: 1146:Table 'blog.blog_auth_rule' doesn't exist
+ [ SQL语句 ] : SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_auth_rule s left join blog_auth_rule p on p.id=s.pid where s.name='Index/index'
+
+[ 2018-04-19T14:11:42+08:00 ] ::1 /blog/index.php/Admin/Index/index.html
+ERR: 1146:Table 'blog.blog_auth_rule' doesn't exist
+ [ SQL语句 ] : SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_auth_rule s left join blog_auth_rule p on p.id=s.pid where s.name='Index/index'
+
+[ 2018-04-19T14:33:35+08:00 ] ::1 /blog/index.php/Admin/Index/%7B:U('index/index')%7D
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'index'' at line 1
+ [ SQL语句 ] : SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Index/{:U('index'
+
+[ 2018-04-19T14:37:03+08:00 ] ::1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T14:42:42+08:00 ] ::1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T15:42:10+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T15:42:35+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T15:44:18+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T15:44:18+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T15:44:18+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T15:44:19+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T15:44:38+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T15:44:38+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/index.html
+ERR: 无法加载控制器:Menu
+
+[ 2018-04-19T18:04:50+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/index.html
+ERR: 1054:Unknown column 'o' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `blog_menu` ORDER BY o asc 
+
+[ 2018-04-19T18:13:48+08:00 ] 127.0.0.1 /blog/index.php/Admin/Menu/add.html
+ERR: 非法操作:add
+

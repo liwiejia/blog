@@ -1,0 +1,134 @@
+
+<include file="Public/head"/>
+<body class="no-skin">
+<include file="Public/header"/>
+<div class="main-container" id="main-container">
+    <include file="Public/sidebar"/>
+    <div class="main-content">
+        <div class="main-content-inner">
+            <!-- 面包屑导航-->
+            <include file="Public/breadcrumbs" />
+            <div class="page-content">
+                <include file="Public/set"/>
+                <div class="row">
+                    <form class="form-horizontal" id="form" role="form" method="post" action="<{:U('update')}>">
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 网站名称 </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="sitename" id="sitename" class="rcol-xs-10 col-sm-5"  value="<{$vars[0][value]}>">
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 网站标题 </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="title" id="title" class="rcol-xs-10 col-sm-5"  value="<{$vars[3][value]}>">
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 网站Logo</label>
+                            <div class="col-sm-9"  style="width:32.5%">
+                                <input multiple="" name="logo" type="file" id="id-input-file-3">
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 关键词 </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="keywords" id="keywords" class="rcol-xs-10 col-sm-5"  value="<{$vars[5][value]}>">
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 网站描述 </label>
+                            <div class="col-sm-9">
+                                    <textarea name="description" id="description" placeholder="网站描述"
+                                              class="col-xs-10 col-sm-5" rows="5"><{$vars[4][value]}></textarea>
+
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 底部内容 </label>
+                            <div class="col-sm-9">
+                                    <textarea name="footer" id="footer" placeholder="网站描述"
+                                              class="col-xs-10 col-sm-5" rows="5"><{$vars[2][value]}></textarea>
+
+                            </div>
+                        </div>
+                        <div class="col-md-offset-2 col-md-9">
+                            <button class="btn btn-info" type="submit">
+                                <i class="icon-ok bigger-110"></i>
+                                提交
+                            </button>
+
+                            &nbsp; &nbsp; &nbsp;
+                            <button class="btn" type="reset">
+                                <i class="icon-undo bigger-110"></i>
+                                重置
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.main-content -->
+
+    <include file="Public/footer"/>
+</div>
+<include file="Public/footerjs"/>
+<script>
+    $('#id-input-file-3').ace_file_input({
+        style: 'well',
+        btn_choose: '在此处放置图像或单击以选择',
+        btn_change: null,
+        no_icon: 'ace-icon fa fa-picture-o',
+        droppable: true,
+        whitelist_ext : ["jpeg", "jpg", "png", "gif" , "bmp"],
+        whitelist_mime : ["image/jpg", "image/jpeg", "image/png", "image/gif", "image/bmp"],
+
+        thumbnail: 'small'//large | fit
+        //,icon_remove:null//set null, to hide remove/reset button
+        /**,before_change:function(files, dropped) {
+						//Check an example below
+						//or examples/file-upload.html
+						return true;
+					}*/
+        /**,before_remove : function() {
+						return true;
+					}*/
+        ,
+        preview_error : function(filename, error_code) {
+            //name of the file that failed
+            //error_code values
+            //1 = 'FILE_LOAD_FAILED',
+            //2 = 'IMAGE_LOAD_FAILED',
+            //3 = 'THUMBNAIL_FAILED'
+            //alert(error_code);
+        }
+
+    }).on('change', function(){
+        //console.log($(this).data('ace_input_files'));
+        //console.log($(this).data('ace_input_method'));
+    });
+    $('#id-input-file-3')
+    .ace_file_input('show_file_list', [
+    {type: 'image', name: 'Logo', path: '<{$vars[1][value]}>'},
+    ]);
+</script>
+</body>
+</html>

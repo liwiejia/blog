@@ -1,0 +1,14 @@
+[ 2018-04-18T14:38:41+08:00 ] 127.0.0.1 /blog/index.php/Admin/Index/profile.html
+ERR: 非法操作:profile
+
+[ 2018-04-18T14:40:44+08:00 ] 127.0.0.1 /blog/index.php/Admin/Index/inbox.html
+ERR: 非法操作:inbox
+
+[ 2018-04-18T16:40:55+08:00 ] 127.0.0.1 /blog/index.php/Admin/Index/index.html
+ERR: 1054:Unknown column 'name' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC 
+
+[ 2018-04-18T16:40:56+08:00 ] 127.0.0.1 /blog/index.php/Admin/Index/index.html
+ERR: 1054:Unknown column 'name' in 'field list'
+ [ SQL语句 ] : SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC 
+

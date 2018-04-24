@@ -1,0 +1,189 @@
+
+<include file="Public/head"/>
+<body class="no-skin">
+<include file="Public/header"/>
+<div class="main-container" id="main-container">
+    <include file="Public/sidebar"/>
+    <div class="main-content">
+        <div class="main-content-inner">
+            <!-- 面包屑导航-->
+            <include file="Public/breadcrumbs" />
+            <div class="page-content">
+                <include file="Public/set"/>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <form class="form-horizontal form" action="<{:U('update')}>" method="post">
+
+                            <div class="form-group" >
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-10">
+                                    上级菜单 <{$currentmenu.pid}></label>
+                                <input name="id" value="<{$currentmenu.id}>" type="hidden">
+                                <div class="col-sm-9" style="width:32.5%">
+                                    <select class="chosen-select form-control " id="form-field-select-3" data-placeholder="请选择..." name="pid">
+                                        <option value="">  </option>
+                                        <option value="0"
+                                        <if condition="$currentmenu.pid eq 0">selected="selected"</if>
+                                        >顶级菜单</option>
+                                        <volist name="option" id="v">
+                                            <option value="<{$v.id}>"
+                                            <if condition="$currentmenu.pid eq $v['id']">selected="selected"</if>
+                                            ><{$v['title']}></option>
+                                            <volist name="v.children" id="vv">
+                                                <option value="<{$vv.id}>"
+                                                <if condition="$currentmenu.pid eq $vv['id']">selected="selected"</if>
+                                                >&nbsp;&nbsp;┗━<{$vv['title']}></option>
+                                            </volist>
+                                        </volist>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 菜单名称 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="title" id="title" class="rcol-xs-10 col-sm-5"  value="<{$currentmenu.title}>">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 链接 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="name" id="name" placeholder="链接，如：Index/index" class="col-xs-10 col-sm-5" value="<{$currentmenu.name}>">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                                </div>
+                            </div>
+
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                    ICON图标 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="icon" id="icon" placeholder="ICON图标" value="<{$currentmenu.icon}>" class="col-xs-10 col-sm-5" value="">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 显示状态 </label>
+                                <div class="control-label no-padding-left col-sm-1">
+                                    <label>
+                                        <input name="islink" id="islink"
+                                        <if condition="$currentmenu.islink eq 1">checked="checked"</if>
+                                        value="1" class="ace ace-switch ace-switch-2" type="checkbox" />
+                                        <span class="lbl"></span>
+                                    </label>
+                                </div>
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+										</span>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 页面提示</label>
+                                <div class="col-sm-9">
+                                    <div class="widget-box widget-color-blue">
+                                        <div class="widget-header widget-header-small">  </div>
+
+                                        <div class="widget-body">
+                                            <div class="widget-main no-padding">
+            <textarea name="tips" data-provide="markdown" data-iconlibrary="fa" rows="10"><{$currentmenu.tips}></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="col-md-offset-2 col-md-9">
+                                <button class="btn btn-info" type="submit">
+                                    <i class="icon-ok bigger-110"></i>
+                                    提交
+                                </button>
+
+                                &nbsp; &nbsp; &nbsp;
+                                <button class="btn" type="reset">
+                                    <i class="icon-undo bigger-110"></i>
+                                    重置
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.main-content -->
+
+    <include file="Public/footer"/>
+</div>
+<include file="Public/footerjs"/>
+<script type="text/javascript">
+    jQuery(function($) {
+        if(!ace.vars['touch']) {
+            $('.chosen-select').chosen({allow_single_deselect:true});
+            //resize the chosen on window resize
+
+            $(window)
+                .off('resize.chosen')
+                .on('resize.chosen', function() {
+                    $('.chosen-select').each(function() {
+                        var $this = $(this);
+                        $this.next().css({'width': $this.parent().width()});
+                    })
+                }).trigger('resize.chosen');
+            //resize chosen on sidebar collapse/expand
+            $(document).on('settings.ace.chosen', function(e, event_name, event_val) {
+                if(event_name != 'sidebar_collapsed') return;
+                $('.chosen-select').each(function() {
+                    var $this = $(this);
+                    $this.next().css({'width': $this.parent().width()});
+                })
+            });
+
+
+            $('#chosen-multiple-style .btn').on('click', function(e){
+                var target = $(this).find('input[type=radio]');
+                var which = parseInt(target.val());
+                if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
+                else $('#form-field-select-4').removeClass('tag-input-style');
+            });
+        }
+
+    });
+   /* $(".form").submit(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var data = new Object();
+        data.id = $("[name='id']").val();
+        data.pid = $("[name='pid']").val();
+        data.title = $("[name='title']").val();
+        data.name = $("[name='name']").val();
+        data.icon = $("[name='icon']").val();
+        data.tips = $("[name='tips']").val();
+
+        var url = $(this).attr('action');
+        $.post(url, data , function(json){
+            if (json.status) {
+                // showInfor(json.info);
+                $("#fat-btn").button('reset');
+                window.location.href = "__MODULE__/Index/index";
+            }else {
+                $("#fat-btn").button('reset');
+                AlertStr=json.info;
+                $("body").append(Al(AlertStr));
+
+                $(".verify_img").trigger('click');
+                return false;
+            }
+        }, 'json');
+        return false;
+    });*/
+</script>
+</body>
+</html>
