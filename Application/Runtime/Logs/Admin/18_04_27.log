@@ -1,0 +1,34 @@
+[ 2018-04-27T16:04:59+08:00 ] 192.168.1.241 /Blog/index.php/Admin/Login
+ERR: 非法操作:index
+
+[ 2018-04-27T19:50:07+08:00 ] 192.168.1.241 /Blog/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate F:\phpstudy\WWW\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\phpstudy\WWW\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT `userid`,`username`,`nickname`,`password`,`lastdate`,`lastip` FROM `blog_users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2018-04-27T19:50:13+08:00 ] 192.168.1.241 /Blog/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: validate F:\phpstudy\WWW\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+
+[ 2018-04-27T19:50:22+08:00 ] 192.168.1.241 /Blog/index.php/Admin/Login/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate F:\phpstudy\WWW\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\phpstudy\WWW\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT `userid`,`username`,`nickname`,`password`,`lastdate`,`lastip` FROM `blog_users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0110s ]
+SQL: UPDATE `blog_users` SET `loginnum`=loginnum+1 WHERE `username` = 'admin' AND `userid` = 1 [ RunTime:0.0010s ]
+SQL: UPDATE `blog_users` SET `username`='admin',`password`='a66abb5684c45962d887564f08346e8d',`lastdate`='1524829822',`lastip`='192.168.1.241' WHERE `username` = 'admin' AND `userid` = 1 [ RunTime:0.0000s ]
+
