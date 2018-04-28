@@ -596,7 +596,7 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 网站Logo</label>
                             <div class="col-sm-9"  style="width:32.5%">
-                                <input multiple="" name="logo" type="file" id="id-input-file-3" value="1">
+                                <input multiple="" name="logo" type="file" id="id-input-file-3">
                                 <span class="help-inline col-xs-12 col-sm-7">
 												<span class="middle"></span>
 											</span>

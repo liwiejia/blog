@@ -60,7 +60,7 @@ switch ($_SERVER['SERVER_NAME']) {
         break;
 
     default:
-        $env = 'dev';
+        $env = 'seaver';
         break;
 }
 $config_env = require $env.'_config.php';
