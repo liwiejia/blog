@@ -28,15 +28,14 @@ class SettingController extends CommonController {
         $data['footer'] = isset($_POST['footer']) ? $_POST['footer'] : '';
         $data['logo'] = isset($_POST['logo']) ? $_POST['logo'] : '';
         $Model = M('website');
-var_dump($data);
-        exit();
+
         foreach ($data as $k => $v) {
             $Model->data(array('v' => $v))->where("k='{$k}'")->save();
         }
         //清除旧的缓存数据
         $cache = \Think\Cache::getInstance();
         $cache->clear();
-        addlog('修改网站配置。');
+        //addlog('修改网站配置。');
         $this->success('恭喜，网站配置成功！');
     }
 }
