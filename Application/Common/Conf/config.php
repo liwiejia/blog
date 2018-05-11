@@ -12,7 +12,7 @@ $config_all =  array(
     'MODULE_ALLOW_LIST'    =>    array('Admin','Index','Home',),
     'DEFAULT_MODULE'       =>    'Index',
 
-    'SHOW_PAGE_TRACE' =>true, // 显示页面Trace信息
+    'SHOW_PAGE_TRACE' =>false, // 显示页面Trace信息
 
     //定义命名空间
      'AUTOLOAD_NAMESPACE' => array(
@@ -30,6 +30,7 @@ $config_all =  array(
         'REPLY_NAME'  => 'Sticker', //回复名称（留空则为发件人名称）
     ),
 
+    'DS'=> "aaaa",
 
     // 添加数据库配置信息
     'DB_PREFIX' => '', // 数据库表前缀
@@ -56,6 +57,7 @@ $config_all =  array(
 
 switch ($_SERVER['SERVER_NAME']) {
     case 'localhost':
+    case '192.168.1.241':
         $env = 'dev';
         break;
 
