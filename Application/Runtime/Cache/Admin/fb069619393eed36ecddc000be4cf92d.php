@@ -571,106 +571,36 @@
     </div><!-- /.ace-settings-box -->
 </div><!-- /.ace-settings-container -->
                 <div class="row">
-                    <div class="col-xs-12">
-                        <form class="form-horizontal form" action="<?php echo U('update');?>" method="post">
-
-                            <div class="form-group" >
-                                <label class="col-sm-1 control-label no-padding-right" for="form-field-10">
-                                    上级菜单 <?php echo ($currentmenu["pid"]); ?></label>
-                                <input name="id" value="<?php echo ($currentmenu["id"]); ?>" type="hidden">
-                                <div class="col-sm-9" style="width:32.5%">
-                                    <select class="chosen-select form-control " id="form-field-select-3" data-placeholder="请选择..." name="pid">
-                                        <option value="">  </option>
-                                        <option value="0"
-                                        <?php if($currentmenu["pid"] == 0): ?>selected="selected"<?php endif; ?>
-                                        >顶级菜单</option>
-                                        <?php if(is_array($option)): $i = 0; $__LIST__ = $option;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><option value="<?php echo ($v["id"]); ?>"
-                                            <?php if($currentmenu["pid"] == $v['id']): ?>selected="selected"<?php endif; ?>
-                                            ><?php echo ($v['title']); ?></option>
-                                            <?php if(is_array($v["children"])): $i = 0; $__LIST__ = $v["children"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vv): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vv["id"]); ?>"
-                                                <?php if($currentmenu["pid"] == $vv['id']): ?>selected="selected"<?php endif; ?>
-                                                >&nbsp;&nbsp;┗━<?php echo ($vv['title']); ?></option><?php endforeach; endif; else: echo "" ;endif; endforeach; endif; else: echo "" ;endif; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="space-4"></div>
-                            <div class="form-group">
-                                <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 菜单名称 </label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="title" id="title" class="rcol-xs-10 col-sm-5"  value="<?php echo ($currentmenu["title"]); ?>">
-                                    <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
-											</span>
-                                </div>
-                            </div>
-                            <div class="space-4"></div>
-                            <div class="form-group">
-                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 链接 </label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="name" id="name" placeholder="链接，如：Index/index" class="col-xs-10 col-sm-5" value="<?php echo ($currentmenu["name"]); ?>">
-                                    <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
-											</span>
-                                </div>
-                            </div>
-
-                            <div class="space-4"></div>
-                            <div class="form-group">
-                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
-                                    ICON图标 </label>
-                                <div class="col-sm-9">
-                                    <input type="text" name="icon" id="icon" placeholder="ICON图标" value="<?php echo ($currentmenu["icon"]); ?>" class="col-xs-10 col-sm-5" value="">
-                                    <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
-											</span>
-                                </div>
-                            </div>
-                            <div class="space-4"></div>
-                            <div class="form-group">
-                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 显示状态 </label>
-                                <div class="control-label no-padding-left col-sm-1">
-                                    <label>
-                                        <input name="islink" id="islink"
-                                        <?php if($currentmenu["islink"] == 1): ?>checked="checked"<?php endif; ?>
-                                        value="1" class="ace ace-switch ace-switch-2" type="checkbox" />
-                                        <span class="lbl"></span>
-                                    </label>
-                                </div>
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
-										</span>
-                            </div>
-                            <div class="space-4"></div>
-                            <div class="form-group">
-                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 页面提示</label>
-                                <div class="col-sm-9">
-                                    <div class="widget-box widget-color-blue">
-                                        <div class="widget-header widget-header-small">  </div>
-
-                                        <div class="widget-body">
-                                            <div class="widget-main no-padding">
-            <textarea name="tips" data-provide="markdown" data-iconlibrary="fa" rows="10"><?php echo ($currentmenu["tips"]); ?></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="space-4"></div>
-                            <div class="col-md-offset-2 col-md-9">
-                                <button class="btn btn-info" type="submit">
-                                    <i class="icon-ok bigger-110"></i>
-                                    提交
-                                </button>
-
-                                &nbsp; &nbsp; &nbsp;
-                                <button class="btn" type="reset">
-                                    <i class="icon-undo bigger-110"></i>
-                                    重置
-                                </button>
-                            </div>
-                        </form>
+                    <div class="cf">
+                        <a class="btn btn-info" href="<?php echo U('Database/backup');?>">数据备份</a>
                     </div>
+                    <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th width="100">备份名称</th>
+                            <th width="100">卷数</th>
+                            <th width="100">压缩</th>
+                            <th width="100">数据大小</th>
+                            <th width="100">备份时间</th>
+                            <th width="100">状态</th>
+                            <th width="100">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><tr>
+                                <td><?php echo (date('Ymd-His',$data["time"])); ?></td>
+                                <td><?php echo ($data["part"]); ?></td>
+                                <td><?php echo ($data["compress"]); ?></td>
+                                <td><?php echo (format_bytes($data["size"])); ?></td>
+                                <td><?php echo ($key); ?></td>
+                                <td>-</td>
+                                <td class="action">
+                                    <a class="db-import" href="<?php echo U('import?time='.$data['time']);?>">还原</a>&nbsp;
+                                    <a class="ajax-get confirm" href="<?php echo U('del?time='.$data['time']);?>">删除</a>
+                                </td>
+                            </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -728,67 +658,42 @@
 
 
 
-<script type="text/javascript">
-    jQuery(function($) {
-        if(!ace.vars['touch']) {
-            $('.chosen-select').chosen({allow_single_deselect:true});
-            //resize the chosen on window resize
-
-            $(window)
-                .off('resize.chosen')
-                .on('resize.chosen', function() {
-                    $('.chosen-select').each(function() {
-                        var $this = $(this);
-                        $this.next().css({'width': $this.parent().width()});
-                    })
-                }).trigger('resize.chosen');
-            //resize chosen on sidebar collapse/expand
-            $(document).on('settings.ace.chosen', function(e, event_name, event_val) {
-                if(event_name != 'sidebar_collapsed') return;
-                $('.chosen-select').each(function() {
-                    var $this = $(this);
-                    $this.next().css({'width': $this.parent().width()});
-                })
-            });
-
-
-            $('#chosen-multiple-style .btn').on('click', function(e){
-                var target = $(this).find('input[type=radio]');
-                var which = parseInt(target.val());
-                if(which == 2) $('#form-field-select-4').addClass('tag-input-style');
-                else $('#form-field-select-4').removeClass('tag-input-style');
-            });
+<script>
+    $(".db-import").click(function () {
+        var self = this, status = ".";
+        $.get(self.href, success, "json");
+        window.onbeforeunload = function () {
+            return "正在还原数据库，请不要关闭！"
         }
-
-    });
-   /* $(".form").submit(function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var data = new Object();
-        data.id = $("[name='id']").val();
-        data.pid = $("[name='pid']").val();
-        data.title = $("[name='title']").val();
-        data.name = $("[name='name']").val();
-        data.icon = $("[name='icon']").val();
-        data.tips = $("[name='tips']").val();
-
-        var url = $(this).attr('action');
-        $.post(url, data , function(json){
-            if (json.status) {
-                // showInfor(json.info);
-                $("#fat-btn").button('reset');
-                window.location.href = "/blog/index.php/Admin/Index/index";
-            }else {
-                $("#fat-btn").button('reset');
-                AlertStr=json.info;
-                $("body").append(Al(AlertStr));
-
-                $(".verify_img").trigger('click');
-                return false;
-            }
-        }, 'json');
         return false;
-    });*/
+
+        function success(data) {
+            if (data.status) {
+                if (data.gz) {
+                    data.info += status;
+                    if (status.length === 5) {
+                        status = ".";
+                    } else {
+                        status += ".";
+                    }
+                }
+                $(self).parent().prev().text(data.info);
+                if (data.part) {
+                    $.get(self.href,
+                        {"part": data.part, "start": data.start},
+                        success,
+                        "json"
+                    );
+                } else {
+                    window.onbeforeunload = function () {
+                        return null;
+                    }
+                }
+            } else {
+                alert(data.info, 'alert-error');
+            }
+        }
+    });
 </script>
 </body>
 </html>

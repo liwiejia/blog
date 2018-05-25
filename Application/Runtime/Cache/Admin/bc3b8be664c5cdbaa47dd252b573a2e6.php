@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta charset="utf-8"/>
     <meta charset="UTF-8">
-    <title>{$current['title']}-{$Think.CONFIG.sitename}</title>
+    <title><?php echo ($current['title']); ?>-<?php echo ($webcConfig["sitename"]); ?></title>
 
-    <meta name="keywords" content="{$Think.CONFIG.keywords}"/>
-    <meta name="description" content="{$Think.CONFIG.description}"/>
+    <meta name="keywords" content="<?php echo ($webcConfig["keywords"]); ?>"/>
+    <meta name="description" content="<?php echo ($webcConfig["description"]); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
     <link href="/blog/Public/Plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">

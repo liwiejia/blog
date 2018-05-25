@@ -29,7 +29,7 @@ class CommonController extends Controller {
             $info = M('users')->where(array('id' => $this->userid))->field('loginnum,username,nickname,head')->find();
             $webInfo = M('website')->field('k,v')->select();
             foreach ($webInfo as $v) {
-                $webcConfig[$v['key']] = $v['value'];
+                $webcConfig[$v['k']] = $v['v'];
 
             };
 //exit(var_dump($webcConfig));
