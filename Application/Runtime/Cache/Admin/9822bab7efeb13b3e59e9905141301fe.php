@@ -625,7 +625,7 @@
                                 <div class="col-xs-9 col-sm-9">
                                     <div class="input-group col-xs-5">
                                         <input class="form-control" id="birthday" name="birthday"
-                                               value="<?php echo (date(" Y-m-d",$member['birthday'])); ?>" type="text"
+                                               value="<?php echo (date("Y-m-d",$member['birthday'])); ?>" type="text"
                                         data-date-format="dd-mm-yyyy" />
                                         <span class="input-group-addon">
 													<i class="ace-icon fa fa-calendar bigger-110"></i>
@@ -637,8 +637,8 @@
                             <div class="form-group">
                                 <label class="col-sm-1 control-label no-padding-right" for="form-field-6"> 电话号码 </label>
                                 <div class="col-sm-9">
-                                    <input type="text" name="phone" id="phone" placeholder="电话号码"
-                                           class="col-xs-10 col-sm-5" value="<?php echo ($member['phone']); ?>">
+                                    <input type="text" name="mobile" id="mobile" placeholder="电话号码"
+                                           class="col-xs-10 col-sm-5" value="<?php echo ($member['mobile']); ?>">
                                     <span class="help-inline col-xs-12 col-sm-7">
 												<span class="middle"></span>
 											</span>
@@ -744,8 +744,17 @@
 
 
 
+<script type="text/javascript" src="/Blog/Public/Plugin/bootstrap-3.3.7-dist\js\bootstrap-datepicker.js"></script>
 <script>
-
+    jQuery(function ($) {
+        $('#birthday').datepicker({
+            format: 'yyyy-mm-dd',
+            weekStart: 1,
+            autoclose: true,
+            todayBtn: 'linked',
+            language: 'cn'
+        });
+    });
 </script>
 </body>
 </html>

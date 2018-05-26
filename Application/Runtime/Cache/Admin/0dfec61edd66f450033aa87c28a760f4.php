@@ -15,7 +15,7 @@
 
 <div class="text-center login">
     <h1>登录</h1>
-    <form action="/Blog/index.php/Admin/Login/login.html" method="post" class="form" >
+    <form action="/Blog/index.php/Admin/login/login.html" method="post" class="form" >
         <div class="input-group input-group-lg" id="username"  data-toggle="tooltip" data-placement="right" data-trigger="focus" title="" foucs-message="请输入您的用户名" lost-message="用户名格式不正确（请输入需包含字母数字中的一种或两种,长度为4-22位）">
             <span class="input-group-addon" > <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
             <input type="text" class="form-control" placeholder="用户名" aria-describedby="basic-addon1" name="username" >
