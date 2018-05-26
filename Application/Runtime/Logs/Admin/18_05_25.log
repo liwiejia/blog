@@ -8559,3 +8559,93 @@ INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
 
+[ 2018-05-25T16:15:19+08:00 ] 192.168.1.241 /blog/index.php/Admin/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0085s ]
+SQL: SELECT `loginnum`,`username`,`nickname`,`head` FROM `blog_users` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0060s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Member/index' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0000s ]
+ERR: 1146:Table 'blog.blog_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `blog_member`
+ERR: 1146:Table 'blog.blog_member' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `blog_member`
+
+[ 2018-05-25T16:16:44+08:00 ] 192.168.1.241 /blog/index.php/Admin/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Member
+
+[ 2018-05-25T16:17:35+08:00 ] 192.168.1.241 /blog/index.php/Admin/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0095s ]
+SQL: SELECT `loginnum`,`username`,`nickname`,`head` FROM `blog_users` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0060s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Member/index' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0065s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0000s ]
+ERR: 1146:Table 'blog.blog_auth_group_access' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `blog_users` INNER JOIN blog_auth_group_access ON blog_users.uid = blog_auth_group_access.uid INNER JOIN blog_auth_group ON blog_auth_group.id = blog_auth_group_access.group_id  ORDER BY blog_users.uid asc LIMIT 1  
+ERR: 1146:Table 'blog.blog_auth_group_access' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `blog_users` INNER JOIN blog_auth_group_access ON blog_users.uid = blog_auth_group_access.uid INNER JOIN blog_auth_group ON blog_auth_group.id = blog_auth_group_access.group_id  ORDER BY blog_users.uid asc LIMIT 1  
+
+[ 2018-05-25T16:20:19+08:00 ] 192.168.1.241 /blog/index.php/Admin/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001500s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0100s ]
+SQL: SELECT `loginnum`,`username`,`nickname`,`head` FROM `blog_users` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0070s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Member/index' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0095s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0005s ]
+ERR: 1146:Table 'blog.blog_auth_group_access' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `blog_users` INNER JOIN blog_auth_group_access ON blog_users.uid = blog_auth_group_access.uid INNER JOIN blog_auth_group ON blog_auth_group.id = blog_auth_group_access.group_id  ORDER BY blog_users.uid asc LIMIT 1  
+ERR: 1146:Table 'blog.blog_auth_group_access' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `blog_users` INNER JOIN blog_auth_group_access ON blog_users.uid = blog_auth_group_access.uid INNER JOIN blog_auth_group ON blog_auth_group.id = blog_auth_group_access.group_id  ORDER BY blog_users.uid asc LIMIT 1  
+
+[ 2018-05-25T16:20:20+08:00 ] 192.168.1.241 /blog/index.php/Admin/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0060s ]
+SQL: SELECT `loginnum`,`username`,`nickname`,`head` FROM `blog_users` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0060s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Member/index' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0005s ]
+ERR: 1146:Table 'blog.blog_auth_group_access' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `blog_users` INNER JOIN blog_auth_group_access ON blog_users.uid = blog_auth_group_access.uid INNER JOIN blog_auth_group ON blog_auth_group.id = blog_auth_group_access.group_id  ORDER BY blog_users.uid asc LIMIT 1  
+ERR: 1146:Table 'blog.blog_auth_group_access' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `blog_users` INNER JOIN blog_auth_group_access ON blog_users.uid = blog_auth_group_access.uid INNER JOIN blog_auth_group ON blog_auth_group.id = blog_auth_group_access.group_id  ORDER BY blog_users.uid asc LIMIT 1  
+

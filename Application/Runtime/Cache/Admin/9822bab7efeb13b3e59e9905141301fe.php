@@ -38,7 +38,7 @@
         <div class="navbar-header pull-left">
             <a href="index.html" class="navbar-brand">
                 <small>
-                   <img src="<?php echo ($webcConfig["logo"]); ?>">
+                   <img src="<?php echo ($webcConfig["logo"]); ?>" style="width:50px">
                     <?php echo ($webcConfig["sitename"]); ?> 后台
                 </small>
             </a>
@@ -571,7 +571,122 @@
     </div><!-- /.ace-settings-box -->
 </div><!-- /.ace-settings-container -->
                 <div class="row">
+                    <div class="col-xs-12">
+                        <form class="form-horizontal" role="form" action="<?php echo U('update');?>" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 用户名 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" disabled="disabled" class="rcol-xs-10 col-sm-5"
+                                           value="<?php echo ($member["username"]); ?>">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">无法修改</span>
+											</span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 用户密码 </label>
+                                <div class="col-sm-9">
+                                    <input type="password" name="password" id="password" placeholder="用户密码"
+                                           class="col-xs-10 col-sm-5" value="">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">留空不修改</span>
+											</span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-4"> 缩略图 </label>
+                                <div class="col-sm-9"  style="width:32.5%">
+                                    <?php echo UpImage("head",290,90,$member['head']);?>
+                                </div>
 
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-4"> 性别 </label>
+                                <div class="col-sm-9">
+                                    <select id="sex" name="sex" class="multiselect">
+                                        <option value="0"
+                                        <?php if($member['sex'] == 0): ?>selected="selected"<?php endif; ?>
+                                        >保密</option>
+                                        <option value="1"
+                                        <?php if($member['sex'] == 1): ?>selected="selected"<?php endif; ?>
+                                        >男</option>
+                                        <option value="2"
+                                        <?php if($member['sex'] == 2): ?>selected="selected"<?php endif; ?>
+                                        >女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="id-date-picker-1">生日</label>
+                                <div class="col-xs-9 col-sm-9">
+                                    <div class="input-group col-xs-5">
+                                        <input class="form-control" id="birthday" name="birthday"
+                                               value="<?php echo (date(" Y-m-d",$member['birthday'])); ?>" type="text"
+                                        data-date-format="dd-mm-yyyy" />
+                                        <span class="input-group-addon">
+													<i class="ace-icon fa fa-calendar bigger-110"></i>
+												</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-6"> 电话号码 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="phone" id="phone" placeholder="电话号码"
+                                           class="col-xs-10 col-sm-5" value="<?php echo ($member['phone']); ?>">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-7"> Q&nbsp;&nbsp;Q </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="qq" id="qq" placeholder="QQ" class="col-xs-10 col-sm-5"
+                                           value="<?php echo ($member['qq']); ?>">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                                </div>
+                            </div>
+
+                            <div class="space-4"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-8">
+                                    E-mail </label>
+                                <div class="col-sm-9">
+                                    <input type="email" name="email" id="email" placeholder="E-mail"
+                                           class="col-xs-10 col-sm-5" value="<?php echo ($member['email']); ?>">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                                </div>
+                            </div>
+
+                            <div class="space-4"></div>
+
+                            <div class="col-md-offset-2 col-md-9">
+                                <button class="btn btn-info" type="submit">
+                                    <i class="icon-ok bigger-110"></i>
+                                    提交
+                                </button>
+
+                                &nbsp; &nbsp; &nbsp;
+                                <button class="btn" type="reset">
+                                    <i class="icon-undo bigger-110"></i>
+                                    重置
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -629,5 +744,8 @@
 
 
 
+<script>
+
+</script>
 </body>
 </html>

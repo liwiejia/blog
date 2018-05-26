@@ -38,11 +38,7 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 网站Logo</label>
                             <div class="col-sm-9"  style="width:32.5%">
-                                <input multiple="" name="logo" type="file" id="id-input-file-3">
-
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
-											</span>
+                                <{:UpImage("logo",290,90,$vars[1][v])}>
                             </div>
                         </div>
                         <div class="space-4"></div>
@@ -97,48 +93,6 @@
 <!--<script src="__PUBLIC__/Plugin/ueditor1433/ueditor.config.js" type="text/javascript"></script>
 <script src="__PUBLIC__/Plugin/ueditor1433/ueditor.all.min.js" type="text/javascript"></script>
 <script type="text/javascript" charset="utf-8" src="__PUBLIC__/Plugin/ueditor1433/lang/zh-cn/zh-cn.js"></script>-->
-<script>
-    $('#id-input-file-3').ace_file_input({
-        style: 'well',
-        btn_choose: '在此处放置图像或单击以选择',
-        btn_change: null,
-        no_icon: 'ace-icon fa fa-picture-o',
-        droppable: true,
-        whitelist_ext : ["jpeg", "jpg", "png", "gif" , "bmp"],
-        whitelist_mime : ["image/jpg", "image/jpeg", "image/png", "image/gif", "image/bmp"],
-
-        thumbnail: 'small'//large | fit
-        //,icon_remove:null//set null, to hide remove/reset button
-        /**,before_change:function(files, dropped) {
-						//Check an example below
-						//or examples/file-upload.html
-						return true;
-					}*/
-        /**,before_remove : function() {
-						return true;
-					}*/
-        ,
-        preview_error : function(filename, error_code) {
-            //name of the file that failed
-            //error_code values
-            //1 = 'FILE_LOAD_FAILED',
-            //2 = 'IMAGE_LOAD_FAILED',
-            //3 = 'THUMBNAIL_FAILED'
-            //alert(error_code);
-        }
-
-    }).on('change', function(){
-        //console.log($(this).data('ace_input_files'));
-        //console.log($(this).data('ace_input_method'));
-    });
-    $('#id-input-file-3')
-        .ace_file_input('show_file_list', [
-            {type: 'image', name: 'Logo', path: '<{$vars[1][v]}>'},
-        ]);
-
-
-
-</script>
 <!--图片上传开始-->
 <script type="text/plain" id="input_editor1" style="display:none;"></script>
 <script type="text/javascript">

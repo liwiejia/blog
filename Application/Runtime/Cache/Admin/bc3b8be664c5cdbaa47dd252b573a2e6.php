@@ -11,14 +11,14 @@
     <meta name="description" content="<?php echo ($webcConfig["description"]); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
-    <link href="/blog/Public/Plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/fonts.googleapis.com.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/fonts.googleapis.com.css" rel="stylesheet" type="text/css">
 
-    <link href="/blog/Public/Plugin/assets/css/ace-skins.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/ace-rtl.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/chosen.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/ace.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/ace-skins.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/ace-rtl.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/chosen.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/ace.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -40,7 +40,7 @@
         <div class="navbar-header pull-left">
             <a href="index.html" class="navbar-brand">
                 <small>
-                   <img src="<?php echo ($webcConfig["logo"]); ?>">
+                   <img src="<?php echo ($webcConfig["logo"]); ?>" style="width:50px">
                     <?php echo ($webcConfig["sitename"]); ?> 后台
                 </small>
             </a>
@@ -598,11 +598,7 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 网站Logo</label>
                             <div class="col-sm-9"  style="width:32.5%">
-                                <input multiple="" name="logo" type="file" id="id-input-file-3">
-
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
-											</span>
+                                <?php echo UpImage("logo",290,90,$vars[1][v]);?>
                             </div>
                         </div>
                         <div class="space-4"></div>
@@ -668,34 +664,31 @@
     <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 </a>
 </div>
-<script type="text/javascript" src="/blog/Public/Plugin/assets/js/ace-extra.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/jquery.dataTables.bootstrap.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/dataTables.buttons.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/buttons.flash.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/buttons.html5.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/buttons.print.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/buttons.colVis.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/dataTables.select.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/assets/js/ace-elements.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/assets/js/ace.min.js"></script>
-<script type="text/javascript" src="/blog/Public/js/jquery.mobile.custom.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/assets/js/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/bootstrap-3.3.7-dist\js\bootstrap-markdown.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/ace-extra.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/jquery.dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/buttons.flash.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/buttons.html5.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/buttons.print.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/buttons.colVis.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/dataTables.select.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/ace-elements.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/ace.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/js/jquery.mobile.custom.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/bootstrap-3.3.7-dist\js\bootstrap-markdown.min.js"></script>
 
 
-<!--<script type="text/javascript" src="/blog/Public/Js/jquery-ui.custom.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.easypiechart.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.sparkline.index.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.flot.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.flot.pie.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.flot.resize.min.js"></script>-->
-
-
-
+<!--<script type="text/javascript" src="/Blog/Public/Js/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.easypiechart.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.sparkline.index.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.flot.resize.min.js"></script>-->
 
 
 
@@ -703,51 +696,12 @@
 
 
 
-<!--<script src="/blog/Public/Plugin/ueditor1433/ueditor.config.js" type="text/javascript"></script>
-<script src="/blog/Public/Plugin/ueditor1433/ueditor.all.min.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8" src="/blog/Public/Plugin/ueditor1433/lang/zh-cn/zh-cn.js"></script>-->
-<script>
-    $('#id-input-file-3').ace_file_input({
-        style: 'well',
-        btn_choose: '在此处放置图像或单击以选择',
-        btn_change: null,
-        no_icon: 'ace-icon fa fa-picture-o',
-        droppable: true,
-        whitelist_ext : ["jpeg", "jpg", "png", "gif" , "bmp"],
-        whitelist_mime : ["image/jpg", "image/jpeg", "image/png", "image/gif", "image/bmp"],
-
-        thumbnail: 'small'//large | fit
-        //,icon_remove:null//set null, to hide remove/reset button
-        /**,before_change:function(files, dropped) {
-						//Check an example below
-						//or examples/file-upload.html
-						return true;
-					}*/
-        /**,before_remove : function() {
-						return true;
-					}*/
-        ,
-        preview_error : function(filename, error_code) {
-            //name of the file that failed
-            //error_code values
-            //1 = 'FILE_LOAD_FAILED',
-            //2 = 'IMAGE_LOAD_FAILED',
-            //3 = 'THUMBNAIL_FAILED'
-            //alert(error_code);
-        }
-
-    }).on('change', function(){
-        //console.log($(this).data('ace_input_files'));
-        //console.log($(this).data('ace_input_method'));
-    });
-    $('#id-input-file-3')
-        .ace_file_input('show_file_list', [
-            {type: 'image', name: 'Logo', path: '<?php echo ($vars[1][v]); ?>'},
-        ]);
 
 
 
-</script>
+<!--<script src="/Blog/Public/Plugin/ueditor1433/ueditor.config.js" type="text/javascript"></script>
+<script src="/Blog/Public/Plugin/ueditor1433/ueditor.all.min.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8" src="/Blog/Public/Plugin/ueditor1433/lang/zh-cn/zh-cn.js"></script>-->
 <!--图片上传开始-->
 <script type="text/plain" id="input_editor1" style="display:none;"></script>
 <script type="text/javascript">

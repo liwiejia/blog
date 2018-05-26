@@ -5,17 +5,17 @@
     <title><?php echo (L("login_title")); ?></title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <link href="/blog/Public/Plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Style/Admin/login.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
-    <script type="text/javascript" src="/blog/Public/Plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/blog/Public/Js/Admin/login.js"></script>
+    <link href="/Blog/Public/Plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Style/Admin/login.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/Blog/Public/Js/jquery.min.js"></script>
+    <script type="text/javascript" src="/Blog/Public/Plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Blog/Public/Js/Admin/login.js"></script>
 </head>
 <body>
 
 <div class="text-center login">
     <h1>登录</h1>
-    <form action="/blog/index.php/Admin/Login/login.html" method="post" class="form" >
+    <form action="/Blog/index.php/Admin/Login/login.html" method="post" class="form" >
         <div class="input-group input-group-lg" id="username"  data-toggle="tooltip" data-placement="right" data-trigger="focus" title="" foucs-message="请输入您的用户名" lost-message="用户名格式不正确（请输入需包含字母数字中的一种或两种,长度为4-22位）">
             <span class="input-group-addon" > <span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
             <input type="text" class="form-control" placeholder="用户名" aria-describedby="basic-addon1" name="username" >
@@ -73,7 +73,7 @@
             if (json.status) {
                // showInfor(json.info);
                 $("#fat-btn").button('reset');
-                window.location.href = "/blog/index.php/Admin/Index/index";
+                window.location.href = "/Blog/index.php/Admin/Index/index";
             }else {
                 $("#fat-btn").button('reset');
                 AlertStr=json.info;

@@ -12,15 +12,15 @@ use Think\Controller;
 
 class PersonalController extends CommonController {
     public function index(){
-
-
+       // $member = M('users')->where('userid=' . $this->USER['uid'])->find();
+        $this->assign('nav', array('Personal', 'profile', ''));//导航
+        $this->assign('member', $this->USER);
         $this->display();
-
     }
-    public function add(){
+    public function update(){
 
 
-        $this->display();
+
 
     }
 

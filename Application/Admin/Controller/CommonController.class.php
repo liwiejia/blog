@@ -12,6 +12,7 @@ use Think\Controller;
 class CommonController extends Controller {
     /* 定义用户id */
     public static $userid ='';
+    public $USER;
 
     /**
      * 自动执行
@@ -26,13 +27,14 @@ class CommonController extends Controller {
             $m = M();
             $prefix = C('DB_PREFIX');
 
-            $info = M('users')->where(array('id' => $this->userid))->field('loginnum,username,nickname,head')->find();
+            $info = M('users')->where(array('userid' => $this->userid))->find();
             $webInfo = M('website')->field('k,v')->select();
             foreach ($webInfo as $v) {
                 $webcConfig[$v['k']] = $v['v'];
 
             };
 //exit(var_dump($webcConfig));
+            $this->USER = $info;
             $this->assign('info', $info);
             $this->assign('webcConfig', $webcConfig);
 
