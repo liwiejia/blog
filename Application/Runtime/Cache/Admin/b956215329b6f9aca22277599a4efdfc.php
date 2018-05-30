@@ -38,7 +38,7 @@
         <div class="navbar-header pull-left">
             <a href="index.html" class="navbar-brand">
                 <small>
-                   <img src="<?php echo ($webcConfig["logo"]); ?>">
+                   <img src="<?php echo ($webcConfig["logo"]); ?>" style="width:50px">
                     <?php echo ($webcConfig["sitename"]); ?> 后台
                 </small>
             </a>
@@ -726,7 +726,7 @@
                                                                 </li>
 
                                                                 <li>
-                                                                    <a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                                                    <a href="<?php echo U('edit',array('id'=>$val['id']));?>" class="tooltip-success" data-rel="tooltip" title="Edit">
 																				<span class="green">
 																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
 																				</span>
@@ -734,7 +734,7 @@
                                                                 </li>
 
                                                                 <li>
-                                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                                    <a href="<?php echo U('del',array('ids'=>$val['id']));?>" class="tooltip-error" data-rel="tooltip" title="Delete">
 																				<span class="red">
 																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
 																				</span>

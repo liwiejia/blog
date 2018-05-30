@@ -23,6 +23,32 @@ class MenuController extends CommonController {
         $this->display();
 
     }
+    public function del()
+    {
+        $ids = isset($_REQUEST['ids']) ? $_REQUEST['ids'] : false;
+        if (!$ids) {
+            $this->error('请勾选删除菜单！');
+        }
+        //uid为1的禁止删除
+        if (is_array($ids)) {
+            foreach ($ids as $k => $v) {
+                $ids[$k] = intval($v);
+            }
+            if (!$ids) {
+                $this->error('参数错误！');
+                $uids = implode(',', $uids);
+            }
+        }
+
+        $map['id'] = array('in', $ids);
+        if (M('menu')->where($map)->delete()) {
+
+           // addlog('删除菜单ID：' . $ids);
+            $this->success('恭喜，菜单删除成功！');
+        } else {
+            $this->error('参数错误！');
+        }
+    }
     public function update(){
         $id = I('post.id', '', 'intval');
         $data['pid'] = I('post.pid', '', 'intval');

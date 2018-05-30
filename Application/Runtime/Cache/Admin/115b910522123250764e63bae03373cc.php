@@ -571,7 +571,126 @@
     </div><!-- /.ace-settings-box -->
 </div><!-- /.ace-settings-container -->
                 <div class="row">
+                    <form class="form-horizontal form" role="form" id="form" method="post" action="<?php echo U('update');?>">
+                        <input name="id" id="id" value="<?php echo ($currentcategory["id"]); ?>" type="hidden">
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="type"> 栏目类型 </label>
+                            <div class="col-sm-9">
+                                <select id="type" name="type" class="col-xs-10 col-sm-5">
+                                    <option value="0"
+                                    <?php if($currentcategory['type'] == 0): ?>selected="selected"<?php endif; ?>
+                                    >普通栏目</option>
+                                    <option value="1"
+                                    <?php if($currentcategory['type'] == 1): ?>selected="selected"<?php endif; ?>
+                                    >单页栏目</option>
+                                    <option value="2"
+                                    <?php if($currentcategory['type'] == 2): ?>selected="selected"<?php endif; ?>
+                                    >外链栏目</option>
+                                </select>
 
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">栏目类型。</span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="pid"> 父类 </label>
+                            <div class="col-sm-9">
+                                <select id="pid" name="pid" class="col-xs-10 col-sm-5">
+                                    <option value="0">顶级分类</option>
+                                    <?php echo ($category); ?>
+                                </select>
+
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">选择所属分类。</span>
+											</span>
+                            </div>
+                        </div>
+
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="name"> 分类名称 </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="name" id="name" placeholder="分类名称"
+                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["name"]); ?>">
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">分类名称，不能为空。</span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="url"> 链接 </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="url" id="url" placeholder="链接，如：Index/index"
+                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["url"]); ?>">
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">如果不填写则为默认链接。</span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="iconUrl"> ICON图标 </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="iconUrl" id="iconUrl" placeholder="链接，如：Index/index"
+                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["iconUrl"]); ?>">
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle"></span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                SEO标题 </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="seotitle" id="seotitle" placeholder="SEO标题"
+                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["seotitle"]); ?>">
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">请填写SEO标题利于SEO优化</span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="keywords"> 关键词 </label>
+                            <div class="col-sm-9">
+                                <input type="text" name="keywords" id="keywords" placeholder="关键词"
+                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["keywords"]); ?>">
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">SEO关键词，建议用","隔开。</span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label no-padding-right" for="content"> 栏目描述 </label>
+                            <div class="col-sm-9">
+                                    <textarea name="content" id="content" placeholder="栏目描述"
+                                              class="col-xs-10 col-sm-5"
+                                              rows="5"><?php echo ($currentcategory["content"]); ?></textarea>
+                                <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">栏目描述。</span>
+											</span>
+                            </div>
+                        </div>
+                        <div class="space-4"></div>
+
+                        <div class="col-md-offset-2 col-md-9">
+                            <button class="btn btn-info submit" type="submit">
+                                <i class="icon-ok bigger-110"></i>
+                                提交
+                            </button>
+
+                            &nbsp; &nbsp; &nbsp;
+                            <button class="btn" type="reset">
+                                <i class="icon-undo bigger-110"></i>
+                                重置
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

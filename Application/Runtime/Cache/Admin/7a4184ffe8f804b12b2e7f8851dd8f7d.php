@@ -11,14 +11,14 @@
     <meta name="description" content="<?php echo ($webcConfig["description"]); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
-    <link href="/blog/Public/Plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/fonts.googleapis.com.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/fonts.googleapis.com.css" rel="stylesheet" type="text/css">
 
-    <link href="/blog/Public/Plugin/assets/css/ace-skins.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/ace-rtl.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/chosen.min.css" rel="stylesheet" type="text/css">
-    <link href="/blog/Public/Plugin/assets/css/ace.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/ace-skins.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/ace-rtl.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/chosen.min.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/ace.min.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -571,7 +571,10 @@
     </div><!-- /.ace-settings-box -->
 </div><!-- /.ace-settings-container -->
                 <div class="row">
-
+                    <!--新增按钮-->
+                    <div class="cf">
+                        <a class="btn btn-info" href="<?php echo U('add');?>" value="">新增</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -594,31 +597,31 @@
     <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
 </a>
 </div>
-<script type="text/javascript" src="/blog/Public/Plugin/assets/js/ace-extra.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/jquery.dataTables.bootstrap.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/dataTables.buttons.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/buttons.flash.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/buttons.html5.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/buttons.print.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/buttons.colVis.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/DataTables/dataTables.select.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/assets/js/ace-elements.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/assets/js/ace.min.js"></script>
-<script type="text/javascript" src="/blog/Public/js/jquery.mobile.custom.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/assets/js/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Plugin/bootstrap-3.3.7-dist\js\bootstrap-markdown.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/ace-extra.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/jquery.dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/buttons.flash.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/buttons.html5.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/buttons.print.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/buttons.colVis.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/DataTables/dataTables.select.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/ace-elements.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/ace.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/js/jquery.mobile.custom.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/chosen.jquery.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Plugin/bootstrap-3.3.7-dist\js\bootstrap-markdown.min.js"></script>
 
 
-<!--<script type="text/javascript" src="/blog/Public/Js/jquery-ui.custom.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.easypiechart.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.sparkline.index.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.flot.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.flot.pie.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/jquery.flot.resize.min.js"></script>-->
+<!--<script type="text/javascript" src="/Blog/Public/Js/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.easypiechart.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.sparkline.index.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.flot.pie.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.flot.resize.min.js"></script>-->
 
 
 

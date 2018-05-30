@@ -13,8 +13,12 @@ use Vendor\Tree;
 
 class CategoryController extends CommonController {
     public function index(){
+        $m = M('Category');
+        $count = $m->count();
 
-
+        $list = $m->order('id asc')->select();
+        $list = $this->getMenu($list);
+        $this->assign('list', $list);
         $this->display();
 
     }
@@ -25,7 +29,7 @@ class CategoryController extends CommonController {
         $currentcategory = M('category')->where('id=' . $id)->find();
         $this->assign('currentcategory', $currentcategory);
 
-        $category = M('category')->field('id,pid,name')->where("id <> {$id}")->order('o asc')->select();
+        $category = M('category')->field('id,pid,name')->where("id <> {$id}")->order('id asc')->select();
         $tree = new Tree($category);
         $str = "<option value=\$id \$selected>\$spacer\$name</option>"; //生成的形式
         $category = $tree->get_tree(0, $str, $currentcategory['pid']);
@@ -57,6 +61,7 @@ class CategoryController extends CommonController {
         if ($data['name'] == '') {
             $this->error('分类名称不能为空！');
         }
+        
         if ($id) {
             if (M('category')->data($data)->where('id=' . $id)->save()) {
                // addlog('文章分类修改，ID：' . $id . '，名称：' . $data['name']);
@@ -86,5 +91,30 @@ class CategoryController extends CommonController {
         $this->display('form');
 
     }
+    public function del()
+    {
+        $ids = isset($_REQUEST['ids']) ? $_REQUEST['ids'] : false;
+        if (!$ids) {
+            $this->error('请勾选删除菜单！');
+        }
+        //uid为1的禁止删除
+        if (is_array($ids)) {
+            foreach ($ids as $k => $v) {
+                $ids[$k] = intval($v);
+            }
+            if (!$ids) {
+                $this->error('参数错误！');
+                $uids = implode(',', $uids);
+            }
+        }
 
+        $map['id'] = array('in', $ids);
+        if (M('category')->where($map)->delete()) {
+
+           // addlog('删除菜单ID：' . $ids);
+            $this->success('恭喜，菜单删除成功！');
+        } else {
+            $this->error('参数错误！');
+        }
+    }
 }
