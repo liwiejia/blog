@@ -10,10 +10,10 @@
     <meta name="description" content="<?php echo ($webcConfig["description"]); ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
-    <link href="/Blog/Public/Plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="/Blog/Public/Plugin/assets/css/ace.min.css" rel="stylesheet" type="text/css">
+    <link href="/blog/Public/Plugin/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/blog/Public/Plugin/assets/css/ace.min.css" rel="stylesheet" type="text/css">
 
-    <link href="/Blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
 
@@ -33,9 +33,9 @@
     <input multiple="" name="img" type="file" id="id-input-file-3">
 
 </form>
-<script type="text/javascript" src="/Blog/Public/Js/jquery.min.js"></script>
-<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/ace-elements.min.js"></script>
-<script type="text/javascript" src="/Blog/Public/Plugin/assets/js/ace.min.js"></script>
+<script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
+<script type="text/javascript" src="/blog/Public/Plugin/assets/js/ace-elements.min.js"></script>
+<script type="text/javascript" src="/blog/Public/Plugin/assets/js/ace.min.js"></script>
 <script>
     $('#id-input-file-3').ace_file_input({
         style: 'well',
@@ -75,12 +75,12 @@
     });
 <?php if($Img == ''): ?>$('#id-input-file-3')
             .ace_file_input('show_file_list', [
-                {type: 'image', name: 'Logo', path: $('#<?php echo ($BackCall); ?>',parent.document).val()},
+                {type: 'image', name: '<?php echo ($Title); ?>', path: $('#<?php echo ($BackCall); ?>',parent.document).val()},
             ])
 <?php else: ?>
     $('#id-input-file-3')
         .ace_file_input('show_file_list', [
-            {type: 'image', name: 'Logo', path: '<?php echo ($Img); ?>'},
+            {type: 'image', name: '<?php echo ($Title); ?>', path: '<?php echo ($Img); ?>'},
         ]);
     $('#<?php echo ($BackCall); ?>',parent.document).val("<?php echo ($Img); ?>");<?php endif; ?>;
 
@@ -90,6 +90,6 @@
 
 
 </script>
-</script>
+
 </body>
 </html>

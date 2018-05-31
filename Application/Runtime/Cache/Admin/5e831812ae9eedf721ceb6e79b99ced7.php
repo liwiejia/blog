@@ -22,8 +22,6 @@
 
 </head>
 
-
-
 <body class="no-skin">
 <div id="navbar" class="navbar navbar-default ace-save-state">
     <div class="navbar-container ace-save-state" id="navbar-container">
@@ -573,75 +571,100 @@
     </div><!-- /.ace-settings-box -->
 </div><!-- /.ace-settings-container -->
                 <div class="row">
-                    <form class="form-horizontal" id="form" role="form" method="post" action="<?php echo U('update');?>" enctype="multipart/form-data">
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 网站名称 </label>
-                            <div class="col-sm-9">
-                                <input type="text" name="sitename" id="sitename" class="rcol-xs-10 col-sm-5"  value="<?php echo ($vars[0][v]); ?>">
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
+                    <div class="col-xs-12">
+                        <form class="form-horizontal" id="form" method="post" action="<?php echo U('update');?>">
+                            <input type="hidden" name="id" value="<?php echo ($article["id"]); ?>" id="aid"/>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-0">文章分类</label>
+                                <div class="col-sm-9">
+                                    <select id="sid" name="sid" class="col-xs-10 col-sm-5">
+                                        <?php echo ($category); ?>
+                                    </select>
+                                    <span class="help-inline col-xs-12 col-sm-7">
+                                        <span class="middle">选择所属分类。</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-1">
+                                    文章标题 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="title" id="title" placeholder="文章标题"
+                                           class="col-xs-10 col-sm-5" value="<?php echo ($article['title']); ?>">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+												<span class="middle">文章标题不能为空。</span>
 											</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 网站标题 </label>
-                            <div class="col-sm-9">
-                                <input type="text" name="title" id="title" class="rcol-xs-10 col-sm-5"  value="<?php echo ($vars[3][v]); ?>">
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
-											</span>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-1">
+                                    SEO标题 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="seotitle" id="seotitle" placeholder="SEO标题" class="col-xs-10 col-sm-5" value="<?php echo ($article['seotitle']); ?>">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+                                        <span class="middle">如果设置SEO标题，将会在IE标题栏显示SEO标题。</span>
+									</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 网站Logo</label>
-                            <div class="col-sm-9"  style="width:32.5%">
-                                <?php echo UpImage("logo",290,90,$vars[1][v],'Logo');?>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                    关键词 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="keywords" id="keywords" placeholder="关键词" class="col-xs-10 col-sm-5" value="<?php echo ($article['keywords']); ?>">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+                                        <span class="middle">文章关键词。</span>
+									</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="form-field-1"> 关键词 </label>
-                            <div class="col-sm-9">
-                                <input type="text" name="keywords" id="keywords" class="rcol-xs-10 col-sm-5"  value="<?php echo ($vars[5][v]); ?>">
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
-											</span>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-3"> 文章摘要 </label>
+                                <div class="col-sm-9">
+                                    <textarea name="description" id="description" placeholder="文章摘要" class="col-xs-10 col-sm-5" rows="5"><?php echo ($article['description']); ?></textarea>
+                                    <span class="help-inline col-xs-12 col-sm-7">
+										<span class="middle">文章摘要、描述。</span>
+									</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 网站描述 </label>
-                            <div class="col-sm-9">
-                                    <textarea name="description" id="description" placeholder="网站描述"
-                                              class="col-xs-10 col-sm-5" rows="5"><?php echo ($vars[4][v]); ?></textarea>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-4"> 缩略图 </label>
+                                <div class="col-sm-9">
+                                    <div class="col-xs-10 col-sm-5">
+                                        <?php echo UpImage("thumbnail",290,90,$article['thumbnail'],"缩略图");?>
+                                    </div>
+                                    <span class="help-inline col-xs-12 col-sm-7">
+										<span class="middle">仅支持jpg、gif、png、bmp、jpeg，且小于1MB。</span>
+									</span>
+                                </div>
 
                             </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="form-field-2"> 底部内容 </label>
-                            <div class="col-sm-9">
-                                    <textarea name="footer" id="footer" placeholder="网站描述"
-                                              class="col-xs-10 col-sm-5" rows="5"><?php echo ($vars[2][v]); ?></textarea>
+                            <div class="space-4"></div>
 
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                    文章内容 </label>
+                                <div class="col-sm-9">
+                                    <textarea name="content" id="content1a" style="width:100%; height:150px;"><?php echo ($article['content']); ?></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-offset-2 col-md-9">
-                            <button class="btn btn-info" type="submit">
-                                <i class="icon-ok bigger-110"></i>
-                                提交
-                            </button>
+                            <div class="space-4"></div>
+                            <div class="col-md-offset-2 col-md-9">
+                                <button class="btn btn-info submit" type="button">
+                                    <i class="icon-ok bigger-110"></i>
+                                    提交
+                                </button>
 
-                            &nbsp; &nbsp; &nbsp;
-                            <button class="btn" type="reset">
-                                <i class="icon-undo bigger-110"></i>
-                                重置
-                            </button>
-                        </div>
-                    </form>
+                                &nbsp; &nbsp; &nbsp;
+                                <button class="btn" type="reset">
+                                    <i class="icon-undo bigger-110"></i>
+                                    重置
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -699,35 +722,71 @@
 
 
 
-<!--<script src="/blog/Public/Plugin/ueditor1433/ueditor.config.js" type="text/javascript"></script>
+<script src="/blog/Public/Js/bootbox.js"></script>
+-<script src="/blog/Public/Plugin/ueditor1433/ueditor.config.js" type="text/javascript"></script>
 <script src="/blog/Public/Plugin/ueditor1433/ueditor.all.min.js" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8" src="/blog/Public/Plugin/ueditor1433/lang/zh-cn/zh-cn.js"></script>-->
-<!--图片上传开始-->
-<script type="text/plain" id="input_editor1" style="display:none;"></script>
+<script type="text/javascript" charset="utf-8" src="/blog/Public/Plugin/ueditor1433/lang/zh-cn/zh-cn.js"></script>
+<!--文件上传开始-->
+<script type="text/plain" id="input_editor" style="display:none;"></script>
+
 <script type="text/javascript">
-    /*//弹出图片上传的对话框
-     var url='<?php echo U('Ueditor/index');?>';
-
-     //实例化编辑器
-     var upload_editor1 = UE.getEditor('input_editor1',{
-     serverUrl :url,
-     });
-     $("#id-input-file-3").click(function(e){
-     e.preventDefault();
-     e.stopPropagation();
-     upload_editor1.ready(function(){
-     upload_editor1.hide();//隐藏编辑器
-     //监听图片上传
-     upload_editor1.addListener('beforeInsertImage', function (t,arg){
-     $("input[name='logo']").val(arg[0].src);
-
-     });
-     });
-     //弹出图片上传的对话框
-     var myImage1 = upload_editor1.getDialog("insertimage");
-     myImage1.open();
-     });*/
+    var url='<?php echo U('Ueditor/index');?>';
+    var ue = UE.getEditor('content1a',{
+        serverUrl :url,
+    });
 </script>
+<!--富文本编辑器结束-->
 
+<script>
+    $(function () {
+
+        $(".submit").click(function () {
+            var sid = $("#sid").val();
+            var title = $("#title").val();
+            var content = $("#content").val();
+            if (sid == 0) {
+                bootbox.dialog({
+                    title: '友情提示：',
+                    message: "文章分类必须选择。",
+                    buttons: {
+                        "success": {
+                            "label": "确定",
+                            "className": "btn-danger"
+                        }
+                    }
+                });
+                return;
+            }
+            if (title == '') {
+                bootbox.dialog({
+                    title: '友情提示：',
+                    message: "文章标题必须填写。",
+                    buttons: {
+                        "success": {
+                            "label": "确定",
+                            "className": "btn-danger"
+                        }
+                    }
+                });
+                return;
+            }
+            if (content == '') {
+                bootbox.dialog({
+                    title: '友情提示：',
+                    message: "文章内容需要填写。",
+                    buttons: {
+                        "success": {
+                            "label": "确定",
+                            "className": "btn-danger"
+                        }
+                    }
+                });
+                return;
+                return;
+            }
+            $("#form").submit();
+        });
+    })
+</script>
 </body>
 </html>

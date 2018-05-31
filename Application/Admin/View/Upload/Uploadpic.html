@@ -76,12 +76,12 @@
 <if condition="$Img eq ''">
         $('#id-input-file-3')
             .ace_file_input('show_file_list', [
-                {type: 'image', name: 'Logo', path: $('#<{$BackCall}>',parent.document).val()},
+                {type: 'image', name: '<{$Title}>', path: $('#<{$BackCall}>',parent.document).val()},
             ])
 <else />
     $('#id-input-file-3')
         .ace_file_input('show_file_list', [
-            {type: 'image', name: 'Logo', path: '<{$Img}>'},
+            {type: 'image', name: '<{$Title}>', path: '<{$Img}>'},
         ]);
     $('#<{$BackCall}>',parent.document).val("<{$Img}>");
 </if>;
@@ -92,6 +92,6 @@
 
 
 </script>
-</script>
+
 </body>
 </html>

@@ -491,9 +491,10 @@ function format_bytes($size, $delimiter = '')
     }
     return round($size, 2) . $delimiter . $units[$i];
 }
-function UpImage($callBack = "image", $width = 100, $height = 100, $image = "")
+
+function UpImage($callBack = "image", $width = 100, $height = 100, $image = "",$title="")
 {
     echo '<iframe scrolling="no" frameborder="0" border="0" onload="this.height=this.contentWindow.document.body.scrollHeight;this.width=this.contentWindow.document.body.scrollWidth;" width=' . $width . ' height="' . $height . '"  src="' . U('Upload/uploadpic',
-            array('Width' => $width, 'Height' => $height, 'BackCall' => $callBack)) . '"></iframe>
+            array('Width' => $width, 'Height' => $height, 'BackCall' => $callBack, 'Title' =>$title)) . '"></iframe>
          <input type="hidden" ' . 'value = "' . $image . '"' . 'name="' . $callBack . '" id="' . $callBack . '">';
 }

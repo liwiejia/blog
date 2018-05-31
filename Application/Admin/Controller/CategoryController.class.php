@@ -61,7 +61,7 @@ class CategoryController extends CommonController {
         if ($data['name'] == '') {
             $this->error('分类名称不能为空！');
         }
-        
+
         if ($id) {
             if (M('category')->data($data)->where('id=' . $id)->save()) {
                // addlog('文章分类修改，ID：' . $id . '，名称：' . $data['name']);

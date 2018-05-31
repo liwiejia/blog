@@ -38,7 +38,7 @@
         <div class="navbar-header pull-left">
             <a href="index.html" class="navbar-brand">
                 <small>
-                   <img src="<?php echo ($webcConfig["logo"]); ?>">
+                   <img src="<?php echo ($webcConfig["logo"]); ?>" style="width:50px">
                     <?php echo ($webcConfig["sitename"]); ?> 后台
                 </small>
             </a>
