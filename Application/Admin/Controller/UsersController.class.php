@@ -19,7 +19,7 @@ class UsersController extends Controller {
      */
     public function userlist()
     {
-        $list = M('users')->where(array('userid' => $this->userid))->find();
+        $list = M('admin')->where(array('userid' => $this->userid))->find();
 
         var_dump($list);
     }

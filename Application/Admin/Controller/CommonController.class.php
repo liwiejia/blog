@@ -27,7 +27,7 @@ class CommonController extends Controller {
             $m = M();
             $prefix = C('DB_PREFIX');
 
-            $info = M('users')->where(array('userid' => $this->userid))->find();
+            $info = M('admin')->where(array('userid' => $this->userid))->find();
             $webInfo = M('website')->field('k,v')->select();
             foreach ($webInfo as $v) {
                 $webcConfig[$v['k']] = $v['v'];

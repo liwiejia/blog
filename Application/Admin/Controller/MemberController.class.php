@@ -46,7 +46,7 @@ class MemberController extends CommonController
         }
 
 
-        $user = M('users');
+        $user = M('admin');
         $pagesize = 10;#每页数量
         $offset = $pagesize * ($p - 1);//计算记录偏移量
         $count = $user->field("{$prefix}users.*,{$prefix}auth_group.id as gid,{$prefix}auth_group.title")
@@ -95,7 +95,7 @@ class MemberController extends CommonController
         }
 
         $map['uid'] = array('in', $uids);
-        if (M('users')->where($map)->delete()) {
+        if (M('admin')->where($map)->delete()) {
             M('auth_group_access')->where($map)->delete();
             addlog('删除会员UID：' . $uids);
             $this->success('恭喜，用户删除成功！');
@@ -109,9 +109,9 @@ class MemberController extends CommonController
 
         $uid = isset($_GET['uid']) ? intval($_GET['uid']) : false;
         if ($uid) {
-            //$users = M('users')->where("uid='$uid'")->find();
+            //$users = M('admin')->where("uid='$uid'")->find();
             $prefix = C('DB_PREFIX');
-            $user = M('users');
+            $user = M('admin');
             $users = $user->field("{$prefix}users.*,{$prefix}auth_group_access.group_id")->join("{$prefix}auth_group_access ON {$prefix}users.userid = {$prefix}auth_group_access.uid")->where("{$prefix}users.userid=$uid")->find();
 
         } else {
@@ -161,17 +161,17 @@ class MemberController extends CommonController
             if (!$password) {
                 $this->error('用户密码不能为空！');
             }
-            if (M('users')->where("user='$user'")->count()) {
+            if (M('admin')->where("user='$user'")->count()) {
                 $this->error('用户名已被占用！');
             }
             $data['user'] = $user;
-            $uid = M('users')->data($data)->add();
+            $uid = M('admin')->data($data)->add();
             M('auth_group_access')->data(array('group_id' => $group_id, 'uid' => $uid))->add();
             addlog('新增会员，会员UID：' . $uid);
         } else {
             M('auth_group_access')->data(array('group_id' => $group_id))->where("uid=$uid")->save();
             addlog('编辑会员信息，会员UID：' . $uid);
-            M('users')->data($data)->where("uid=$uid")->save();
+            M('admin')->data($data)->where("uid=$uid")->save();
 
         }
         $this->success('操作成功！');

@@ -16,7 +16,7 @@ class SendMailModel extends Model {
      * self::MUST_VALIDATE 或者1 必须验证
      * self::VALUE_VALIDATE或者2 值不为空的时候验证
      */
-    protected $tableName = 'users';
+    protected $tableName = 'admin';
 
     protected $_validate = array(
         array('username', 'require', '用户名不能为空！'), //默认情况下用正则进行验证prqs

@@ -12,7 +12,7 @@ use Think\Controller;
 
 class PersonalController extends CommonController {
     public function index(){
-       // $member = M('users')->where('userid=' . $this->USER['uid'])->find();
+       // $member = M('admin')->where('userid=' . $this->USER['uid'])->find();
         $this->assign('nav', array('Personal', 'profile', ''));//导航
         $this->assign('member', $this->USER);
         $this->display();
@@ -38,7 +38,7 @@ class PersonalController extends CommonController {
         if ($uid <> 1) {#禁止最高管理员设为普通会员。
             $data['isadmin'] = $isadmin == 'on' ? 1 : 0;
         }
-        $Model = M('users');
+        $Model = M('admin');
 
         $Model->data($data)->where("userid=$uid")->save();
        // addlog('修改个人资料');

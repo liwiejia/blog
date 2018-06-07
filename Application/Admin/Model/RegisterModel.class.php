@@ -13,7 +13,7 @@ use Think\Model;
 class RegisterModel extends Model {
 
     // 重新定义表
-    protected $tableName = 'users';
+    protected $tableName = 'admin';
 
     /**
      * 自动验证

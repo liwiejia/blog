@@ -41,8 +41,8 @@ class LoginController extends Controller {
 
                 // 更新用户登录信息
                 $where['userid'] = session('uid');
-                M('users')->where($where)->setInc('loginnum');   // 登录次数加 1
-                M('users')->where($where)->save($data);   // 更新登录时间和登录ip
+                M('admin')->where($where)->setInc('loginnum');   // 登录次数加 1
+                M('admin')->where($where)->save($data);   // 更新登录时间和登录ip
 
                 $this->success('登录成功,正跳转至系统首页...', U('Index/index'));
             } else {
