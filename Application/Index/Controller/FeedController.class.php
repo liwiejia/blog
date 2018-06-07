@@ -1,7 +1,7 @@
 <?php
 namespace Index\Controller;
 use Think\Controller;
-class IndexController extends CommonController {
+class FeedController extends CommonController {
     public function index(){
         $this->display();
     }

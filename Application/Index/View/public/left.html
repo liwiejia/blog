@@ -1,0 +1,34 @@
+<div class="router-box">
+    <a class="router-box-item  <if condition="$Think.const.CONTROLLER_NAME eq 'Index'"> active</if>" href="Index">
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+        <span class="name">今日焦点</span>
+    </a>
+    <a class="router-box-item  SFLogin  <if condition="$Think.const.CONTROLLER_NAME eq 'Feed'"> active</if>" href="Feed">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        <span class="name">为你推荐</span>
+    </a>
+    <a class="router-box-item  <if condition="$Think.const.CONTROLLER_NAME eq 'Newest'"> active</if>" href="Newest">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        <span class="name">最新内容</span>
+    </a>
+
+</div>
+<div class="tech-square hidden-xs">
+    <h5 class="tech-square-title mt0 mb15">技术频道</h5>
+    <volist name="category" id="category">
+        <a class="tech-square-item <if condition="$Think.const.CONTROLLER_NAME eq $category['url']"> active</if>" href="<{$category['url']}>">
+            <span class="tech-square-item-icon">
+              <img src="<{$category['iconurl']}>">
+            </span>
+            <span><{$category['name']}></span>
+        </a>
+    </volist>
+
+
+    <a class="tech-square-item" href="/tags">
+            <span class="tech-square-item-icon">
+              <i class="fa fa-tags" aria-hidden="true"></i>
+            </span>
+        <span>更多标签</span>
+    </a>
+</div>

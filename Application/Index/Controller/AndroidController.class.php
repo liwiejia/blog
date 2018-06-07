@@ -1,7 +1,7 @@
 <?php
 namespace Index\Controller;
 use Think\Controller;
-class IndexController extends CommonController {
+class AndroidController extends CommonController {
     public function index(){
         $this->display();
     }

@@ -1,7 +1,7 @@
 <?php
 namespace Index\Controller;
 use Think\Controller;
-class IndexController extends CommonController {
+class IndustryController extends CommonController {
     public function index(){
         $this->display();
     }
