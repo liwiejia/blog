@@ -17523,3 +17523,689 @@ SQL: SHOW COLUMNS FROM `blog_act` [ RunTime:0.0110s ]
 SQL: SELECT blog_act.*,blog_category.name FROM `blog_act` INNER JOIN blog_category ON blog_category.id = blog_act.sid  WHERE ( 1 = 1  ) ORDER BY id asc LIMIT 0,10   [ RunTime:0.0005s ]
 SQL: SELECT COUNT(*) AS tp_count FROM `blog_act` WHERE ( 1 = 1  ) LIMIT 1   [ RunTime:0.0000s ]
 
+[ 2018-05-31T18:13:55+08:00 ] 192.168.1.241 /blog/index.php/Admin/Article/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0215s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0145s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Article/add' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0130s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`pid`,`name` FROM `blog_category` ORDER BY id asc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Undefined variable: article F:\phpstudy\WWW\Blog\Application\Runtime\Cache\Admin\5e831812ae9eedf721ceb6e79b99ced7.php 第 576 行.
+NOTIC: [8] Undefined variable: article F:\phpstudy\WWW\Blog\Application\Runtime\Cache\Admin\5e831812ae9eedf721ceb6e79b99ced7.php 第 594 行.
+NOTIC: [8] Undefined variable: article F:\phpstudy\WWW\Blog\Application\Runtime\Cache\Admin\5e831812ae9eedf721ceb6e79b99ced7.php 第 604 行.
+NOTIC: [8] Undefined variable: article F:\phpstudy\WWW\Blog\Application\Runtime\Cache\Admin\5e831812ae9eedf721ceb6e79b99ced7.php 第 615 行.
+NOTIC: [8] Undefined variable: article F:\phpstudy\WWW\Blog\Application\Runtime\Cache\Admin\5e831812ae9eedf721ceb6e79b99ced7.php 第 625 行.
+NOTIC: [8] Undefined variable: article F:\phpstudy\WWW\Blog\Application\Runtime\Cache\Admin\5e831812ae9eedf721ceb6e79b99ced7.php 第 636 行.
+NOTIC: [8] Undefined variable: article F:\phpstudy\WWW\Blog\Application\Runtime\Cache\Admin\5e831812ae9eedf721ceb6e79b99ced7.php 第 650 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023503s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023503s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:01+08:00 ] 192.168.1.241 /blog/index.php/Admin/Upload/uploadpic/Width/290/Height/90/BackCall/thumbnail/Title/%E7%BC%A9%E7%95%A5%E5%9B%BE.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0205s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0240s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Upload/uploadpic' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 0 F:\phpstudy\WWW\Blog\Application\Admin\Controller\CommonController.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0225s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: img F:\phpstudy\WWW\Blog\Application\Admin\Controller\UploadController.class.php 第 20 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:02+08:00 ] 192.168.1.241 /blog/index.php/Admin/Article/assets/images/avatars/avatar.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:02+08:00 ] 192.168.1.241 /blog/index.php/Admin/Article/assets/images/avatars/avatar3.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:02+08:00 ] 192.168.1.241 /blog/index.php/Admin/Article/assets/images/avatars/avatar4.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:02+08:00 ] 192.168.1.241 /blog/index.php/Admin/Article/assets/images/avatars/avatar2.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000501s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-05-31T18:14:02+08:00 ] 192.168.1.241 /blog/index.php/Admin/Article/assets/images/avatars/avatar5.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:03+08:00 ] 192.168.1.241 /blog/index.php/Admin/Category/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0245s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0255s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Category/index' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0215s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `blog_category` LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `blog_category` ORDER BY id asc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043506s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043506s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002500s ]
+
+[ 2018-05-31T18:14:09+08:00 ] 192.168.1.241 /blog/index.php/Admin/Category/assets/images/avatars/avatar.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:09+08:00 ] 192.168.1.241 /blog/index.php/Admin/Category/assets/images/avatars/avatar3.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:09+08:00 ] 192.168.1.241 /blog/index.php/Admin/Category/assets/images/avatars/avatar4.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:09+08:00 ] 192.168.1.241 /blog/index.php/Admin/Category/assets/images/avatars/avatar2.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:14:10+08:00 ] 192.168.1.241 /blog/index.php/Admin/Category/assets/images/avatars/avatar5.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T18:14:59+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000501s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0135s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Link/index' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0125s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024503s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024503s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:05+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:05+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar3.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:05+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar4.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+
+[ 2018-05-31T18:15:05+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar2.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:06+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar5.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:11+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0220s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Link/add' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0225s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021502s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021502s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000501s ]
+
+[ 2018-05-31T18:15:18+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:18+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar3.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:18+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar4.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-05-31T18:15:18+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar5.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:19+08:00 ] 192.168.1.241 /blog/index.php/Admin/Link/assets/images/avatars/avatar2.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-05-31T18:15:20+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0210s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0165s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Personal/index' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0155s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025504s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:26+08:00 ] 192.168.1.241 /blog/index.php/Admin/Upload/uploadpic/Width/290/Height/90/BackCall/head/Title/%E5%A4%B4%E5%83%8F.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002501s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0205s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0230s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Upload/uploadpic' [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 0 F:\phpstudy\WWW\Blog\Application\Admin\Controller\CommonController.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0160s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: img F:\phpstudy\WWW\Blog\Application\Admin\Controller\UploadController.class.php 第 20 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012502s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012502s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:26+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:26+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar3.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000500s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:15:26+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar4.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T18:15:26+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar2.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+
+[ 2018-05-31T18:15:27+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar5.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:16:06+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/update.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001500s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0160s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Personal/update' [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 0 F:\phpstudy\WWW\Blog\Application\Admin\Controller\CommonController.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0130s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0000s ]
+SQL: UPDATE `blog_users` SET `head`='/blog/Uploads/image/5b091d267355d.jpg',`sex`='0',`birthday`='901036800',`mobile`='18310009074',`qq`='1076217644',`email`='1076217644@qq.com' WHERE ( userid=1 ) [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:16:07+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0175s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0160s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Personal/index' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0160s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026504s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:16:13+08:00 ] 192.168.1.241 /blog/index.php/Admin/Upload/uploadpic/Width/290/Height/90/BackCall/head/Title/%E5%A4%B4%E5%83%8F.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001500s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0230s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0260s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Upload/uploadpic' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 0 F:\phpstudy\WWW\Blog\Application\Admin\Controller\CommonController.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0260s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: img F:\phpstudy\WWW\Blog\Application\Admin\Controller\UploadController.class.php 第 20 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000500s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011501s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011501s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:16:13+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T18:16:13+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar3.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T18:16:13+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar4.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-05-31T18:16:14+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar2.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T18:16:14+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar5.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:16:25+08:00 ] 192.168.1.241 /blog/index.php/Admin/Member/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0140s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Member/index' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0140s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0000s ]
+ERR: 1146:Table 'blog.blog_auth_group_access' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `blog_users` INNER JOIN blog_auth_group_access ON blog_users.userid = blog_auth_group_access.uid INNER JOIN blog_auth_group ON blog_auth_group.id = blog_auth_group_access.group_id  ORDER BY blog_users.userid asc LIMIT 1  
+ERR: 1146:Table 'blog.blog_auth_group_access' doesn't exist
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `blog_users` INNER JOIN blog_auth_group_access ON blog_users.userid = blog_auth_group_access.uid INNER JOIN blog_auth_group ON blog_auth_group.id = blog_auth_group_access.group_id  ORDER BY blog_users.userid asc LIMIT 1  
+
+[ 2018-05-31T18:16:28+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0165s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0175s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0005s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Personal/index' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0170s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:16:34+08:00 ] 192.168.1.241 /blog/index.php/Admin/Upload/uploadpic/Width/290/Height/90/BackCall/head/Title/%E5%A4%B4%E5%83%8F.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0195s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0225s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Upload/uploadpic' [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 0 F:\phpstudy\WWW\Blog\Application\Admin\Controller\CommonController.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0235s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: img F:\phpstudy\WWW\Blog\Application\Admin\Controller\UploadController.class.php 第 20 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000500s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:16:35+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T18:16:35+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar3.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T18:16:35+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar4.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T18:16:35+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar2.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T18:16:35+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/assets/images/avatars/avatar5.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2018-05-31T19:57:49+08:00 ] 192.168.1.241 /blog/index.php/Admin/Personal/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T19:58:16+08:00 ] 192.168.1.241 /blog/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant verify - assumed 'verify' F:\phpstudy\WWW\Blog\Application\Runtime\Cache\Admin\0dfec61edd66f450033aa87c28a760f4.php 第 32 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-05-31T19:58:17+08:00 ] 192.168.1.241 /blog/index.php/Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T19:58:41+08:00 ] 192.168.1.241 /blog/index.php/Admin/Login/verify.html?0.4086282373602963
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T19:58:51+08:00 ] 192.168.1.241 /blog/index.php/Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: validate F:\phpstudy\WWW\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\phpstudy\WWW\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT `userid`,`username`,`nickname`,`password`,`lastdate`,`lastip` FROM `blog_users` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0060s ]
+SQL: UPDATE `blog_users` SET `loginnum`=loginnum+1 WHERE `username` = 'admin' AND `userid` = 1 [ RunTime:0.0000s ]
+SQL: UPDATE `blog_users` SET `username`='admin',`password`='a66abb5684c45962d887564f08346e8d',`lastdate`='1527767931',`lastip`='192.168.1.241' WHERE `username` = 'admin' AND `userid` = 1 [ RunTime:0.0000s ]
+
+[ 2018-05-31T19:58:51+08:00 ] 192.168.1.241 /blog/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `blog_users` WHERE `userid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `blog_website` [ RunTime:0.0080s ]
+SQL: SELECT `k`,`v` FROM `blog_website`  [ RunTime:0.0000s ]
+SQL: SELECT s.id,s.title,s.name,s.tips,s.pid,p.pid as ppid,p.title as ptitle FROM blog_menu s left join blog_menu p on p.id=s.pid where s.name='Index/index' [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id`,`title`,`pid`,`name`,`icon` FROM `blog_menu` WHERE ( islink=1 ) ORDER BY id ASC  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T19:58:57+08:00 ] 192.168.1.241 /blog/index.php/Admin/Index/assets/images/avatars/avatar.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T19:58:57+08:00 ] 192.168.1.241 /blog/index.php/Admin/Index/assets/images/avatars/avatar3.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T19:58:57+08:00 ] 192.168.1.241 /blog/index.php/Admin/Index/assets/images/avatars/avatar4.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T19:58:57+08:00 ] 192.168.1.241 /blog/index.php/Admin/Index/assets/images/avatars/avatar2.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-05-31T19:58:58+08:00 ] 192.168.1.241 /blog/index.php/Admin/Index/assets/images/avatars/avatar5.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+

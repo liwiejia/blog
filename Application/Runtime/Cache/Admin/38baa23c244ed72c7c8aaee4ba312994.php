@@ -22,7 +22,7 @@
     <li><a href="login/type/kaixin">开心网用户登录</a></li>
     <li><a href="login/type/sohu">搜狐微博用户登录</a></li>
 </ul>
-<form id="upload" method='post' action="/blog/index.php/Admin/Test/upload/" enctype="multipart/form-data">
+<form id="upload" method='post' action="/Blog/index.php/Admin/Test/upload/" enctype="multipart/form-data">
     <input name="image" type="file" />
     <input type="submit" value="提交" >
 </form>

@@ -20,10 +20,12 @@ class CommonController extends Controller {
     public function _initialize()
     {
         // 判断用户是否登录
-        $info = '1';
+        $info = '';
+
         if (session('Iuid')) {
-            $this->Iuserid = session('uid');
-            $info = M('users')->where(array('userid' => $this->userid))->find();
+            $this->Iuserid = session('Iuid');
+
+            $info = M('users')->where(array('userid' => $this->Iuserid))->find();
         }
 
         $category = M('category')->select();
