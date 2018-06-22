@@ -36,7 +36,7 @@ class TestController extends Controller
         (empty($type) || empty($code)) && $this->error('参数错误');
 
         //加载ThinkOauth类并实例化一个对象
-        import("ORG.ThinkSDK.ThinkOauth");
+        //import("ORG.ThinkSDK.ThinkOauth");
         $sns  = ThinkOauth::getInstance($type);
         //腾讯微博需传递的额外参数
         $extend = null;

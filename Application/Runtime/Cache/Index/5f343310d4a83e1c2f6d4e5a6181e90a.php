@@ -1,3 +1,24 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta property="qc:admins" content="15317273575564615446375">
+    <meta property="og:image" content="https://static.segmentfault.com/v-5b112aa6/global/img/touch-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="alexaVerifyID" content="LkzCRJ7rPEUwt6fVey2vhxiw1vQ">
+    <meta name="apple-itunes-app" content="app-id=958101793, app-argument=">
+    <title><?php echo ($current['title']); ?>-<?php echo ($webcConfig["sitename"]); ?></title>
+    <meta name="description" content="Liweijia-Blog ( blog.liweijia.site) 是开发者技术社区。 我希望为编程爱好者提供一个纯粹、高质的技术交流的平台， 与开发者一起学习、交流与成长，创造属于开发者的时代！">
+    <meta name="keywords" content="Liweijia-Blog,Liweijia-Blog,IT技术社区,编程社区,技术问答,技术文章,技术笔记,技术活动,开发者,程序员,极客,编程,代码,开源">
+    <link rel="shortcut icon" href="/Blog/Public/Image/favicon.ico">
+    <link href="/Blog/Public/Style/Index/head.css" rel="stylesheet" type="text/css">
+    <link href="/Blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body  class="no-skin">
 <div class="global-nav blog-header blog-header--index">
     <div class="bottom-nav visible-xs visible-sm ">
         <div class="opts">
@@ -29,11 +50,11 @@
         </div>
     </div>
     <nav class="container nav">
-        <div class="visible-xs visible-sm header-response"><a href="<{:U('Search/index')}>" style="display:block"><i class="fa fa-search" aria-hidden="true"></i></a>
+        <div class="visible-xs visible-sm header-response"><a href="<?php echo U('Search/index');?>" style="display:block"><i class="fa fa-search" aria-hidden="true"></i></a>
             <div class="blog-header__logo blog-header__logo--response">
                 <h1><a href="/" style="height:24px; background-size: auto 24px;"></a></h1>
             </div>
-            <a href="<{:U('User/login')}>" class="pull-right login-btn"><i class="fa fa-user" aria-hidden="true"></i></a></div>
+            <a href="<?php echo U('User/login');?>" class="pull-right login-btn"><i class="fa fa-user" aria-hidden="true"></i></a></div>
         <script>
             mobileScroll(
                 function(direction) {
@@ -84,20 +105,19 @@
                         </li>
                         <li class="menu__item visible-sm-inline-block"><a href="/search"><span class="glyphicon glyphicon-search" style="vertical-align: middle;"></span></a></li>
                     </ul>
-                    <form action="<{:U('Search/index')}>" class="header-search  hidden-sm hidden-xs pull-right">
+                    <form action="<?php echo U('Search/index');?>" class="header-search  hidden-sm hidden-xs pull-right">
                         <button class="btn btn-link"><span class="sr-only">搜索</span><span class="fa fa-search" style="font-size: 14px"></span></button>
-                        <input id="searchBox" name="q" type="text" placeholder="搜索问题或关键字" class="form-control" value="<{$search['title']}>">
+                        <input id="searchBox" name="q" type="text" placeholder="搜索问题或关键字" class="form-control" value="<?php echo ($search['title']); ?>">
                     </form>
                 </div>
             </div>
             <div class="col-sm-4 col-md-3 col-lg-3 text-right">
                 <ul class="opts list-inline hidden-xs">
-                    <if condition="$info eq ''">
-                        <li class="opts__item">
-                            <a href="<{:U('User/login')}>" class="Register btn-signin" style="margin-bottom:2px;">立即登录</a>
-                            <a href="<{:U('User/register')}>" class="Login ml10 btn-signup" onClick="">免费注册</a>
+                    <?php if($info == ''): ?><li class="opts__item">
+                            <a href="<?php echo U('User/login');?>" class="Register btn-signin" style="margin-bottom:2px;">立即登录</a>
+                            <a href="<?php echo U('User/register');?>" class="Login ml10 btn-signup" onClick="">免费注册</a>
                         </li>
-                        <else />
+                        <?php else: ?>
                         <li class="opts__item dropdown hoverDropdown write-btns visible-lg-inline-block">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 创建 <span class="caret"></span></button>
@@ -210,7 +230,7 @@
                             }
                         </style>
                         <li class="opts__item user dropdown hoverDropdown ml0">
-                            <a class="avatar-* dropdownBtn user-avatar" data-toggle="dropdown" style="background-image: url('<if condition="$info['head'] eq ''">__PUBLIC__/Image/user-64.png<else /><{$info['head']}></if>')" href="<{:U('User/Index',array('user'=>$info['pageurl']))}>"></a>
+                            <a class="avatar-* dropdownBtn user-avatar" data-toggle="dropdown" style="background-image: url('<?php if($info['head'] == ''): ?>/Blog/Public/Image/user-64.png<?php else: echo ($info['head']); endif; ?>')" href="<?php echo U('User/Index',array('user'=>$info['pageurl']));?>"></a>
                             <div class="dropdown-avatar-menu hidden">
                                 <div class="menu-score"><span class="score pull-left ml20 mr10">1 声望</span>
                                     <div class=""><span class="badge badge--o badge--sf badge--gold"><i class="badge__icon"></i></span><span class="profile__sidebar--award-badge-count">0</span><span class="badge badge--o badge--sf badge--silver"><i class="badge__icon"></i></span><span class="profile__sidebar--award-badge-count">0</span><span class="badge badge--o badge--sf badge--bronze"><i class="badge__icon"></i></span><span class="profile__sidebar--award-badge-count">0</span></div>
@@ -221,30 +241,28 @@
                                         <div class="col-md-6 col-xs-6 pl0 pr0">
                                             <ul>
                                                 <li class="message-response visible-xs"><a href="/user/notifications" id="messageCount-response">通知提醒</a></li>
-                                                <li><a href="<{:U('User/Notes',array('user'=>$info['pageurl']))}>">我的笔记</a></li>
-                                                <li><a href="<{:U('User/bookmarks',array('user'=>$info['pageurl']))}>">我的收藏</a></li>
-                                                <li><a href="<{:U('User/invited',array('user'=>$info['pageurl']))}>">受邀回答</a></li>
-                                                <li><a href="<{:U('User/experts',array('user'=>$info['pageurl']))}>">付费问答</a></li>
+                                                <li><a href="<?php echo U('User/Notes',array('user'=>$info['pageurl']));?>">我的笔记</a></li>
+                                                <li><a href="<?php echo U('User/bookmarks',array('user'=>$info['pageurl']));?>">我的收藏</a></li>
+                                                <li><a href="<?php echo U('User/invited',array('user'=>$info['pageurl']));?>">受邀回答</a></li>
+                                                <li><a href="<?php echo U('User/experts',array('user'=>$info['pageurl']));?>">付费问答</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-6 col-xs-6 pl0 pr0">
                                             <ul>
-                                                <li class="letter-response  visible-xs"><a href="<{:U('User/messages',array('user'=>$info['pageurl']))}>" id="letterCount-response">私信消息</a></li>
-                                                <li><a href="<{:U('User/Index',array('user'=>$info['pageurl']))}>">我的主页</a></li>
-                                                <li><a href="<{:U('User/about',array('user'=>$info['pageurl']))}>">我的档案</a></li>
-                                                <li><a href="<{:U('User/finance',array('user'=>$info['pageurl']))}>">我的资产</a></li>
-                                                <li><a href="<{:U('User/settings',array('user'=>$info['pageurl']))}>">个人设置</a></li>
-                                                <li><a href="<{:U('User/logout')}>">退出</a></li>
+                                                <li class="letter-response  visible-xs"><a href="<?php echo U('User/messages',array('user'=>$info['pageurl']));?>" id="letterCount-response">私信消息</a></li>
+                                                <li><a href="<?php echo U('User/Index',array('user'=>$info['pageurl']));?>">我的主页</a></li>
+                                                <li><a href="<?php echo U('User/about',array('user'=>$info['pageurl']));?>">我的档案</a></li>
+                                                <li><a href="<?php echo U('User/finance',array('user'=>$info['pageurl']));?>">我的资产</a></li>
+                                                <li><a href="<?php echo U('User/settings',array('user'=>$info['pageurl']));?>">个人设置</a></li>
+                                                <li><a href="<?php echo U('User/logout');?>">退出</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="menu-footer"><a class="js__action--complain" href="javascript:void(0);"><span>用户申诉</span></a> · <a href="/g/1570000009280187"><span>建议反馈</span></a> · <a href="<{:U('User/Index',array('user'=>$info['pageurl'],'type'=>'invitation'))}>"><span>邀请朋友</span></a></div>
+                                <div class="menu-footer"><a class="js__action--complain" href="javascript:void(0);"><span>用户申诉</span></a> · <a href="/g/1570000009280187"><span>建议反馈</span></a> · <a href="<?php echo U('User/Index',array('user'=>$info['pageurl'],'type'=>'invitation'));?>"><span>邀请朋友</span></a></div>
                             </div>
-                            <script type="text/template" id="js__action--complain-tpl"><form class="complain__form" method="post" action="/api/appeals/add"><div class="form-group"><label>理由</label><textarea name="description" class="form-control"rows="3"></textarea></div></form></script></li>
-
-                    </if>
+                            <script type="text/template" id="js__action--complain-tpl"><form class="complain__form" method="post" action="/api/appeals/add"><div class="form-group"><label>理由</label><textarea name="description" class="form-control"rows="3"></textarea></div></form></script></li><?php endif; ?>
 
                 </ul>
             </div>
@@ -270,3 +288,142 @@
 
 
 <div class="in"></div>
+<div class="wrapper">
+
+
+    <div class="container mt30">
+        <div class="row">
+            <div class="col-md-2 left">
+                <div class="router-box">
+    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="Index">
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+        <span class="name">今日焦点</span>
+    </a>
+    <a class="router-box-item  SFLogin  <?php if(CONTROLLER_NAME== 'Feed'): ?>active<?php endif; ?>" href="Feed">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        <span class="name">为你推荐</span>
+    </a>
+    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Newest'): ?>active<?php endif; ?>" href="Newest">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        <span class="name">最新内容</span>
+    </a>
+
+</div>
+<div class="tech-square hidden-xs">
+    <h5 class="tech-square-title mt0 mb15">技术频道</h5>
+    <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><a class="tech-square-item <?php if(CONTROLLER_NAME== $category['url']): ?>active<?php endif; ?>" href="<?php echo ($category['url']); ?>">
+            <span class="tech-square-item-icon">
+              <img src="<?php echo ($category['iconurl']); ?>">
+            </span>
+            <span><?php echo ($category['name']); ?></span>
+        </a><?php endforeach; endif; else: echo "" ;endif; ?>
+
+
+    <a class="tech-square-item" href="/tags">
+            <span class="tech-square-item-icon">
+              <i class="fa fa-tags" aria-hidden="true"></i>
+            </span>
+        <span>更多标签</span>
+    </a>
+</div>
+            </div>
+            <div class="col-md-10 middle">
+                <div class="news-list">
+                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><div class="news-item stream__item clearfix" data-id="1190000015212663">
+                            <div class="news__item-from">来自标签 <a href="/t/%E5%89%8D%E7%AB%AF"><?php echo ($val['name']); ?></a></div>
+                            <div class="news__item-avatar"><a href="<?php echo U('User/Index',array('user'=>$val['pageurl']));?>"><img class="avatars-img" src="<?php echo ($val['head']); ?>"></a></div>
+                            <div class="news__item-info">
+                                <div class="mb6">
+                                    <h4 class="news__item-title mt0"><a class="mr10" target="_blank" href="<?php echo U('Article/Index',array('id'=>$val['id']));?>"><?php echo ($val['title']); ?></a></h4>
+                                </div>
+                                <p class="news__item-meta"><a href="/u/phoenixchan"><?php echo ($val['nickname']); ?></a> 发布于 <a href="/u/phoenixchan/articles">亚古的个人文章</a><span class="dot">·</span><span><?php echo (mdate($val['date'])); ?></span><span class="pull-right hidden-xs hidden-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i> <?php echo ($val['thumbs']); ?></span></p>
+                            </div>
+                        </div><?php endforeach; endif; else: echo "" ;endif; ?>
+
+                </div>
+                <div class="text-center">
+                    <ul class="pager">
+                        <li id="btn-load-more" class="hidden" style="pointer-events: none;"><a href="javascript:;">没数据了 (〒︿〒)</a></li>
+                        <li id="btn-loading" class=""><a href="javascript:;"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> 载入中</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer id="footer">
+    <div class="container">
+        <div class="row hidden-xs">
+
+            <dl class="col-sm-2 site-link">
+                <dt>资源</dt>
+                <dd><a href="/weekly?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-weekly&amp;utm_term=每周精选">每周精选</a></dd>
+                <dd><a href="/users?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-users&amp;utm_term=用户排行榜">用户排行榜</a></dd>
+                <dd><a href="/badges?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-badges&amp;utm_term=徽章">徽章</a></dd>
+                <dd><a href="/faq?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-faq&amp;utm_term=帮助中心">帮助中心</a></dd>
+                <dd><a href="/repu?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-repu&amp;utm_term=声望与权限">声望与权限</a></dd>
+                <dd><a href="/community?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-community&amp;utm_term=社区服务中心">社区服务中心</a></dd>
+                <dd><a href="https://docs.segmentfault.com?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-docs&amp;utm_term=开发手册">开发手册</a></dd>
+
+
+            </dl>
+
+            <dl class="col-sm-2 site-link">
+                <dt>关于</dt>
+                <dd><a href="">关于我们</a></dd>
+                <dd><a href="">加入我们</a></dd>
+                <dd><a href="">联系我们</a></dd>
+            </dl>
+
+            <dl class="col-sm-2 site-link">
+                <dt>关注</dt>
+                <dd>
+                    <ul class="sn-inline">
+                        <li>
+                            <a class="entypo-wechart icon-sn-weixin weixin-popover-qrcode" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">微信</a>
+                            <div class="popover fade top in" role="tooltip" id="popover192361" style="top: -80px; left: -31px; display: none;"><div class="arrow" style="left: 50%; pointer-events: all;"></div><h3 class="popover-title" style="display: none;"></h3><div class="popover-content"><div class="weixin-qrcode"></div><p class="text-center mb0">添加微信</p></div></div>
+                        </li>
+                        <li>
+                            <a href="tencent://message/?uin=1076217644&Site=http://liweijia.site&Menu=yes" target="_blank" class="entypo-weibo icon-sn-weibo">QQ</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/liwiejia/blog" target="_blank" class="entypo-facebook icon-sn-github">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/LIWEIJIAAA" target="_blank" class="entypo-twitter icon-sn-twitter">Twitter</a>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+
+           <!-- <dl class="col-sm-2 site-link" id="license">
+                <dt>条款</dt>
+                <dd><a href="/tos">服务条款</a></dd>
+                <dd><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">内容许可</a></dd>
+                <dd>
+                    <a href="/app" class="clearfix mt10 block"><img src="https://static.segmentfault.com/v-5b112aa6/page/img/app/appQrcode.png" class="app-qrcode"></a>
+                    <div class="app-download-desc">
+                        <p>扫一扫下载 App</p>
+                    </div>
+
+                </dd>
+            </dl>-->
+        </div>
+        <div class="copyright">
+            Copyright © 2017-2018 Liweijia-Blog. 当前呈现版本 V 1.01.01<br>
+            <a href="http://www.miibeian.gov.cn/" rel="nofollow">京ICP备 18019844号</a> &nbsp;
+           <!-- <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602002000" rel="nofollow">浙公网安备 33010602002000号</a>-->
+            <span class="ml5">李伟佳个人版权所有</span>
+
+        </div>
+    </div>
+</footer>
+<div id="fixedTools" class="hidden-xs hidden-sm">
+    <a id="backtop" class="border-bottom" href="#">回顶部</a>
+</div>
+<script type="text/javascript" src="/Blog/Public/Js/jquery.min.js"></script>
+<script type="text/javascript" src="/Blog/Public/Js/Index/index.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<include file="Public/head"/>
+<link href="__PUBLIC__/Style/Index/paqe.css" rel="stylesheet" type="text/css">
+<body  class="no-skin">
+<include file="Public/header"/>
+<div class="wrap " id="searchPage">
+    <div class="post-topheader">
+        <div class="container">
+            <div class="block-for-right-border">
+                <form action="<{:U('Search/index')}>" class="row">
+                    <div class="col-md-8">
+                        <input class="input-lg form-control" type="text" name="q" value="<{$search['title']}>" placeholder="输入关键字搜索" autocomplete="off">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block search-btn">搜索</button>
+                    </div>
+                </form>
+                <ul class="search-category nav nav-tabs nav-tabs-primary">
+                    <li <if condition="$search['type'] eq ''"> class="active"</if> ><a href="<{:U('index',array('q'=>$search['title']))}>">全部</a></li>
+                    <li <if condition="$search['type'] eq 'question'"> class="active"</if> ><a href="<{:U('index',array('q'=>$search['title'],'type'=>'question'))}>">问答</a></li>
+                    <li <if condition="$search['type'] eq 'article'"> class="active"</if> ><a href="<{:U('index',array('q'=>$search['title'],'type'=>'article'))}>">文章</a></li>
+                    <li <if condition="$search['type'] eq 'news'"> class="active"</if> ><a href="<{:U('index',array('q'=>$search['title'],'type'=>'news'))}>">头条</a></li>
+                    <li <if condition="$search['type'] eq 'live'"> class="active"</if> ><a href="<{:U('index',array('q'=>$search['title'],'type'=>'live'))}>">讲堂</a></li>
+                    <li <if condition="$search['type'] eq 'tag'"> class="active"</if> ><a href="<{:U('index',array('q'=>$search['title'],'type'=>'tag'))}>">标签</a></li>
+                    <li <if condition="$search['type'] eq 'user'"> class="active"</if> ><a href="<{:U('index',array('q'=>$search['title'],'type'=>'user'))}>">用户</a></li>
+                    <li <if condition="$search['type'] eq 'activity'"> class="active"</if> ><a href="<{:U('index',array('q'=>$search['title'],'type'=>'activity'))}>">活动</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container mt15">
+        <div class="row">
+            <div class="col-md-8 main search-result">
+                <h3 class="h5 mt0 mb20 relatedObject-number relatedObject-number"> <{$search['cnt']}></h3>
+                <volist name="search['list']" id="vo">
+                    <section class="widget-blog">
+                        <h2 class="h4"><a class="title" href="<{:U('Article/Index',array('id'=>$vo['id']))}>" target="_blank"><{$vo.title}></a><span class="text-muted"></span></h2>
+                        <p class="excerpt mt10 content"><{$vo.content}></p>
+                        <p class="excerpt mt10"><{$vo.thumbs}> 投票&nbsp;&nbsp;&nbsp;<{$vo.comment}> 评论 </p>
+                    </section>
+                </volist>
+
+                <div class="text-center">
+                    <div class="result page"><{$search['page']}></div>
+                </div>
+            </div>
+            <div class="right_a_a1"><div>aaa</div>...互联网行业aaaaaaaaaaa...</div>
+            <div class="right_a_a1">...互联网行业aaaaaaaaaaa...</div>
+            <div class="col-md-4 side">
+                <div id="bdcs-frame-box"></div>
+                <ul class="list-unstyled">
+                    <li><a target="_blank" href="https://www.google.com/?gws_rd=ssl#newwindow=1&amp;q=site:blog.liweijia.site+<{$search['title']}>">在 Google 中搜索 »</a></li>
+                    <li><a target="_blank" href="http://www.baidu.com/s?wd=site%3Ablog.liweijia.site%20<{$search['title']}>">在 百度 中搜索 »</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<include file="Public/footer"/>
+<include file="Public/footerjs"/>
+<script language="javascript">
+    (function ($) {
+        $.fn.GL = function (options) {
+            var dataop = {
+                ocolor:'red',
+                oshuru:'高亮',
+            };
+            var chuancan = $.extend(dataop,options);
+
+            if(chuancan.oshuru==''){
+                return false;
+            }else{
+                var regExp = new RegExp("(" + chuancan.oshuru.replace(/[(){}.+*?^$|\\\[\]]/g, "\\$&") + ")", "ig");//创建正则表达式，g表示全局的，如果不用g，则查找到第一个就不会继续向下查找了；
+                $(this).each(function()//遍历文章；
+                {
+                    var _this1 = $(this)
+                    var html = _this1.html();
+                    var newHtml = html.replace(regExp, '<span class="glnow" style="color:'+chuancan.ocolor+'">'+chuancan.oshuru+'</span>');//将找到的关键字替换，加上highlight属性；
+                    _this1.html(newHtml);//更新文章；
+                });
+            }
+        }
+    })(jQuery);
+$(".title").GL({
+    ocolor:'red',//设置关键词高亮颜色
+    oshuru:'<{$search['title']}>',//设置要显示的关键词
+});
+    $(".content").GL({
+        ocolor:'red',//设置关键词高亮颜色
+        oshuru:'<{$search['title']}>',//设置要显示的关键词
+    })
+
+</script>
+</body>
+</html>
