@@ -69,4 +69,35 @@ class UserController extends CommonController {
         session(null);
         $this->success('正在退出登录...',U('Index/index'), 2);
     }
+
+    public function register(){
+        // 判断提交方式 做不同处理
+        if (IS_POST) {
+            // 实例化Register对象
+            $user = D('Register');
+
+            // 自动验证 创建数据集
+            if (!$data = $user->create()) {
+                // 防止输出中文乱码
+                header("Content-type: text/html; charset=utf-8");
+                exit(json_encode(array(
+                    'status'=> 404, // 格式错误
+                    'cap'=>$user->getError()  // 错误信息
+                 )));
+            }
+            //插入数据库
+            if ($id = $user->add($data)) {
+                /* 直接注册用户为超级管理员,子用户采用邀请注册的模式,
+                   遂设置公司id等于注册用户id,便于管理公司用户*/
+                $user->where("userid = $id")->setField('companyid', $id);
+                $this->success('注册成功', U('Index/index'), 2);
+            } else {
+                $this->error('注册失败');
+            }
+        } else {
+            $this->display();
+        }
+    }
+
+
 }

@@ -328,25 +328,7 @@
 </div>
             </div>
             <div class="col-md-10 middle">
-                <div class="news-list">
-                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><div class="news-item stream__item clearfix" data-id="1190000015212663">
-                            <div class="news__item-from">来自标签 <a href="/t/%E5%89%8D%E7%AB%AF"><?php echo ($val['name']); ?></a></div>
-                            <div class="news__item-avatar"><a href="<?php echo U('User/Index',array('user'=>$val['pageurl']));?>"><img class="avatars-img" src="<?php echo ($val['head']); ?>"></a></div>
-                            <div class="news__item-info">
-                                <div class="mb6">
-                                    <h4 class="news__item-title mt0"><a class="mr10" target="_blank" href="<?php echo U('Article/Index',array('id'=>$val['id']));?>"><?php echo ($val['title']); ?></a></h4>
-                                </div>
-                                <p class="news__item-meta"><a href="/u/phoenixchan"><?php echo ($val['nickname']); ?></a> 发布于 <a href="/u/phoenixchan/articles">亚古的个人文章</a><span class="dot">·</span><span><?php echo (mdate($val['date'])); ?></span><span class="pull-right hidden-xs hidden-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i> <?php echo ($val['thumbs']); ?></span></p>
-                            </div>
-                        </div><?php endforeach; endif; else: echo "" ;endif; ?>
 
-                </div>
-                <div class="text-center">
-                    <ul class="pager">
-                        <li id="btn-load-more" class="hidden" style="pointer-events: none;"><a href="javascript:;">没数据了 (〒︿〒)</a></li>
-                        <li id="btn-loading" class=""><a href="javascript:;"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> 载入中</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -422,9 +404,6 @@
 <div id="fixedTools" class="hidden-xs hidden-sm">
     <a id="backtop" class="border-bottom" href="#">回顶部</a>
 </div>
-<script>
-    var verifyImg = '<?php echo U('Api/verify');?>';
-</script>
 <script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
 <script type="text/javascript" src="/blog/Public/Js/Index/index.min.js"></script>
 

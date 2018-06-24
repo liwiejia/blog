@@ -27,7 +27,7 @@ class SearchController extends CommonController {
 
         $Data = M('act'); // 实例化Data数据对象
         $count      = $Data->where($map)->count();// 查询满足要求的总记录数 $map表示查询条件
-        $Page       = new Page($count,1);// 实例化分页类 传入总记录数
+        $Page       = new Page($count);// 实例化分页类 传入总记录数
         $show       = $Page->show();// 分页显示输出
         // 进行分页数据查询
         $list = $Data->where($map)->order('date')->page($nowPage.','.$Page->listRows)->select();

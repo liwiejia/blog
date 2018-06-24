@@ -85,7 +85,7 @@
                 </div>
                 <div>
                     <ul class="menu list-inline pull-left hidden-xs">
-                        <li class="menu__item"><a href="/" class="active-nav">首页</a></li>
+                        <li class="menu__item"><a href="/Index" class="active-nav">首页</a></li>
                         <li class="menu__item"><a href="/questions" class="">问答</a></li>
                         <li class="menu__item"><a href="/blogs" class="">专栏</a></li>
                         <li class="menu__item"><a href="/lives" class="">讲堂</a></li>
@@ -328,8 +328,6 @@
                     <div class="result page"><?php echo ($search['page']); ?></div>
                 </div>
             </div>
-            <div class="right_a_a1"><div>aaa</div>...互联网行业aaaaaaaaaaa...</div>
-            <div class="right_a_a1">...互联网行业aaaaaaaaaaa...</div>
             <div class="col-md-4 side">
                 <div id="bdcs-frame-box"></div>
                 <ul class="list-unstyled">

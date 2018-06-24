@@ -13,9 +13,9 @@
     <title><?php echo ($current['title']); ?>-<?php echo ($webcConfig["sitename"]); ?></title>
     <meta name="description" content="Liweijia-Blog ( blog.liweijia.site) 是开发者技术社区。 我希望为编程爱好者提供一个纯粹、高质的技术交流的平台， 与开发者一起学习、交流与成长，创造属于开发者的时代！">
     <meta name="keywords" content="Liweijia-Blog,Liweijia-Blog,IT技术社区,编程社区,技术问答,技术文章,技术笔记,技术活动,开发者,程序员,极客,编程,代码,开源">
-    <link rel="shortcut icon" href="/Blog/Public/Image/favicon.ico">
-    <link href="/Blog/Public/Style/Index/head.css" rel="stylesheet" type="text/css">
-    <link href="/Blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/blog/Public/Image/favicon.ico">
+    <link href="/blog/Public/Style/Index/head.css" rel="stylesheet" type="text/css">
+    <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
 <body  class="no-skin">
@@ -84,7 +84,7 @@
                 </div>
                 <div>
                     <ul class="menu list-inline pull-left hidden-xs">
-                        <li class="menu__item"><a href="/" class="active-nav">首页</a></li>
+                        <li class="menu__item"><a href="/Index" class="active-nav">首页</a></li>
                         <li class="menu__item"><a href="/questions" class="">问答</a></li>
                         <li class="menu__item"><a href="/blogs" class="">专栏</a></li>
                         <li class="menu__item"><a href="/lives" class="">讲堂</a></li>
@@ -230,7 +230,7 @@
                             }
                         </style>
                         <li class="opts__item user dropdown hoverDropdown ml0">
-                            <a class="avatar-* dropdownBtn user-avatar" data-toggle="dropdown" style="background-image: url('<?php if($info['head'] == ''): ?>/Blog/Public/Image/user-64.png<?php else: echo ($info['head']); endif; ?>')" href="<?php echo U('User/Index',array('user'=>$info['pageurl']));?>"></a>
+                            <a class="avatar-* dropdownBtn user-avatar" data-toggle="dropdown" style="background-image: url('<?php if($info['head'] == ''): ?>/blog/Public/Image/user-64.png<?php else: echo ($info['head']); endif; ?>')" href="<?php echo U('User/Index',array('user'=>$info['pageurl']));?>"></a>
                             <div class="dropdown-avatar-menu hidden">
                                 <div class="menu-score"><span class="score pull-left ml20 mr10">1 声望</span>
                                     <div class=""><span class="badge badge--o badge--sf badge--gold"><i class="badge__icon"></i></span><span class="profile__sidebar--award-badge-count">0</span><span class="badge badge--o badge--sf badge--silver"><i class="badge__icon"></i></span><span class="profile__sidebar--award-badge-count">0</span><span class="badge badge--o badge--sf badge--bronze"><i class="badge__icon"></i></span><span class="profile__sidebar--award-badge-count">0</span></div>
@@ -2380,8 +2380,8 @@ public function getMonthDayAttribute($date)
 <div id="fixedTools" class="hidden-xs hidden-sm">
     <a id="backtop" class="border-bottom" href="#">回顶部</a>
 </div>
-<script type="text/javascript" src="/Blog/Public/Js/jquery.min.js"></script>
-<script type="text/javascript" src="/Blog/Public/Js/Index/index.min.js"></script>
+<script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
+<script type="text/javascript" src="/blog/Public/Js/Index/index.min.js"></script>
 
 </body>
 </html>
