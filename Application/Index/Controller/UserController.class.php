@@ -73,6 +73,59 @@ class UserController extends CommonController {
     public function register(){
         // 判断提交方式 做不同处理
         if (IS_POST) {
+            $nickname = I('post.nickname');
+            $email = I('post.email');
+            $verify = I('post.verify');
+            $code = I('post.code');
+            $password = I('post.password');
+            $cap = array();
+
+            if(!verify_check($verify)){
+                array_push($cap,array(
+                    'name'=> 'verify', // DOM name
+                    'value'=> '图形验证码不正确', // 提示信息
+                ));
+            }
+            $mail_erify =M('mail_verify');
+            $verify=$mail_erify->where(array('email' => $email))->find('verify');
+
+            if(!$verify){
+                array_push($cap,array(
+                    'name'=> 'code', // DOM name
+                    'value'=> '请先发送Email验证码', // 提示信息
+                ));
+            }else{
+                if($code !=auth_code($verify)){
+                    array_push($cap,array(
+                        'name'=> 'code', // DOM name
+                        'value'=> '邮箱验证码不正确', // 提示信息
+                    ));
+                }
+            }
+
+            if($cap){
+                exit(json_encode(array(
+                    'status'=> 404, // 格式错误
+                    'cap'=>$cap  // 错误信息
+                )));
+            }
+
+
+            $data = array(
+                'username'=> $email,
+                'password'=> $password,
+                'nickname'=> $nickname,
+                'head'=> '/blog/Public/Image/user-64.png',
+                'regdate'=> time(),
+                'lastdate'=> time(),
+                'regip'=> get_client_ip(),
+                'loginnum'=> 1,
+                'email'=> $email,
+                'pageurl'=>pinyin($nickname) ,
+            );
+            var_dump();
+            exit();
+
             // 实例化Register对象
             $user = D('Register');
 

@@ -34,7 +34,7 @@ class ApiController
 
         if(IS_POST){
             //获取mail
-            $mail = I('post.mail');
+            $mail = I('post.email');
 
             $pattern="/([a-z0-9]*[-_.]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[.][a-z]{2,3}([.][a-z]{2})?/i";
             if(!$mail || !preg_match($pattern,$mail)){
