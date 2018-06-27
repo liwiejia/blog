@@ -26,38 +26,47 @@ class UserController extends CommonController {
     public function login(){
         // 判断提交方式
         if (IS_POST) {
-            // 实例化Login对象
-            $login = D('login');
-
-            // 自动验证 创建数据集
-            if (!$data = $login->create()) {
-                $this->error($login->getError());
-            }
+            $username = I('post.username');
+            $password = I('post.password');
 
             // 组合查询条件
             $where = array();
-            $where['username'] = $data['username'];
-            $result = $login->where($where)->field('userid,username,nickname,password,lastdate,lastip')->find();
+            $where['username'] = $username;
+            $result = M('users')->where($where)->field('id,username,nickname,password,lastdate,lastip')->find();
 
             // 验证用户名 对比 密码
-            if ($result && $result['password'] == $data['password']) {
+
+            if ($result && auth_code($result['password']) == $password) {
 
                 // 存储session
-                session('Iuid', $result['userid']);          // 当前用户id
+                session('Iuid', $result['id']);          // 当前用户id
                 session('Inickname', $result['nickname']);   // 当前用户昵称
                 session('Iusername', $result['username']);   // 当前用户名
                 session('Ilastdate', $result['lastdate']);   // 上一次登录时间
                 session('Ilastip', $result['lastip']);       // 上一次登录ip
 
-
+                $data = array(
+                    'lastdate'=> time(),
+                    'regip'=> get_client_ip(),
+                    'lastip'=> get_client_ip(),
+                );
                 // 更新用户登录信息
-                $where['userid'] = session('Iuid');
+                $where['id'] = session('Iuid');
                 M('admin')->where($where)->setInc('loginnum');   // 登录次数加 1
                 M('admin')->where($where)->save($data);   // 更新登录时间和登录ip
 
-                $this->success('登录成功,正跳转至系统首页...', U('Index/index'));
+                exit(json_encode(array(
+                    'status'=> 200, // 格式错误
+                    'cap'=>'登录成功' // 错误信息
+                )));
             } else {
-                $this->error('登录失败,用户名或密码不正确!');
+                exit(json_encode(array(
+                    'status'=> 404, // 格式错误
+                    'cap'=>array(
+                        'name'=> 'username', // DOM name
+                        'value'=> '账号或密码错误', // 提示信息
+                    )  // 错误信息
+                )));
             }
         } else {
             $this->success('非法操作', U('Index/index'));
@@ -73,6 +82,7 @@ class UserController extends CommonController {
     public function register(){
         // 判断提交方式 做不同处理
         if (IS_POST) {
+
             $nickname = I('post.nickname');
             $email = I('post.email');
             $verify = I('post.verify');
@@ -87,20 +97,32 @@ class UserController extends CommonController {
                 ));
             }
             $mail_erify =M('mail_verify');
-            $verify=$mail_erify->where(array('email' => $email))->find('verify');
+            $verifyDate=$mail_erify->where(array('email' => $email))->field()->find();
 
-            if(!$verify){
+            if(!$verifyDate['verify']){
                 array_push($cap,array(
                     'name'=> 'code', // DOM name
                     'value'=> '请先发送Email验证码', // 提示信息
                 ));
             }else{
-                if($code !=auth_code($verify)){
+                if($code !=auth_code($verifyDate['verify'])){
                     array_push($cap,array(
                         'name'=> 'code', // DOM name
                         'value'=> '邮箱验证码不正确', // 提示信息
                     ));
                 }
+                if((time() - $verifyDate['verify']) < 60*30){
+                    array_push($cap,array(
+                        'name'=> 'code', // DOM name
+                        'value'=> '验证码已经过期。请重新发送mail', // 提示信息
+                    ));
+                }
+            }
+            if( M('users')->where("email='$email'")->find()){
+                array_push($cap,array(
+                    'name'=> 'email', // DOM name
+                    'value'=> '邮箱已经注册', // 提示信息
+                ));
             }
 
             if($cap){
@@ -109,44 +131,49 @@ class UserController extends CommonController {
                     'cap'=>$cap  // 错误信息
                 )));
             }
-
+            $mail_erify->where('id = '.$verifyDate['id'])->delete();
+            $pageurl = pinyin($nickname);
+            if( M('users')->where("pageurl='$pageurl'")->find()){
+                $pageyrl = $pageurl.rand_int(6);
+            }
 
             $data = array(
                 'username'=> $email,
-                'password'=> $password,
+                'password'=> auth_code($password,'1'),
                 'nickname'=> $nickname,
                 'head'=> '/blog/Public/Image/user-64.png',
                 'regdate'=> time(),
                 'lastdate'=> time(),
                 'regip'=> get_client_ip(),
+                'lastip'=> get_client_ip(),
                 'loginnum'=> 1,
                 'email'=> $email,
-                'pageurl'=>pinyin($nickname) ,
+                'pageurl'=>$pageyrl ,
             );
-            var_dump();
-            exit();
 
-            // 实例化Register对象
-            $user = D('Register');
+            //插入数据库
+            if ($id = M('users')->add($data)) {
+                // 存储session
+                session('Iuid', $id);          // 当前用户id
+                session('Inickname', $data['nickname']);   // 当前用户昵称
+                session('Iusername', $data['username']);   // 当前用户名
+                session('Ilastdate', $data['lastdate']);   // 上一次登录时间
+                session('Ilastip', $data['lastip']);       // 上一次登录ip
 
-            // 自动验证 创建数据集
-            if (!$data = $user->create()) {
-                // 防止输出中文乱码
-                header("Content-type: text/html; charset=utf-8");
+
+                exit(json_encode(array(
+                    'status'=> 200, // 格式错误
+                    'cap'=>'注册成功！'  // 错误信息
+                )));
+
+            } else {
                 exit(json_encode(array(
                     'status'=> 404, // 格式错误
-                    'cap'=>$user->getError()  // 错误信息
-                 )));
+                    'cap'=> $this->error('注册失败')  // 错误信息
+                )));
+
             }
-            //插入数据库
-            if ($id = $user->add($data)) {
-                /* 直接注册用户为超级管理员,子用户采用邀请注册的模式,
-                   遂设置公司id等于注册用户id,便于管理公司用户*/
-                $user->where("userid = $id")->setField('companyid', $id);
-                $this->success('注册成功', U('Index/index'), 2);
-            } else {
-                $this->error('注册失败');
-            }
+
         } else {
             $this->display();
         }

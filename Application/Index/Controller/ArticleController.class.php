@@ -18,7 +18,7 @@ class ArticleController extends CommonController {
 
         $data = M('act')->field("{$prefix}act.*,{$prefix}category.name,{$prefix}users.nickname,{$prefix}users.head,{$prefix}users.pageurl")
             ->where("{$prefix}act.id= $id")
-            ->join("{$prefix}users ON {$prefix}users.userid = {$prefix}act.usersid")
+            ->join("{$prefix}users ON {$prefix}users.id = {$prefix}act.usersid")
             ->join("{$prefix}category ON {$prefix}category.id = {$prefix}act.sid")
             ->find();
         if(!$data){

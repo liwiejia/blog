@@ -23,9 +23,10 @@ class CommonController extends Controller {
         $info = '';
 
         if (session('Iuid')) {
+
             $this->Iuserid = session('Iuid');
 
-            $info = M('users')->where(array('userid' => $this->Iuserid))->find();
+            $info = M('users')->where(array('id' => $this->Iuserid))->find();
         }
 
         $category = M('category')->select();

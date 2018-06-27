@@ -30,7 +30,7 @@ class LoginModel extends Model {
      */
     protected $_auto = array (
         /* 登录的时候自动完成 */
-        array('password', 'md5', 3, 'function') , // 对password字段使用md5函数处理
+        array('password', 'auth_code', 3, 'function') , // 对password字段使用md5函数处理
         array('lastdate', 'time', 1, 'function'), // 对lastdate字段在登录的时候写入当前时间戳
         array('lastip', 'get_client_ip', 1, 'function'), // 对lastip字段在登录的时候写入当前登录ip地址
     );

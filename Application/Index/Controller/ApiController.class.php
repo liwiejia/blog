@@ -62,7 +62,7 @@ class ApiController
                         'cap' => '已经发送了哦，请检查邮箱'  // 错误信息
                     )));
             }
-            $verify = rand_int();
+            $verify = auth_code(rand_int(),"11") ;
 
             $str ="<div class='header' style='background-color: rgb(117, 212, 183); padding: 10px;'><span class='logo'><img src='__PUBLIC__/Image/log-1.png' style='width: 150px;'></span></div><div style='font-size: 14px;padding: 2em;'><br><br>        您好  ".$mail.",<br><br><p>您的验证码为：</p><h3 style='font-size: 60px; color: #f00; font-weight: bold;'>".auth_code($verify)."</h3><p>该验证邮件有效期为30分钟，超时请重新发送邮件。</p></div><div style='font-size: 14px; padding: 2em;'>        Regards<br>        Your  Team<br>        ------------------------------------<br><a href=''>www.blog.liweijia.site</a><br><div style='color: #999;'><p>发件时间：<span id='stickerTimer' style='border-bottom: 1px dashed rgb(204, 204, 204); position: relative;'  times='".date("G").":".date("i")."' isout='0'>".date("Y")."/".date("m")."/".date("d")."</span>  ".date("G").":".date("i").":".date("s")."</p><p>此邮件为系统自动发出的，请勿直接回复。</p></div></div>";
 

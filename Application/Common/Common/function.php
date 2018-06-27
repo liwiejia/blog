@@ -476,7 +476,7 @@ function rand_int($len = 4){
     {
         $output .= $chars[mt_rand(0, $charsLen)];
     }
-    return auth_code($output,"11");
+    return $output;
 }
 /**
  * 函数：格式化字节大小

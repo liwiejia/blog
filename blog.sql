@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-06-25 09:51:25
+Date: 2018-06-27 19:41:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -179,12 +179,12 @@ INSERT INTO `blog_category` VALUES ('10', '0', '0', '行业', '行业', '行业'
 DROP TABLE IF EXISTS `blog_mail_verify`;
 CREATE TABLE `blog_mail_verify` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `verify` char(32) NOT NULL COMMENT '验证码',
+  `verify` char(70) NOT NULL COMMENT '验证码',
   `email` char(32) NOT NULL COMMENT '邮箱',
   `date` int(2) NOT NULL,
   `ip` char(15) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog_mail_verify
@@ -241,9 +241,9 @@ INSERT INTO `blog_menu` VALUES ('25', '18', 'Personal/index', '信息管理', '1
 -- ----------------------------
 DROP TABLE IF EXISTS `blog_users`;
 CREATE TABLE `blog_users` (
-  `userid` mediumint(9) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `id` mediumint(9) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
   `username` char(20) NOT NULL COMMENT '用户名',
-  `password` char(32) NOT NULL COMMENT '用户密码',
+  `password` char(60) NOT NULL COMMENT '用户密码',
   `nickname` char(20) NOT NULL COMMENT '昵称',
   `head` varchar(255) NOT NULL,
   `regdate` int(10) NOT NULL COMMENT '注册时间',
@@ -260,13 +260,14 @@ CREATE TABLE `blog_users` (
   `birthday` int(10) NOT NULL COMMENT '生日',
   `pageurl` char(15) NOT NULL COMMENT '个人信息页面',
   `info` varchar(255) DEFAULT NULL COMMENT '个人说明',
-  PRIMARY KEY (`userid`,`pageurl`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog_users
 -- ----------------------------
-INSERT INTO `blog_users` VALUES ('1', 'admin', 'a66abb5684c45962d887564f08346e8d', 'admin', '/blog/Uploads/image/5b091d267355d.jpg', '0', '1528250665', '', '192.168.1.241', '28', '1076217644@qq.com', '18310009074', '0', '0', '1076217644', '0', '901036800', 'admin', null);
+INSERT INTO `blog_users` VALUES ('11', 'admin', 'a66abb5684c45962d887564f08346e8d', 'admin', '/blog/Uploads/image/5b091d267355d.jpg', '0', '1528250665', '', '192.168.1.241', '28', '1076217644@qq.com1', '18310009074', '0', '0', '1076217644', '0', '901036800', 'admin', null);
+INSERT INTO `blog_users` VALUES ('25', '1076217644@qq.com', '30caOpU2tvCxBQ+ZVn4R3tVRSil487W/8ZWbkey+61BdoL8', 'admin', '/blog/Public/Image/user-64.png', '1530097603', '1530097603', '192.168.1.241', '192.168.1.241', '1', '1076217644@qq.com', '', '0', '0', '', '0', '0', 'admin799827', null);
 
 -- ----------------------------
 -- Table structure for blog_website
