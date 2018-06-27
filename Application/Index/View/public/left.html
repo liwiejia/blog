@@ -1,13 +1,13 @@
 <div class="router-box">
-    <a class="router-box-item  <if condition="$Think.const.CONTROLLER_NAME eq 'Index'"> active</if>" href="Index">
+    <a class="router-box-item  <if condition="$Think.const.CONTROLLER_NAME eq 'Index'"> active</if>" href="<{:U('Index')}>">
         <i class="fa fa-newspaper-o" aria-hidden="true"></i>
         <span class="name">今日焦点</span>
     </a>
-    <a class="router-box-item  SFLogin  <if condition="$Think.const.CONTROLLER_NAME eq 'Feed'"> active</if>" href="Feed">
+    <a class="router-box-item  SFLogin  <if condition="$Think.const.CONTROLLER_NAME eq 'Feed'"> active</if>" href="<{:U('Feed')}>">
         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
         <span class="name">为你推荐</span>
     </a>
-    <a class="router-box-item  <if condition="$Think.const.CONTROLLER_NAME eq 'Newest'"> active</if>" href="Newest">
+    <a class="router-box-item  <if condition="$Think.const.CONTROLLER_NAME eq 'Newest'"> active</if>" href="<{:U('Newest')}>">
         <i class="fa fa-globe" aria-hidden="true"></i>
         <span class="name">最新内容</span>
     </a>
@@ -25,7 +25,7 @@
     </volist>
 
 
-    <a class="tech-square-item" href="/tags">
+    <a class="tech-square-item" href="<{:U('Tags')}>">
             <span class="tech-square-item-icon">
               <i class="fa fa-tags" aria-hidden="true"></i>
             </span>
