@@ -18,33 +18,32 @@
     <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<link href="/blog/Public/Style/Index/paqe.css" rel="stylesheet" type="text/css">
 <body  class="no-skin">
 <div class="global-nav blog-header blog-header--index">
     <div class="bottom-nav visible-xs visible-sm ">
         <div class="opts">
-            <a class="opts-group active" href="<?php echo U('Index/index');?>">
+            <a class="opts-group active" href="/">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 <span>首页</span>
             </a>
-            <a class="opts-group " href="<?php echo U('Questions');?>">
+            <a class="opts-group " href="/questions">
                 <i class="fa fa-comments" aria-hidden="true"></i>
                 <span>问答</span>
             </a>
-            <a class="opts-group " href="<?php echo U('blogs');?>">
+            <a class="opts-group " href="/blogs">
                 <i class="fa fa-pencil-square" aria-hidden="true"></i>
                 <span>专栏</span>
             </a>
-            <a class="opts-group " href="<?php echo U('lives');?>">
+            <a class="opts-group " href="/lives">
                 <i class="fa fa-play-circle" aria-hidden="true">
                 </i><span>讲堂</span></a>
             <div class="opts-group">
                 <div class="btn-group dropup"><i class="fa fa-bars dropdown hoverDropdown" data-toggle="dropdown" aria-hidden="true"><span>更多</span></i>
                     <ul class="dropdown-menu">
-                        <li><a href="<?php echo U('Jobs');?>">职位</a></li>
-                        <li><a href="<?php echo U('Events');?>">活动</a></li>
-                        <li><a href="<?php echo U('Tags');?>">标签</a></li>
-                        <li><a href="<?php echo U('Badges');?>">徽章</a></li>
+                        <li><a href="/jobs">职位</a></li>
+                        <li><a href="/events">活动</a></li>
+                        <li><a href="/tags">标签</a></li>
+                        <li><a href="/badges">徽章</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,20 +84,20 @@
                 </div>
                 <div>
                     <ul class="menu list-inline pull-left hidden-xs">
-                        <li class="menu__item"><a href="<?php echo U('Index/index');?>" class="active-nav">首页</a></li>
-                        <li class="menu__item"><a href="<?php echo U('Questions');?>" class="">问答</a></li>
-                        <li class="menu__item"><a href="<?php echo U('Blogs');?>" class="">专栏</a></li>
-                        <li class="menu__item"><a href="<?php echo U('Lives');?>" class="">讲堂</a></li>
-                        <li class="menu__item"><a href="<?php echo U('Groups');?>" class="">圈子</a></li>
+                        <li class="menu__item"><a href="/Index" class="active-nav">首页</a></li>
+                        <li class="menu__item"><a href="/questions" class="">问答</a></li>
+                        <li class="menu__item"><a href="/blogs" class="">专栏</a></li>
+                        <li class="menu__item"><a href="/lives" class="">讲堂</a></li>
+                        <li class="menu__item"><a href="/groups" class="">圈子</a></li>
                         <li class="menu__item menu__item--more dropdown"><a href="##" class="dropdown-toggle dropdownBtn" data-toggle="dropdown"> 发现<i class="fa fa-caret-down" style="font-size: 14px;margin-left: 5px;" aria-hidden="true"></i></a>
                             <div class="dropdown-block hidden">
                                 <ul class="dropdown-content-menu">
-                                    <li><a href="<?php echo U('events');?>">活动</a></li>
-                                    <li><a href="<?php echo U('Tags');?>">标签</a></li>
-                                    <li><a href="<?php echo U('Jobs');?>">找工作</a></li>
-                                    <li><a href="<?php echo U('Users');?>">排行榜</a></li>
-                                    <li><a href="<?php echo U('Badges');?>">徽章</a></li>
-                                    <li><a href="<?php echo U('Notes');?>">笔记</a></li>
+                                    <li><a href="/events">活动</a></li>
+                                    <li><a href="/tags">标签</a></li>
+                                    <li><a href="/jobs">找工作</a></li>
+                                    <li><a href="/users">排行榜</a></li>
+                                    <li><a href="/badges">徽章</a></li>
+                                    <li><a href="/notes">笔记</a></li>
                                     <li><a href="https://docs.segmentfault.com" target="_blank">开发手册<i style="line-height: 20px;font-size: 12px;color: #F5A623;" class="ml10 fa fa-external-link-square"></i></a></li>
                                     <li><a href="https://business.segmentfault.com/ads?utm_source=blog-header" target="_blank">广告投放<i style="line-height: 20px;font-size: 12px;color: #F5A623;" class="ml10 fa fa-external-link-square"></i></a></li>
                                 </ul>
@@ -123,23 +122,23 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 创建 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?php echo U('Ask/index');?>">提问题</a></li>
-                                    <li><a href="<?php echo U('submit/index');?>">发头条</a></li>
-                                    <li><a href="<?php echo U('write/index');?>">写文章</a></li>
-                                    <li><a href="<?php echo U('record/index');?>">记笔记</a></li>
+                                    <li><a href="/ask">提问题</a></li>
+                                    <li><a href="/submit">发头条</a></li>
+                                    <li><a href="/write">写文章</a></li>
+                                    <li><a href="/record">记笔记</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="<?php echo U('User/draft');?>">草稿箱（1）</a></li>
+                                    <li><a href="/user/draft">草稿箱（1）</a></li>
                                 </ul>
                             </div>
                         </li>
                         <li class="opts__item dropdown hoverDropdown write-btns visible-md-inline-block"><a class="dropdownBtn" data-toggle="dropdown" href="/ask"><i class="fa fa-plus" aria-hidden="true"></i></a>
                             <ul class="dropdown-menu dropdown-menu-right ">
-                                <li><a href="<?php echo U('Ask/index');?>">提问题</a></li>
-                                <li><a href="<?php echo U('submit/index');?>">发头条</a></li>
-                                <li><a href="<?php echo U('write/index');?>">写文章</a></li>
-                                <li><a href="<?php echo U('record/index');?>">记笔记</a></li>
+                                <li><a href="/ask">提问题</a></li>
+                                <li><a href="/submit">发头条</a></li>
+                                <li><a href="/write">写文章</a></li>
+                                <li><a href="/record">记笔记</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo U('User/draft');?>">草稿箱（1）</a></li>
+                                <li><a href="/user/draft">草稿箱（1）</a></li>
                             </ul>
                         </li>
                         <li class="opts__item message has-unread hidden-sm ml10"><a id="dLabel" class="dropdown-toggle-message" href="/user/notifications"><span class="sr-only">消息</span><span id="messageCount" class="fa fa-bell-o"></span></a>
@@ -155,10 +154,10 @@
                                     </div>
                                     <div class="panel-body">
                                         <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane active" id="messageGeneral">1</div>
-                                            <div role="tabpanel" class="tab-pane" id="messageComment">2</div>
-                                            <div role="tabpanel" class="tab-pane" id="messageRanked">3</div>
-                                            <div role="tabpanel" class="tab-pane" id="messageFollowed">4</div>
+                                            <div role="tabpanel" class="tab-pane active" id="messageGeneral"></div>
+                                            <div role="tabpanel" class="tab-pane" id="messageComment"></div>
+                                            <div role="tabpanel" class="tab-pane" id="messageRanked"></div>
+                                            <div role="tabpanel" class="tab-pane" id="messageFollowed"></div>
                                             <script type="text/template" id="messageGeneralTpl"><ul class="mCustomScrollbar-message" data-proto="general"  data-mcs-theme="minimal-dark"><% _.each(general,function(d){ %><li class="<%= d.viewed >0 ?'':'bg-warning'%>"><%= d.sentence %>&nbsp;<a
                                                     href="<%= d.url %>"><%= d.excerpt %></a>&nbsp<%= d.appendSentence %></li><% }) %></ul></script><script type="text/template" id="item--general"><% _.each(general,function(d){ %><li class="<%= d.viewed>0 ?'':'bg-warning'%>"><%= d.sentence %>&nbsp;<a
                                                 href="<%= d.url %>"><%= d.excerpt %></a></li><% }) %></script><script type="text/template" id="messageCommentTpl"><ul class="mCustomScrollbar-message" data-proto="comment"  data-mcs-theme="minimal-dark"><% _.each(comment,function(d){ %><li class="<%= d.viewed>0 ?'':'bg-warning'%>"><%= d.sentence %>&nbsp;<a
@@ -188,14 +187,14 @@
                                     <div class="panel-footer">
                                         <div class="row">
                                             <div class="col-sm-6"><a href="javascript:;" class="message-ingore-all hide"><span class="glyphicon glyphicon-ok-sign"></span> 全部标记为已读</a></div>
-                                            <div class="col-sm-6"><a class="opts__item--message-view-all" href="<?php echo U('User/notifications');?>">查看全部
+                                            <div class="col-sm-6"><a class="opts__item--message-view-all" href="/user/notifications">查看全部
                                                 »</a></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li class="opts__item letter has-unread hidden-sm"><a id="dLabel" class="dropdown-toggle-letter" href="<?php echo U('User/messages');?>"><span class="sr-only">私信</span><span id="letterCount" class="fa fa-envelope-o"></span></a>
+                        <li class="opts__item letter has-unread hidden-sm"><a id="dLabel" class="dropdown-toggle-letter" href="/user/messages"><span class="sr-only">私信</span><span id="letterCount" class="fa fa-envelope-o"></span></a>
                             <div class="opts__item--letter hide">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
@@ -241,7 +240,7 @@
                                     <div class="menu-list row">
                                         <div class="col-md-6 col-xs-6 pl0 pr0">
                                             <ul>
-                                                <li class="message-response visible-xs"><a href="<?php echo U('User/notifications');?>" id="messageCount-response">通知提醒</a></li>
+                                                <li class="message-response visible-xs"><a href="/user/notifications" id="messageCount-response">通知提醒</a></li>
                                                 <li><a href="<?php echo U('User/Notes',array('user'=>$info['pageurl']));?>">我的笔记</a></li>
                                                 <li><a href="<?php echo U('User/bookmarks',array('user'=>$info['pageurl']));?>">我的收藏</a></li>
                                                 <li><a href="<?php echo U('User/invited',array('user'=>$info['pageurl']));?>">受邀回答</a></li>
@@ -289,57 +288,51 @@
 
 
 <div class="in"></div>
-<div class="wrap " id="searchPage">
-    <div class="post-topheader">
-        <div class="container">
-            <div class="block-for-right-border">
-                <form action="<?php echo U('Search/index');?>" class="row">
-                    <div class="col-md-8">
-                        <input class="input-lg form-control" type="text" name="q" value="<?php echo ($search['title']); ?>" placeholder="输入关键字搜索" autocomplete="off">
-                    </div>
-                    <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block search-btn">搜索</button>
-                    </div>
-                </form>
-                <ul class="search-category nav nav-tabs nav-tabs-primary">
-                    <li <?php if($search['type'] == ''): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title']));?>">全部</a></li>
-                    <li <?php if($search['type'] == 'question'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'question'));?>">问答</a></li>
-                    <li <?php if($search['type'] == 'article'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'article'));?>">文章</a></li>
-                    <li <?php if($search['type'] == 'news'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'news'));?>">头条</a></li>
-                    <li <?php if($search['type'] == 'live'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'live'));?>">讲堂</a></li>
-                    <li <?php if($search['type'] == 'tag'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'tag'));?>">标签</a></li>
-                    <li <?php if($search['type'] == 'user'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'user'));?>">用户</a></li>
-                    <li <?php if($search['type'] == 'activity'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'activity'));?>">活动</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container mt15">
-        <div class="row">
-            <div class="col-md-8 main search-result">
-                <h3 class="h5 mt0 mb20 relatedObject-number relatedObject-number"> <?php echo ($search['cnt']); ?></h3>
-                <?php if(is_array($search['list'])): $i = 0; $__LIST__ = $search['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><section class="widget-blog">
-                        <h2 class="h4"><a class="title" href="<?php echo U('Article/Index',array('id'=>$vo['id']));?>" target="_blank"><?php echo ($vo["title"]); ?></a><span class="text-muted"></span></h2>
-                        <p class="excerpt mt10 content"><?php echo ($vo["content"]); ?></p>
-                        <p class="excerpt mt10"><?php echo ($vo["thumbs"]); ?> 投票&nbsp;&nbsp;&nbsp;<?php echo ($vo["comment"]); ?> 评论 </p>
-                    </section><?php endforeach; endif; else: echo "" ;endif; ?>
+<div class="wrapper">
 
-                <div class="text-center">
-                    <div class="result page"><?php echo ($search['page']); ?></div>
-                </div>
-            </div>
-            <div class="col-md-4 side">
-                <div id="bdcs-frame-box"></div>
-                <ul class="list-unstyled">
-                    <li><a target="_blank" href="https://www.google.com/?gws_rd=ssl#newwindow=1&amp;q=site:blog.liweijia.site+<?php echo ($search['title']); ?>">在 Google 中搜索 »</a></li>
-                    <li><a target="_blank" href="http://www.baidu.com/s?wd=site%3Ablog.liweijia.site%20<?php echo ($search['title']); ?>">在 百度 中搜索 »</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+
+    <div class="container mt30">
+        <div class="row">
+            <div class="col-md-2 left">
+                <div class="router-box">
+    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="Index">
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+        <span class="name">今日焦点</span>
+    </a>
+    <a class="router-box-item  SFLogin  <?php if(CONTROLLER_NAME== 'Feed'): ?>active<?php endif; ?>" href="Feed">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        <span class="name">为你推荐</span>
+    </a>
+    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Newest'): ?>active<?php endif; ?>" href="Newest">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        <span class="name">最新内容</span>
+    </a>
 
 </div>
+<div class="tech-square hidden-xs">
+    <h5 class="tech-square-title mt0 mb15">技术频道</h5>
+    <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><a class="tech-square-item <?php if(CONTROLLER_NAME== $category['url']): ?>active<?php endif; ?>" href="<?php echo ($category['url']); ?>">
+            <span class="tech-square-item-icon">
+              <img src="<?php echo ($category['iconurl']); ?>">
+            </span>
+            <span><?php echo ($category['name']); ?></span>
+        </a><?php endforeach; endif; else: echo "" ;endif; ?>
 
+
+    <a class="tech-square-item" href="/tags">
+            <span class="tech-square-item-icon">
+              <i class="fa fa-tags" aria-hidden="true"></i>
+            </span>
+        <span>更多标签</span>
+    </a>
+</div>
+            </div>
+            <div class="col-md-10 middle">
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer id="footer">
     <div class="container">
@@ -411,44 +404,8 @@
 <div id="fixedTools" class="hidden-xs hidden-sm">
     <a id="backtop" class="border-bottom" href="#">回顶部</a>
 </div>
-<script>
-    var verifyImg = '<?php echo U('Api/verify');?>';
-</script>
 <script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
 <script type="text/javascript" src="/blog/Public/Js/Index/index.min.js"></script>
 
-<script language="javascript">
-    (function ($) {
-        $.fn.GL = function (options) {
-            var dataop = {
-                ocolor:'red',
-                oshuru:'高亮',
-            };
-            var chuancan = $.extend(dataop,options);
-
-            if(chuancan.oshuru==''){
-                return false;
-            }else{
-                var regExp = new RegExp("(" + chuancan.oshuru.replace(/[(){}.+*?^$|\\\[\]]/g, "\\$&") + ")", "ig");//创建正则表达式，g表示全局的，如果不用g，则查找到第一个就不会继续向下查找了；
-                $(this).each(function()//遍历文章；
-                {
-                    var _this1 = $(this)
-                    var html = _this1.html();
-                    var newHtml = html.replace(regExp, '<span class="glnow" style="color:'+chuancan.ocolor+'">'+chuancan.oshuru+'</span>');//将找到的关键字替换，加上highlight属性；
-                    _this1.html(newHtml);//更新文章；
-                });
-            }
-        }
-    })(jQuery);
-$(".title").GL({
-    ocolor:'red',//设置关键词高亮颜色
-    oshuru:'<?php echo ($search['title']); ?>',//设置要显示的关键词
-});
-    $(".content").GL({
-        ocolor:'red',//设置关键词高亮颜色
-        oshuru:'<?php echo ($search['title']); ?>',//设置要显示的关键词
-    })
-
-</script>
 </body>
 </html>

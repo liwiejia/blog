@@ -18,7 +18,7 @@
     <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<link href="/blog/Public/Style/Index/paqe.css" rel="stylesheet" type="text/css">
+<link href="/blog/Public/Style/Index/user.css" rel="stylesheet" type="text/css">
 <body  class="no-skin">
 <div class="global-nav blog-header blog-header--index">
     <div class="bottom-nav visible-xs visible-sm ">
@@ -123,10 +123,10 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 创建 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?php echo U('Ask/index');?>">提问题</a></li>
-                                    <li><a href="<?php echo U('submit/index');?>">发头条</a></li>
-                                    <li><a href="<?php echo U('write/index');?>">写文章</a></li>
-                                    <li><a href="<?php echo U('record/index');?>">记笔记</a></li>
+                                    <li><a href="<?php echo U('ask');?>">提问题</a></li>
+                                    <li><a href="<?php echo U('submit');?>">发头条</a></li>
+                                    <li><a href="<?php echo U('write');?>">写文章</a></li>
+                                    <li><a href="<?php echo U('record');?>">记笔记</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="<?php echo U('User/draft');?>">草稿箱（1）</a></li>
                                 </ul>
@@ -134,10 +134,10 @@
                         </li>
                         <li class="opts__item dropdown hoverDropdown write-btns visible-md-inline-block"><a class="dropdownBtn" data-toggle="dropdown" href="/ask"><i class="fa fa-plus" aria-hidden="true"></i></a>
                             <ul class="dropdown-menu dropdown-menu-right ">
-                                <li><a href="<?php echo U('Ask/index');?>">提问题</a></li>
-                                <li><a href="<?php echo U('submit/index');?>">发头条</a></li>
-                                <li><a href="<?php echo U('write/index');?>">写文章</a></li>
-                                <li><a href="<?php echo U('record/index');?>">记笔记</a></li>
+                                <li><a href="<?php echo U('ask');?>">提问题</a></li>
+                                <li><a href="<?php echo U('submit');?>">发头条</a></li>
+                                <li><a href="<?php echo U('write');?>">写文章</a></li>
+                                <li><a href="<?php echo U('record');?>">记笔记</a></li>
                                 <li class="divider"></li>
                                 <li><a href="<?php echo U('User/draft');?>">草稿箱（1）</a></li>
                             </ul>
@@ -289,57 +289,75 @@
 
 
 <div class="in"></div>
-<div class="wrap " id="searchPage">
-    <div class="post-topheader">
-        <div class="container">
-            <div class="block-for-right-border">
-                <form action="<?php echo U('Search/index');?>" class="row">
-                    <div class="col-md-8">
-                        <input class="input-lg form-control" type="text" name="q" value="<?php echo ($search['title']); ?>" placeholder="输入关键字搜索" autocomplete="off">
-                    </div>
-                    <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block search-btn">搜索</button>
-                    </div>
-                </form>
-                <ul class="search-category nav nav-tabs nav-tabs-primary">
-                    <li <?php if($search['type'] == ''): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title']));?>">全部</a></li>
-                    <li <?php if($search['type'] == 'question'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'question'));?>">问答</a></li>
-                    <li <?php if($search['type'] == 'article'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'article'));?>">文章</a></li>
-                    <li <?php if($search['type'] == 'news'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'news'));?>">头条</a></li>
-                    <li <?php if($search['type'] == 'live'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'live'));?>">讲堂</a></li>
-                    <li <?php if($search['type'] == 'tag'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'tag'));?>">标签</a></li>
-                    <li <?php if($search['type'] == 'user'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'user'));?>">用户</a></li>
-                    <li <?php if($search['type'] == 'activity'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'activity'));?>">活动</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container mt15">
-        <div class="row">
-            <div class="col-md-8 main search-result">
-                <h3 class="h5 mt0 mb20 relatedObject-number relatedObject-number"> <?php echo ($search['cnt']); ?></h3>
-                <?php if(is_array($search['list'])): $i = 0; $__LIST__ = $search['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><section class="widget-blog">
-                        <h2 class="h4"><a class="title" href="<?php echo U('Article/Index',array('id'=>$vo['id']));?>" target="_blank"><?php echo ($vo["title"]); ?></a><span class="text-muted"></span></h2>
-                        <p class="excerpt mt10 content"><?php echo ($vo["content"]); ?></p>
-                        <p class="excerpt mt10"><?php echo ($vo["thumbs"]); ?> 投票&nbsp;&nbsp;&nbsp;<?php echo ($vo["comment"]); ?> 评论 </p>
-                    </section><?php endforeach; endif; else: echo "" ;endif; ?>
+    <div class="profile">
 
-                <div class="text-center">
-                    <div class="result page"><?php echo ($search['page']); ?></div>
+        <header class="profile__heading">
+            <div class="container">
+                <div class="row" style="position: relative;">
+                    <div class="col-md-2 col-sm-3 col-xs-3">
+                        <div class="profile__heading--avatar-warp"><a href="<?php echo U('User/Index',array('user'=>$infor['pageurl']));?>"><img class="profile__heading--avatar avatar-160" src="<?php echo ($infor['head']); ?>" alt="<?php echo ($infor['pageurl']); ?>"></a>
+                            <input type="file" id="avatarFile" name="avatar" class="file hide">
+                        </div>
+                       <!-- <div class="profile__heading&#45;&#45;social">
+                            <ul class="sn-inline profile__heading&#45;&#45;social-item">
+                                <li><a href="https://github.com/callmedadaxin" class="icon-sn-github" target="_blank"></a></li>
+                            </ul>
+                        </div>-->
+                    </div>
+                    <div class="col-md-5 col-sm-9 col-xs-9">
+                        <h2 class="profile__heading--name"> <?php echo ($infor['nickname']); ?> <small class="ml15"><a href="<?php echo U('User/about',array('user'=>$infor['pageurl']));?>">查看完整档案</a></small></h2>
+                        <div class="profile__heading--award"><a class="profile__rank-btn" href="/u/athon/rank"><span class="h4">1040</span><span class="profile__rank-btn-text">声望</span></a>
+                            <div class="profile__heading--award-badge"><span class="badge badge--o badge--sf badge--gold"><i class="badge__icon"></i></span><span class="profile__heading--award-badge-count">0</span><span class="badge badge--o badge--sf badge--silver"><i class="badge__icon"></i></span><span class="profile__heading--award-badge-count">1</span><span class="badge badge--o badge--sf badge--bronze"><i class="badge__icon"></i></span><span class="profile__heading--award-badge-count">5</span></div>
+                        </div>
+                        <div class="profile__heading--other"><script type="text/template" class="tpl__city--form"><form class="form form--profile form-inline form__city"
+                        data-action="/api/user/homepage/city/edit"><div class="form-group"><input placeholder="现居城市       " name="city" data-city="<%- city %>"
+                                                                                                  class="input-sm tagsInput form-control mr10"><button type="button" class="btn btn-sm btn-primary js-submit">保存</button></div></form></script><script type="text/template" class="tpl__city--content"><%- city.name %><span class="profile__heading-edit btn btn-xs" data-type="city"><i class="fa fa-pencil"
+                                                                                                                                                                                                                                                                                                                                                                                          aria-hidden="true"></i>编辑</span></script><span class="profile__heading--other-item hide"><i class="fa fa-map-marker"></i><span class="profile__city">北京<span class="profile__heading-edit   btn btn-xs " data-type="city"><i class="fa fa-pencil " aria-hidden="true"></i>编辑</span></span></span><script type="text/template" class="tpl__school--form"><form class="form form--profile form-inline form__school"
+                        data-action="/api/user/homepage/school/edit"><div class="form-group"><input placeholder="院校名称       " name="name"
+                                                                                                    class="input-sm tagsInput form-control mr10"
+                                                                                                    data-school="<%- school[0]%>"><input placeholder="所学专业" name="department"
+                                                                                                                                         class="input-sm tagsInput form-control mr10" value="<%- school[1]%>"><button type="button" class="btn btn-sm btn-primary js-submit">保存</button></div></form></script><script type="text/template" class="tpl__school--content"><%= school[0] %><span
+                                class="profile__heading--other-item-fgx">&nbsp;&nbsp;|&nbsp;&nbsp;</span><%= school[1] %><span class="profile__heading-edit btn btn-xs" data-type="school"><i class="fa fa-pencil"
+                                                                                                                                                                                              aria-hidden="true"></i>编辑</span></script><span class="profile__heading--other-item "><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="profile__school">北京科技大学<span class="profile__heading--other-item-fgx ">&nbsp;&nbsp;|&nbsp;&nbsp;</span>计算机科学与技术 <span class="profile__heading-edit   btn btn-xs " data-type="school"><i class="fa fa-pencil " aria-hidden="true"></i>编辑</span></span></span><script type="text/template" class="tpl__company--form"><form class="form form--profile form-inline form__company"
+                        data-action="/api/user/homepage/company/edit"><div class="form-group"><input placeholder="公司/组织名称" name="name"
+                                                                                                     class="tagsInput form-control mr10 input-sm" value="<%- company[0]%>"><input placeholder="职位头衔" name="role"
+                                                                                                                                                                                  class="tagsInput form-control mr10 input-sm" value="<%- company[1]%>"><button type="button" class="btn btn-primary btn-sm js-submit">保存</button></div></form></script><script type="text/template" class="tpl__company--content"><%= company[0]%><span
+                                class="profile__heading--other-item-fgx">&nbsp;&nbsp;|&nbsp;&nbsp;</span><%= company[1] %><span class="profile__heading-edit btn btn-xs" data-type="company"><i class="fa fa-pencil"
+                                                                                                                                                                                                aria-hidden="true"></i>编辑</span></script><span class="profile__heading--other-item "><i class="fa fa-briefcase" aria-hidden="true"></i><span class="profile__company">Threatbook<span class="profile__heading--other-item-fgx ">&nbsp;&nbsp;|&nbsp;&nbsp;</span>前端开发工程师 <span class="profile__heading-edit   btn btn-xs " data-type="company"><i class="fa fa-pencil " aria-hidden="true"></i>编辑</span></span></span><script type="text/template" class="tpl__site--form"><form class="form form--profile form-inline form__site"
+                        data-action="/api/user/homepage/site/edit"><div class="form-group"><input placeholder="个人网站" name="site"
+                                                                                                  onkeypress="stopSubmit(event)"
+                                                                                                  class="tagsInput form-control mr10 input-sm" value="<%- site %>"><button type="button" class="btn btn-sm btn-primary js-submit">保存</button></div></form></script><script>
+                            stopSubmit = function (e) {
+                                if(e.keyCode == 13){
+                                    e.preventDefault();
+                                }
+
+                            }</script><script type="text/template" class="tpl__site--content"><a class="profile__heading--other-item-link" target="_blank" href="<%- site %>"
+                        target="_blank"><%- siteWithoutScheme %></a><span class="profile__heading-edit btn btn-xs" data-type="site"><i class="fa fa-pencil"
+                                                                                                                                       aria-hidden="true"></i>编辑</span></script><span class="profile__heading--other-item "><i class="fa fa-link"></i><span class="profile__site"><a class="profile__heading--other-item-link" target="_blank" href="http://callmedadaxin.github.io/"> callmedadaxin.github.io/ </a><span class="profile__heading-edit  btn btn-xs " data-type="site"><i class="fa fa-pencil " aria-hidden="true"></i>编辑</span></span></span></div>
+                    </div>
+                    <div class="profile__heading--desc col-md-5 col-sm-12 col-xs-12">
+                        <div class="profile__heading--desc-heading"><span class="profile__heading--desc-heading-dot-warp"><span class="profile__heading-dot profile__heading-dot--red"></span><span class="profile__heading-dot profile__heading-dot--yellow"></span><span class="profile__heading-dot profile__heading-dot--green"></span></span>
+                            <div class="pull-right"><span data-type="desc" class="profile__heading-edit   btn btn-xs profile__heading--desc-heading-edit"><i class="fa fa-pencil" aria-hidden="true"></i>编辑</span></div>
+                        </div>
+                        <div class="profile__heading--desc-body"><script type="text/template" class="tpl__desc--form"><form class="form form--profile form__desc"
+                        data-action="/api/user/homepage/description/edit"><div class="form-group"><textarea class="form-control" name="description" rows="4"><%= description %></textarea></div><div class="text-right"><button type="button" class="btn btn-default js-cancel mr10">取消</button><button type="button" class="btn btn-primary js-submit">保存</button></div></form></script><script type="text/template" class="tpl__desc--content"><% if(parsedText){ %><%= parsedText %><% }else{ %><div style="white-space: pre"> _
+                            | |__ _ _ __ _
+                            | '_ \| | | |/ _` |
+                            | |_) | |_| | (_| |
+                            |_.__/ \__,_|\__, |
+                            |___/ 该用户太懒什么也没留下
+                        </div><% } %></script>
+                            <div class="profile__desc">
+                                <p>前端coder,热爱前端开发，mac爱好者</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-4 side">
-                <div id="bdcs-frame-box"></div>
-                <ul class="list-unstyled">
-                    <li><a target="_blank" href="https://www.google.com/?gws_rd=ssl#newwindow=1&amp;q=site:blog.liweijia.site+<?php echo ($search['title']); ?>">在 Google 中搜索 »</a></li>
-                    <li><a target="_blank" href="http://www.baidu.com/s?wd=site%3Ablog.liweijia.site%20<?php echo ($search['title']); ?>">在 百度 中搜索 »</a></li>
-                </ul>
-            </div>
-        </div>
+        </header>
+
     </div>
-
-</div>
-
 
 <footer id="footer">
     <div class="container">
@@ -417,38 +435,5 @@
 <script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
 <script type="text/javascript" src="/blog/Public/Js/Index/index.min.js"></script>
 
-<script language="javascript">
-    (function ($) {
-        $.fn.GL = function (options) {
-            var dataop = {
-                ocolor:'red',
-                oshuru:'高亮',
-            };
-            var chuancan = $.extend(dataop,options);
-
-            if(chuancan.oshuru==''){
-                return false;
-            }else{
-                var regExp = new RegExp("(" + chuancan.oshuru.replace(/[(){}.+*?^$|\\\[\]]/g, "\\$&") + ")", "ig");//创建正则表达式，g表示全局的，如果不用g，则查找到第一个就不会继续向下查找了；
-                $(this).each(function()//遍历文章；
-                {
-                    var _this1 = $(this)
-                    var html = _this1.html();
-                    var newHtml = html.replace(regExp, '<span class="glnow" style="color:'+chuancan.ocolor+'">'+chuancan.oshuru+'</span>');//将找到的关键字替换，加上highlight属性；
-                    _this1.html(newHtml);//更新文章；
-                });
-            }
-        }
-    })(jQuery);
-$(".title").GL({
-    ocolor:'red',//设置关键词高亮颜色
-    oshuru:'<?php echo ($search['title']); ?>',//设置要显示的关键词
-});
-    $(".content").GL({
-        ocolor:'red',//设置关键词高亮颜色
-        oshuru:'<?php echo ($search['title']); ?>',//设置要显示的关键词
-    })
-
-</script>
 </body>
 </html>

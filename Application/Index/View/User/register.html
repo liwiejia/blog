@@ -1,0 +1,39 @@
+<include file="Public/head"/>
+<style>
+    .panel {width: 600px}
+    @media(max-width: 600px) {
+        .panel {width: 100%}
+    }
+</style>
+<div class="container">
+    <div class="header text-center">
+        <h1>
+            <a href="/" class="logo">
+                <img src="__PUBLIC__/Image/home-logo.png" alt="Liweijia-Blog">
+            </a>
+        </h1>
+        <p class="description text-muted">欢迎来到Liwieji-Blog</p>
+    </div>
+    <div class="panel panel-default center-block">
+        <div class="panel-heading">
+            <h3 class="panel-title">注册</h3>
+        </div>
+        <div class="panel-body sfModal-content">
+
+        </div>
+    </div>
+</div>
+
+<include file="Public/footerjs"/>
+<script>
+    var verifyImg = '<{:U('Api/verify')}>';
+    $(document).ready(function (){
+        $('body').attr('class','user-login ')
+        str= regisStr.replace('{verifyImg}',verifyImg).replace("{partyStr}",partyStr).replace("{loRore}",'<a class="btn-block btn btn-default pull-right pl20 pr20 SFLogin" href="<{:U('User/login')}>"> 已有账号登录 </a>')
+        $(".panel-body.sfModal-content").html(str);
+        checkRegister()
+    });
+
+</script>
+</body>
+</html>

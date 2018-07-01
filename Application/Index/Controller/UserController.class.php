@@ -7,6 +7,7 @@
  */
 
 namespace Index\Controller;
+use Admin\Controller\MemberController;
 use Think\Controller;
 
 
@@ -69,7 +70,7 @@ class UserController extends CommonController {
                 )));
             }
         } else {
-            $this->success('非法操作', U('Index/index'));
+            $this->display();
         }
     }
     public function logout(){
@@ -97,7 +98,7 @@ class UserController extends CommonController {
                 ));
             }
             $mail_erify =M('mail_verify');
-            $verifyDate=$mail_erify->where(array('email' => $email))->field()->find();
+            $verifyDate=$mail_erify->where(array('email' => $email,'type'=>1))->field()->find();
 
             if(!$verifyDate['verify']){
                 array_push($cap,array(
@@ -178,6 +179,65 @@ class UserController extends CommonController {
             $this->display();
         }
     }
+    public function forgot(){
+        // 判断提交方式 做不同处理
+        if (IS_POST) {
+            $email = I('post.email');
+            $verify = I('post.verify');
 
+
+            if(!verify_check($verify)){
+                array_push($cap,array(
+                    'name'=> 'verify', // DOM name
+                    'value'=> '图形验证码不正确', // 提示信息
+                ));
+            }
+            $user = M('users')->where("email='$email'")->find();
+            if(!$user){
+                array_push($cap,array(
+                    'name'=> 'email', // DOM name
+                    'value'=> '此用户未注册', // 提示信息
+                ));
+            }
+            $user_verfy = M('mail_verify')->where(array('email' => $email,'type'=>2))->find();
+
+            $data=array(
+                'verify' => $code,
+                'email' => $email,
+                'date' => time(),
+                'type' => 2,
+                'ip' => get_client_ip(),
+            );
+            if($user_verfy){
+                $update = M('mail_verify')->where($user_verfy['id'])->save($data);
+            }else{
+                $add = M('mail_verify')->add($data);
+            }
+            $str ="<div class='header' style='background-color: rgb(117, 212, 183); padding: 10px;'><span class='logo'><img src='__PUBLIC__/Image/log-1.png' style='width: 150px;'></span></div><div style='font-size: 14px;padding: 2em;'><br><br>        您好  ".$user['nickname'].",<br><br><p>请点击连接修改密码：</p><h3 style='font-size: 60px; color: #f00; font-weight: bold;'>".$code."</h3><p>该验证邮件有效期为30分钟，超时请重新发送邮件。</p></div><div style='font-size: 14px; padding: 2em;'>        Regards<br>        Your  Team<br>        ------------------------------------<br><a href=''>www.blog.liweijia.site</a><br><div style='color: #999;'><p>发件时间：<span id='stickerTimer' style='border-bottom: 1px dashed rgb(204, 204, 204); position: relative;'  times='".date("G").":".date("i")."' isout='0'>".date("Y")."/".date("m")."/".date("d")."</span>  ".date("G").":".date("i").":".date("s")."</p><p>此邮件为系统自动发出的，请勿直接回复。</p></div></div>";
+
+            if ($update || $add ) {
+                send_mail($email,$email,'Blog-找回密码验证码',$str);
+                if(send_mail) {
+                    exit(json_encode(array(
+                        'status' => 200, // 格式错误
+                        'cap' => '发送成功！'  // 错误信息
+                    )));
+                }else{
+                    exit(json_encode(array(
+                        'status' => 403, // 格式错误
+                        'cap' => '网络不通畅，请稍后再试一下！'  // 错误信息
+                    )));
+                }
+            } else {
+                exit(json_encode(array(
+                    'status' => 403, // 格式错误
+                    'cap' => '网络不通畅，请稍后再试一下！'  // 错误信息
+                )));
+            }
+
+        } else {
+            $this->display();
+        }
+    }
 
 }

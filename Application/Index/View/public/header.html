@@ -102,10 +102,10 @@
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 创建 <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<{:U('ask')}>">提问题</a></li>
-                                    <li><a href="<{:U('submit')}>">发头条</a></li>
-                                    <li><a href="<{:U('write')}>">写文章</a></li>
-                                    <li><a href="<{:U('record')}>">记笔记</a></li>
+                                    <li><a href="<{:U('Ask/index')}>">提问题</a></li>
+                                    <li><a href="<{:U('submit/index')}>">发头条</a></li>
+                                    <li><a href="<{:U('write/index')}>">写文章</a></li>
+                                    <li><a href="<{:U('record/index')}>">记笔记</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="<{:U('User/draft')}>">草稿箱（1）</a></li>
                                 </ul>
@@ -113,10 +113,10 @@
                         </li>
                         <li class="opts__item dropdown hoverDropdown write-btns visible-md-inline-block"><a class="dropdownBtn" data-toggle="dropdown" href="/ask"><i class="fa fa-plus" aria-hidden="true"></i></a>
                             <ul class="dropdown-menu dropdown-menu-right ">
-                                <li><a href="<{:U('ask')}>">提问题</a></li>
-                                <li><a href="<{:U('submit')}>">发头条</a></li>
-                                <li><a href="<{:U('write')}>">写文章</a></li>
-                                <li><a href="<{:U('record')}>">记笔记</a></li>
+                                <li><a href="<{:U('Ask/index')}>">提问题</a></li>
+                                <li><a href="<{:U('submit/index')}>">发头条</a></li>
+                                <li><a href="<{:U('write/index')}>">写文章</a></li>
+                                <li><a href="<{:U('record/index')}>">记笔记</a></li>
                                 <li class="divider"></li>
                                 <li><a href="<{:U('User/draft')}>">草稿箱（1）</a></li>
                             </ul>
@@ -167,7 +167,7 @@
                                     <div class="panel-footer">
                                         <div class="row">
                                             <div class="col-sm-6"><a href="javascript:;" class="message-ingore-all hide"><span class="glyphicon glyphicon-ok-sign"></span> 全部标记为已读</a></div>
-                                            <div class="col-sm-6"><a class="opts__item--message-view-all" href="/user/notifications">查看全部
+                                            <div class="col-sm-6"><a class="opts__item--message-view-all" href="<{:U('User/notifications')}>">查看全部
                                                 »</a></div>
                                         </div>
                                     </div>

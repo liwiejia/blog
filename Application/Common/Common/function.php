@@ -278,7 +278,7 @@ function out($info='',$data = '', $jumpUrl = null) {
  * @param $key
  * @param $expiry
  */
-function auth_code($string, $operation = 'DECODE', $key = 'mycntvalltosun', $expiry = 36000)
+function auth_code($string, $operation = 'DECODE', $key = 'mycntvalltosun', $expiry = false)
 {
     $ckey_length = 4;
     $key = md5($key);

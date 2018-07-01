@@ -54,7 +54,7 @@ class ApiController
             $verifyDate='';
             // 实例化mail_verify对象
             $mail_verify = M('mail_verify');
-            if($date = $mail_verify->where(array('email' => $mail))->find()){
+            if($date = $mail_verify->where(array('email' => $mail,'type'=>1))->find()){
                 $verifyDate = $date;
                 if((time()-$date['date'])< 60*30)
                     exit(json_encode(array(
@@ -70,6 +70,7 @@ class ApiController
                 'verify' => $verify,
                 'email' => $mail,
                 'date' => time(),
+                'type' => 1,
                 'ip' => get_client_ip(),
             );
 
@@ -80,8 +81,8 @@ class ApiController
             }
 
             if ($update || $add ) {
-                send_mail($mail,$mail,'Blog-新用户注册验证码',$str);
-                if(send_mail) {
+                $send_mail =send_mail($mail,$mail,'Blog-新用户注册验证码',$str);
+                if($send_mail) {
                     exit(json_encode(array(
                         'status' => 200, // 格式错误
                         'cap' => '发送成功！'  // 错误信息

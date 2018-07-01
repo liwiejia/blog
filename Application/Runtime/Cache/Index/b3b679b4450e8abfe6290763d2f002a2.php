@@ -18,7 +18,6 @@
     <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<link href="/blog/Public/Style/Index/paqe.css" rel="stylesheet" type="text/css">
 <body  class="no-skin">
 <div class="global-nav blog-header blog-header--index">
     <div class="bottom-nav visible-xs visible-sm ">
@@ -289,57 +288,9 @@
 
 
 <div class="in"></div>
-<div class="wrap " id="searchPage">
-    <div class="post-topheader">
-        <div class="container">
-            <div class="block-for-right-border">
-                <form action="<?php echo U('Search/index');?>" class="row">
-                    <div class="col-md-8">
-                        <input class="input-lg form-control" type="text" name="q" value="<?php echo ($search['title']); ?>" placeholder="输入关键字搜索" autocomplete="off">
-                    </div>
-                    <div class="col-md-2">
-                        <button type="submit" class="btn btn-primary btn-lg btn-block search-btn">搜索</button>
-                    </div>
-                </form>
-                <ul class="search-category nav nav-tabs nav-tabs-primary">
-                    <li <?php if($search['type'] == ''): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title']));?>">全部</a></li>
-                    <li <?php if($search['type'] == 'question'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'question'));?>">问答</a></li>
-                    <li <?php if($search['type'] == 'article'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'article'));?>">文章</a></li>
-                    <li <?php if($search['type'] == 'news'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'news'));?>">头条</a></li>
-                    <li <?php if($search['type'] == 'live'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'live'));?>">讲堂</a></li>
-                    <li <?php if($search['type'] == 'tag'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'tag'));?>">标签</a></li>
-                    <li <?php if($search['type'] == 'user'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'user'));?>">用户</a></li>
-                    <li <?php if($search['type'] == 'activity'): ?>class="active"<?php endif; ?> ><a href="<?php echo U('index',array('q'=>$search['title'],'type'=>'activity'));?>">活动</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container mt15">
-        <div class="row">
-            <div class="col-md-8 main search-result">
-                <h3 class="h5 mt0 mb20 relatedObject-number relatedObject-number"> <?php echo ($search['cnt']); ?></h3>
-                <?php if(is_array($search['list'])): $i = 0; $__LIST__ = $search['list'];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><section class="widget-blog">
-                        <h2 class="h4"><a class="title" href="<?php echo U('Article/Index',array('id'=>$vo['id']));?>" target="_blank"><?php echo ($vo["title"]); ?></a><span class="text-muted"></span></h2>
-                        <p class="excerpt mt10 content"><?php echo ($vo["content"]); ?></p>
-                        <p class="excerpt mt10"><?php echo ($vo["thumbs"]); ?> 投票&nbsp;&nbsp;&nbsp;<?php echo ($vo["comment"]); ?> 评论 </p>
-                    </section><?php endforeach; endif; else: echo "" ;endif; ?>
-
-                <div class="text-center">
-                    <div class="result page"><?php echo ($search['page']); ?></div>
-                </div>
-            </div>
-            <div class="col-md-4 side">
-                <div id="bdcs-frame-box"></div>
-                <ul class="list-unstyled">
-                    <li><a target="_blank" href="https://www.google.com/?gws_rd=ssl#newwindow=1&amp;q=site:blog.liweijia.site+<?php echo ($search['title']); ?>">在 Google 中搜索 »</a></li>
-                    <li><a target="_blank" href="http://www.baidu.com/s?wd=site%3Ablog.liweijia.site%20<?php echo ($search['title']); ?>">在 百度 中搜索 »</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="wrapper">
 
 </div>
-
 
 <footer id="footer">
     <div class="container">
@@ -417,38 +368,5 @@
 <script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
 <script type="text/javascript" src="/blog/Public/Js/Index/index.min.js"></script>
 
-<script language="javascript">
-    (function ($) {
-        $.fn.GL = function (options) {
-            var dataop = {
-                ocolor:'red',
-                oshuru:'高亮',
-            };
-            var chuancan = $.extend(dataop,options);
-
-            if(chuancan.oshuru==''){
-                return false;
-            }else{
-                var regExp = new RegExp("(" + chuancan.oshuru.replace(/[(){}.+*?^$|\\\[\]]/g, "\\$&") + ")", "ig");//创建正则表达式，g表示全局的，如果不用g，则查找到第一个就不会继续向下查找了；
-                $(this).each(function()//遍历文章；
-                {
-                    var _this1 = $(this)
-                    var html = _this1.html();
-                    var newHtml = html.replace(regExp, '<span class="glnow" style="color:'+chuancan.ocolor+'">'+chuancan.oshuru+'</span>');//将找到的关键字替换，加上highlight属性；
-                    _this1.html(newHtml);//更新文章；
-                });
-            }
-        }
-    })(jQuery);
-$(".title").GL({
-    ocolor:'red',//设置关键词高亮颜色
-    oshuru:'<?php echo ($search['title']); ?>',//设置要显示的关键词
-});
-    $(".content").GL({
-        ocolor:'red',//设置关键词高亮颜色
-        oshuru:'<?php echo ($search['title']); ?>',//设置要显示的关键词
-    })
-
-</script>
 </body>
 </html>

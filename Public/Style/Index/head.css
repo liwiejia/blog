@@ -1323,5 +1323,8 @@
     font-weight: normal;
     padding: 0 8px
 }
+.user-login,.user-register,.user-forgot,.user-reset {
+    background-color: #f3f3f3
+}
 
 /*# sourceMappingURL=index.css.map */
