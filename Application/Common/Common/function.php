@@ -628,3 +628,13 @@ function pinyin($str, $ret_format = 'all', $placeholder = '_', $allow_chars = '/
 
     return rtrim($rs, ' ');
 }
+
+//创建Token
+function createToken($str1, $str2, $time)
+{
+    return md5(md5($str1).base64_encode($str2).md5($time));
+}
+//解密Token
+function decodeToken($token){
+    return;
+}

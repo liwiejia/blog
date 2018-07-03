@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : sticker
+Source Server         : web
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : blog
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-06-27 19:41:24
+Date: 2018-07-03 23:17:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -183,12 +183,15 @@ CREATE TABLE `blog_mail_verify` (
   `email` char(32) NOT NULL COMMENT '邮箱',
   `date` int(2) NOT NULL,
   `ip` char(15) NOT NULL,
+  `type` int(1) NOT NULL DEFAULT '0' COMMENT '验证码类型，1注册，2找回密码',
+  `IsExpiried` int(1) NOT NULL DEFAULT '1' COMMENT '是否有效，1有效，2失效',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog_mail_verify
 -- ----------------------------
+INSERT INTO `blog_mail_verify` VALUES ('17', 'fee62ac6aafe23e5bf70e4b10d04b9ed', '1076217644@qq.com', '1530630303', '0.0.0.0', '2', '1');
 
 -- ----------------------------
 -- Table structure for blog_menu
@@ -267,7 +270,7 @@ CREATE TABLE `blog_users` (
 -- Records of blog_users
 -- ----------------------------
 INSERT INTO `blog_users` VALUES ('11', 'admin', 'a66abb5684c45962d887564f08346e8d', 'admin', '/blog/Uploads/image/5b091d267355d.jpg', '0', '1528250665', '', '192.168.1.241', '28', '1076217644@qq.com1', '18310009074', '0', '0', '1076217644', '0', '901036800', 'admin', null);
-INSERT INTO `blog_users` VALUES ('25', '1076217644@qq.com', '30caOpU2tvCxBQ+ZVn4R3tVRSil487W/8ZWbkey+61BdoL8', 'admin', '/blog/Public/Image/user-64.png', '1530097603', '1530097603', '192.168.1.241', '192.168.1.241', '1', '1076217644@qq.com', '', '0', '0', '', '0', '0', 'admin799827', null);
+INSERT INTO `blog_users` VALUES ('25', '1076217644@qq.com', 'c2a3yqCuHAqPHSRJOyLeZWWTiXe+Z9KZVfbtkTA+LFZVYUs', 'admin', '/blog/Public/Image/user-64.png', '1530097603', '1530097603', '192.168.1.241', '192.168.1.241', '1', '1076217644@qq.com', '', '0', '0', '', '0', '0', 'admin799827', null);
 
 -- ----------------------------
 -- Table structure for blog_website

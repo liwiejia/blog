@@ -88,20 +88,21 @@
             return false;
         }
 
-        $.post("/blog/index.php/User/register", o, function(e) {
+        $("#submit").prop("disabled", !0);
+        $.post("<?php echo U('User/forgot');?>", o, function(e) {
             e=JSON.parse(e);
             if(e.status!=200){
-                $('.img-rounded').click();
+                $('.captcha').click();
                 for(i=0;i<e.cap.length;i++){
                     !$('[name='+e.cap[i].name+']').siblings("[class='help-block err']").length ? $('[name='+e.cap[i].name+']').parent().append('<span class="help-block err">'+e.cap[i].value+'</span>'):$('[name='+e.cap[i].name+']').siblings("[class='help-block err']")[0].innerHTML = e.cap[i].value;
                     $('[name='+e.cap[i].name+']').parent().addClass("has-error");
                     a.push(e.cap[i].name);
                 }
-                return;
+
             }else{
                 window.location.reload();
             }
-
+            $("#submit").prop("disabled", !1);
         })
     });
 </script>
