@@ -24,7 +24,7 @@ class ArticleController extends CommonController {
         if(!$data){
             header('Location: http://liweijia.site/404/index.html');
         }
-
+        $this->assign('current', "文章");
         $this->assign('data', $data);
         $this->display();
     }

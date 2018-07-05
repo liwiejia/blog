@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="alexaVerifyID" content="LkzCRJ7rPEUwt6fVey2vhxiw1vQ">
     <meta name="apple-itunes-app" content="app-id=958101793, app-argument=">
-    <title><?php echo ($current['title']); ?>-<?php echo ($webcConfig["sitename"]); ?></title>
+    <title><?php echo ($current); ?>-Liweijia Blog</title>
     <meta name="description" content="Liweijia-Blog ( blog.liweijia.site) 是开发者技术社区。 我希望为编程爱好者提供一个纯粹、高质的技术交流的平台， 与开发者一起学习、交流与成长，创造属于开发者的时代！">
     <meta name="keywords" content="Liweijia-Blog,Liweijia-Blog,IT技术社区,编程社区,技术问答,技术文章,技术笔记,技术活动,开发者,程序员,极客,编程,代码,开源">
     <link rel="shortcut icon" href="/blog/Public/Image/favicon.ico">
@@ -22,19 +22,20 @@
 <div class="global-nav blog-header blog-header--index">
     <div class="bottom-nav visible-xs visible-sm ">
         <div class="opts">
-            <a class="opts-group active" href="<?php echo U('Index/index');?>">
+            <a class="opts-group <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="<?php echo U('Index/index');?>">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 <span>首页</span>
             </a>
-            <a class="opts-group " href="<?php echo U('Questions');?>">
+            <a class="opts-group  <?php if(CONTROLLER_NAME== 'Questions'): ?>active<?php endif; ?>" href="<?php echo U('Questions/index');?>">
                 <i class="fa fa-comments" aria-hidden="true"></i>
                 <span>问答</span>
             </a>
-            <a class="opts-group " href="<?php echo U('blogs');?>">
+
+            <a class="opts-group  <?php if(CONTROLLER_NAME== 'Blogs'): ?>active<?php endif; ?>" href="<?php echo U('Blogs/index');?>">
                 <i class="fa fa-pencil-square" aria-hidden="true"></i>
                 <span>专栏</span>
             </a>
-            <a class="opts-group " href="<?php echo U('lives');?>">
+            <a class="opts-group  <?php if(CONTROLLER_NAME== 'lives'): ?>active<?php endif; ?>" href="<?php echo U('lives/index');?>">
                 <i class="fa fa-play-circle" aria-hidden="true">
                 </i><span>讲堂</span></a>
             <div class="opts-group">
@@ -84,11 +85,11 @@
                 </div>
                 <div>
                     <ul class="menu list-inline pull-left hidden-xs">
-                        <li class="menu__item"><a href="<?php echo U('Index/index');?>" class="active-nav">首页</a></li>
-                        <li class="menu__item"><a href="<?php echo U('Questions');?>" class="">问答</a></li>
-                        <li class="menu__item"><a href="<?php echo U('Blogs');?>" class="">专栏</a></li>
-                        <li class="menu__item"><a href="<?php echo U('Lives');?>" class="">讲堂</a></li>
-                        <li class="menu__item"><a href="<?php echo U('Groups');?>" class="">圈子</a></li>
+                        <li class="menu__item"><a href="<?php echo U('Index/index');?>" class="<?php if(CONTROLLER_NAME== 'Index'): ?>active-nav<?php endif; ?>">首页</a></li>
+                        <li class="menu__item"><a href="<?php echo U('Questions/index');?>" class="<?php if(CONTROLLER_NAME== 'Questions'): ?>active-nav<?php endif; ?>">问答</a></li>
+                        <li class="menu__item"><a href="<?php echo U('Blogs/index');?>" class="<?php if(CONTROLLER_NAME== 'Blogs'): ?>active-nav<?php endif; ?>">专栏</a></li>
+                        <li class="menu__item"><a href="<?php echo U('Lives/index');?>" class="<?php if(CONTROLLER_NAME== 'Lives'): ?>active-nav<?php endif; ?>">讲堂</a></li>
+                        <li class="menu__item"><a href="<?php echo U('Groups/index');?>" class="<?php if(CONTROLLER_NAME== 'Groups'): ?>active-nav<?php endif; ?>">圈子</a></li>
                         <li class="menu__item menu__item--more dropdown"><a href="##" class="dropdown-toggle dropdownBtn" data-toggle="dropdown"> 发现<i class="fa fa-caret-down" style="font-size: 14px;margin-left: 5px;" aria-hidden="true"></i></a>
                             <div class="dropdown-block hidden">
                                 <ul class="dropdown-content-menu">
@@ -230,7 +231,7 @@
                             }
                         </style>
                         <li class="opts__item user dropdown hoverDropdown ml0">
-                            <a class="avatar-* dropdownBtn user-avatar" data-toggle="dropdown" style="background-image: url('<?php if($info['head'] == ''): ?>/blog/Public/Image/user-64.png<?php else: echo ($info['head']); endif; ?>')" href="<?php echo U('User/Index',array('user'=>$info['pageurl']));?>"></a>
+                            <a class="avatar-* dropdownBtn user-avatar" data-toggle="dropdown" style="background-image: url('<?php if($info['head'] == ''): ?>/blog/Public/Image/user-64.png<?php else: echo ($info['head']); endif; ?>')" href="<?php echo U('User/index',array('user'=>$info['pageurl']));?>"></a>
                             <div class="dropdown-avatar-menu hidden">
                                 <div class="menu-score"><span class="score pull-left ml20 mr10">1 声望</span>
                                     <div class=""><span class="badge badge--o badge--sf badge--gold"><i class="badge__icon"></i></span><span class="profile__sidebar--award-badge-count">0</span><span class="badge badge--o badge--sf badge--silver"><i class="badge__icon"></i></span><span class="profile__sidebar--award-badge-count">0</span><span class="badge badge--o badge--sf badge--bronze"><i class="badge__icon"></i></span><span class="profile__sidebar--award-badge-count">0</span></div>
@@ -250,7 +251,7 @@
                                         <div class="col-md-6 col-xs-6 pl0 pr0">
                                             <ul>
                                                 <li class="letter-response  visible-xs"><a href="<?php echo U('User/messages',array('user'=>$info['pageurl']));?>" id="letterCount-response">私信消息</a></li>
-                                                <li><a href="<?php echo U('User/Index',array('user'=>$info['pageurl']));?>">我的主页</a></li>
+                                                <li><a href="<?php echo U('User/index',array('user'=>$info['pageurl']));?>">我的主页</a></li>
                                                 <li><a href="<?php echo U('User/about',array('user'=>$info['pageurl']));?>">我的档案</a></li>
                                                 <li><a href="<?php echo U('User/finance',array('user'=>$info['pageurl']));?>">我的资产</a></li>
                                                 <li><a href="<?php echo U('User/settings',array('user'=>$info['pageurl']));?>">个人设置</a></li>
@@ -260,7 +261,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <div class="menu-footer"><a class="js__action--complain" href="javascript:void(0);"><span>用户申诉</span></a> · <a href="/g/1570000009280187"><span>建议反馈</span></a> · <a href="<?php echo U('User/Index',array('user'=>$info['pageurl'],'type'=>'invitation'));?>"><span>邀请朋友</span></a></div>
+                                <div class="menu-footer"><a class="js__action--complain" href="javascript:void(0);"><span>用户申诉</span></a> · <a href="/g/1570000009280187"><span>建议反馈</span></a> · <a href="<?php echo U('User/index',array('user'=>$info['pageurl'],'type'=>'invitation'));?>"><span>邀请朋友</span></a></div>
                             </div>
                             <script type="text/template" id="js__action--complain-tpl"><form class="complain__form" method="post" action="/api/appeals/add"><div class="form-group"><label>理由</label><textarea name="description" class="form-control"rows="3"></textarea></div></form></script></li><?php endif; ?>
 
@@ -295,15 +296,15 @@
         <div class="row">
             <div class="col-md-2 left">
                 <div class="router-box">
-    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="<?php echo U('Index');?>">
+    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="<?php echo U('Index/index');?>">
         <i class="fa fa-newspaper-o" aria-hidden="true"></i>
         <span class="name">今日焦点</span>
     </a>
-    <a class="router-box-item  SFLogin  <?php if(CONTROLLER_NAME== 'Feed'): ?>active<?php endif; ?>" href="<?php echo U('Feed');?>">
+    <a class="router-box-item  SFLogin  <?php if(CONTROLLER_NAME== 'Feed'): ?>active<?php endif; ?>" href="<?php echo U('Feed/index');?>">
         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
         <span class="name">为你推荐</span>
     </a>
-    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Newest'): ?>active<?php endif; ?>" href="<?php echo U('Newest');?>">
+    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Newest'): ?>active<?php endif; ?>" href="<?php echo U('Newest/index');?>">
         <i class="fa fa-globe" aria-hidden="true"></i>
         <span class="name">最新内容</span>
     </a>
@@ -311,7 +312,7 @@
 </div>
 <div class="tech-square hidden-xs">
     <h5 class="tech-square-title mt0 mb15">技术频道</h5>
-    <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><a class="tech-square-item <?php if(CONTROLLER_NAME== $category['url']): ?>active<?php endif; ?>" href="<?php echo ($category['url']); ?>">
+    <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><a class="tech-square-item <?php if($current == $category['name']): ?>active<?php endif; ?>" href="<?php echo U('Channel/'.$category['url']);?>">
             <span class="tech-square-item-icon">
               <img src="<?php echo ($category['iconurl']); ?>">
             </span>
@@ -331,10 +332,10 @@
                 <div class="news-list">
                     <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><div class="news-item stream__item clearfix" data-id="1190000015212663">
                             <div class="news__item-from">来自标签 <a href="/t/%E5%89%8D%E7%AB%AF"><?php echo ($val['name']); ?></a></div>
-                            <div class="news__item-avatar"><a href="<?php echo U('User/Index',array('user'=>$val['pageurl']));?>"><img class="avatars-img" src="<?php echo ($val['head']); ?>"></a></div>
+                            <div class="news__item-avatar"><a href="<?php echo U('User/index',array('user'=>$val['pageurl']));?>"><img class="avatars-img" src="<?php echo ($val['head']); ?>"></a></div>
                             <div class="news__item-info">
                                 <div class="mb6">
-                                    <h4 class="news__item-title mt0"><a class="mr10" target="_blank" href="<?php echo U('Article/Index',array('id'=>$val['id']));?>"><?php echo ($val['title']); ?></a></h4>
+                                    <h4 class="news__item-title mt0"><a class="mr10" target="_blank" href="<?php echo U('Article/index',array('id'=>$val['id']));?>"><?php echo ($val['title']); ?></a></h4>
                                 </div>
                                 <p class="news__item-meta"><a href="/u/phoenixchan"><?php echo ($val['nickname']); ?></a> 发布于 <a href="/u/phoenixchan/articles">亚古的个人文章</a><span class="dot">·</span><span><?php echo (mdate($val['date'])); ?></span><span class="pull-right hidden-xs hidden-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i> <?php echo ($val['thumbs']); ?></span></p>
                             </div>

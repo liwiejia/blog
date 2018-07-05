@@ -15,7 +15,7 @@ class IndexController extends CommonController {
             ->limit(0,30)
             ->select();
 
-
+        $this->assign('current', "首页");
         $this->assign('data', $data);
         $this->display();
     }

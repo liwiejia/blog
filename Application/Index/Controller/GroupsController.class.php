@@ -1,8 +1,10 @@
 <?php
 namespace Index\Controller;
 use Think\Controller;
-class ToolkitController extends CommonController {
+class GroupsController extends CommonController {
     public function index(){
+
+        $this->assign('current', "圈子");
         $this->display();
     }
 }

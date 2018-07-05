@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : web
+Source Server         : sticker
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : blog
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-03 23:17:51
+Date: 2018-07-05 20:13:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -269,7 +269,7 @@ CREATE TABLE `blog_users` (
 -- ----------------------------
 -- Records of blog_users
 -- ----------------------------
-INSERT INTO `blog_users` VALUES ('11', 'admin', 'a66abb5684c45962d887564f08346e8d', 'admin', '/blog/Uploads/image/5b091d267355d.jpg', '0', '1528250665', '', '192.168.1.241', '28', '1076217644@qq.com1', '18310009074', '0', '0', '1076217644', '0', '901036800', 'admin', null);
+INSERT INTO `blog_users` VALUES ('1', 'admin', 'a66abb5684c45962d887564f08346e8d', 'admin', '/blog/Uploads/image/5b091d267355d.jpg', '0', '1528250665', '', '192.168.1.241', '28', '1076217644@qq.com1', '18310009074', '0', '0', '1076217644', '0', '901036800', 'admin', null);
 INSERT INTO `blog_users` VALUES ('25', '1076217644@qq.com', 'c2a3yqCuHAqPHSRJOyLeZWWTiXe+Z9KZVfbtkTA+LFZVYUs', 'admin', '/blog/Public/Image/user-64.png', '1530097603', '1530097603', '192.168.1.241', '192.168.1.241', '1', '1076217644@qq.com', '', '0', '0', '', '0', '0', 'admin799827', null);
 
 -- ----------------------------
