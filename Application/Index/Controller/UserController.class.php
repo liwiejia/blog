@@ -257,8 +257,25 @@ class UserController extends CommonController {
 
     public function modify(){
         $token = I('get.token');
-        echo $token;
-
+        $verify = M('mail_verify')->where(array('verify' => $token,'type'=>2,'IsExpiried'=>1))->find();
+        if($verify){
+            session('modifyUserName', $verify['email']);
+            redirect(U('User/reset'));
+        }else{
+           // $this->error('链接错误或者已经失效...',U('Index/index'), 2);
+        }
     }
+    public function reset(){
+        if(IS_POST){
+            $username = session('modifyUserName');
+            $password = I('post.password');
 
+            echo createToken('1076217644@qq.com','c2a3yqCuHAqPHSRJOyLeZWWTiXe+Z9KZVfbtkTA+LFZVYUs','1530717410');
+            if($username == null){
+
+            }
+        }else{
+            $this->display();
+        }
+    }
 }
