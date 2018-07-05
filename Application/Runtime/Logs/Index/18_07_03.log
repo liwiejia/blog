@@ -1,0 +1,1705 @@
+[ 2018-07-03T21:56:24+08:00 ] ::1 /blog/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.023244s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002148s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.040977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.043183s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.2900s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0193s ]
+SQL: SHOW COLUMNS FROM `blog_act` [ RunTime:0.0577s ]
+SQL: SELECT blog_act.*,blog_category.name,blog_users.nickname,blog_users.head,blog_users.pageurl FROM `blog_act` INNER JOIN blog_users ON blog_users.id = blog_act.usersid INNER JOIN blog_category ON blog_category.id = blog_act.sid  ORDER BY id desc LIMIT 0,30   [ RunTime:0.0535s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000131s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 13 行.
+NOTIC: [8] Undefined variable: search F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.642794s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.642826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013654s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013681s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002527s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002562s ]
+
+[ 2018-07-03T21:56:50+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000444s ]
+
+[ 2018-07-03T21:56:54+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000052s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027916s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027946s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000136s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000220s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000238s ]
+
+[ 2018-07-03T21:56:55+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000337s ]
+
+[ 2018-07-03T22:23:14+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 200 行.
+SQL: SHOW COLUMNS FROM `blog_mail_verify` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `blog_mail_verify` WHERE `email` = '10762176441@qq.com' AND `type` = 2 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: code F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 205 行.
+ERR: 1048:Column 'verify' cannot be null
+ [ SQL语句 ] : INSERT INTO `blog_mail_verify` (`verify`,`email`,`date`,`type`,`ip`) VALUES (NULL,'10762176441@qq.com','1530627794','2','0.0.0.0')
+ERR: 1048:Column 'verify' cannot be null
+ [ SQL语句 ] : INSERT INTO `blog_mail_verify` (`verify`,`email`,`date`,`type`,`ip`) VALUES (NULL,'10762176441@qq.com','1530627794','2','0.0.0.0')
+
+[ 2018-07-03T22:23:20+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 193 行.
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 200 行.
+SQL: SHOW COLUMNS FROM `blog_mail_verify` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `blog_mail_verify` WHERE `email` = '10762176441@qq.com' AND `type` = 2 LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined variable: code F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 205 行.
+ERR: 1048:Column 'verify' cannot be null
+ [ SQL语句 ] : INSERT INTO `blog_mail_verify` (`verify`,`email`,`date`,`type`,`ip`) VALUES (NULL,'10762176441@qq.com','1530627800','2','0.0.0.0')
+ERR: 1048:Column 'verify' cannot be null
+ [ SQL语句 ] : INSERT INTO `blog_mail_verify` (`verify`,`email`,`date`,`type`,`ip`) VALUES (NULL,'10762176441@qq.com','1530627800','2','0.0.0.0')
+
+[ 2018-07-03T22:23:46+08:00 ] ::1 /blog/index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_act` [ RunTime:0.0058s ]
+SQL: SELECT blog_act.*,blog_category.name,blog_users.nickname,blog_users.head,blog_users.pageurl FROM `blog_act` INNER JOIN blog_users ON blog_users.id = blog_act.usersid INNER JOIN blog_category ON blog_category.id = blog_act.sid  ORDER BY id desc LIMIT 0,30   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 13 行.
+NOTIC: [8] Undefined variable: search F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016113s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016134s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000279s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000301s ]
+
+[ 2018-07-03T22:23:56+08:00 ] ::1 /blog/index.php/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0058s ]
+SQL: SELECT `id`,`username`,`nickname`,`password`,`lastdate`,`lastip` FROM `blog_users` WHERE `username` = '1076217644@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:24:02+08:00 ] ::1 /blog/index.php/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000183s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.010233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010538s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\a5682a6889973e48bbd9688b96db0147.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\a5682a6889973e48bbd9688b96db0147.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013499s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013526s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000220s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000238s ]
+
+[ 2018-07-03T22:24:10+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0164s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000053s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003544s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003565s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000122s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000137s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000219s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000237s ]
+
+[ 2018-07-03T22:24:10+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000188s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000283s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000316s ]
+
+[ 2018-07-03T22:24:27+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:24:44+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 194 行.
+
+[ 2018-07-03T22:25:16+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 194 行.
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:25:32+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 194 行.
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 202 行.
+
+[ 2018-07-03T22:25:51+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 194 行.
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 202 行.
+
+[ 2018-07-03T22:25:59+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 194 行.
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 202 行.
+
+[ 2018-07-03T22:26:07+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0001s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 194 行.
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 202 行.
+
+[ 2018-07-03T22:26:27+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 194 行.
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0065s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 202 行.
+
+[ 2018-07-03T22:26:54+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0003s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 194 行.
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [2] array_push() expects parameter 1 to be array, null given F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 202 行.
+
+[ 2018-07-03T22:27:20+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000207s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000255s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:27:54+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:28:43+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-03T22:29:04+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000345s ]
+
+[ 2018-07-03T22:29:05+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000284s ]
+
+[ 2018-07-03T22:29:16+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:36:34+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000214s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='10762176441@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:36:40+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702?0.663390935163475
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000304s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000333s ]
+
+[ 2018-07-03T22:36:41+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702?0.663390935163475?0.024530269575715913
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000185s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000225s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000250s ]
+
+[ 2018-07-03T22:36:43+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702?0.663390935163475?0.024530269575715913?0.9357648415698641
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000272s ]
+
+[ 2018-07-03T22:36:43+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702?0.663390935163475?0.024530269575715913?0.9357648415698641?0.2775145307629039
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000221s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000245s ]
+
+[ 2018-07-03T22:36:44+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702?0.663390935163475?0.024530269575715913?0.9357648415698641?0.2775145307629039?0.9767643947114
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000220s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000243s ]
+
+[ 2018-07-03T22:36:45+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702?0.663390935163475?0.024530269575715913?0.9357648415698641?0.2775145307629039?0.9767643947114?0.9296517031677203
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.011090s ]
+INFO: [ app_end ] --END-- [ RunTime:0.011115s ]
+
+[ 2018-07-03T22:36:57+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:47:58+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-03T22:48:02+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702?0.663390935163475?0.024530269575715913?0.9357648415698641?0.2775145307629039?0.9767643947114?0.9296517031677203?0.1181880374115114
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000293s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2018-07-03T22:48:03+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702?0.663390935163475?0.024530269575715913?0.9357648415698641?0.2775145307629039?0.9767643947114?0.9296517031677203?0.1181880374115114?0.7213978555130836
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000297s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000327s ]
+
+[ 2018-07-03T22:48:03+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5465394886005446?0.7817311233777702?0.663390935163475?0.024530269575715913?0.9357648415698641?0.2775145307629039?0.9767643947114?0.9296517031677203?0.1181880374115114?0.7213978555130836?0.9856779131617093
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000223s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000246s ]
+
+[ 2018-07-03T22:48:42+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_mail_verify` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_mail_verify` WHERE `email` = '1076217644@qq.com' AND `type` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: INSERT INTO `blog_mail_verify` (`verify`,`email`,`date`,`type`,`ip`) VALUES ('d40e1a6d962dff4337c47789964518ce','1076217644@qq.com','1530629292','2','0.0.0.0') [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: update F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 231 行.
+
+[ 2018-07-03T22:48:44+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000267s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:50:38+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.010254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010553s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000054s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000165s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000259s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000277s ]
+
+[ 2018-07-03T22:50:38+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000289s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000323s ]
+
+[ 2018-07-03T22:50:56+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:50:57+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:50:57+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000412s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000454s ]
+
+[ 2018-07-03T22:50:57+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000295s ]
+
+[ 2018-07-03T22:50:58+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:50:59+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000464s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0171s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:50:59+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000238s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2018-07-03T22:51:01+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000274s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:51:02+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:51:03+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000207s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:51:04+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000213s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000266s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:51:05+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000244s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:51:05+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2018-07-03T22:51:06+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:51:06+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156?0.12837522237559762
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000239s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000268s ]
+
+[ 2018-07-03T22:51:07+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0162s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:51:07+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156?0.12837522237559762?0.2754225810005557?0.4108616397147955
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000242s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000239s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000268s ]
+
+[ 2018-07-03T22:51:07+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156?0.12837522237559762?0.2754225810005557
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2018-07-03T22:51:07+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156?0.12837522237559762?0.2754225810005557?0.4108616397147955?0.22141338234808283
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000278s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000306s ]
+
+[ 2018-07-03T22:51:07+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156?0.12837522237559762?0.2754225810005557?0.4108616397147955?0.22141338234808283?0.5736605802166701
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000281s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000307s ]
+
+[ 2018-07-03T22:51:07+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156?0.12837522237559762?0.2754225810005557?0.4108616397147955?0.22141338234808283?0.5736605802166701?0.5081318848039482
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000291s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000321s ]
+
+[ 2018-07-03T22:51:07+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156?0.12837522237559762?0.2754225810005557?0.4108616397147955?0.22141338234808283?0.5736605802166701?0.5081318848039482?0.25663026340440154
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000194s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000294s ]
+
+[ 2018-07-03T22:51:39+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:51:40+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000475s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:51:40+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156?0.12837522237559762?0.2754225810005557?0.4108616397147955?0.22141338234808283?0.5736605802166701?0.5081318848039482?0.25663026340440154?0.9412358211111167
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000243s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000272s ]
+
+[ 2018-07-03T22:51:40+08:00 ] ::1 /blog/index.php/Api/verify.html?0.46369654227375?0.8657021178607358?0.5416693562263941?0.5621111790991156?0.12837522237559762?0.2754225810005557?0.4108616397147955?0.22141338234808283?0.5736605802166701?0.5081318848039482?0.25663026340440154?0.9412358211111167?0.9870062867009934
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000225s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000249s ]
+
+[ 2018-07-03T22:52:02+08:00 ] ::1 /blog/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_act` [ RunTime:0.0053s ]
+SQL: SELECT blog_act.*,blog_category.name,blog_users.nickname,blog_users.head,blog_users.pageurl FROM `blog_act` INNER JOIN blog_users ON blog_users.id = blog_act.usersid INNER JOIN blog_category ON blog_category.id = blog_act.sid  ORDER BY id desc LIMIT 0,30   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000103s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 13 行.
+NOTIC: [8] Undefined variable: search F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 110 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015895s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000256s ]
+
+[ 2018-07-03T22:52:06+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000211s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000232s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000264s ]
+
+[ 2018-07-03T22:52:08+08:00 ] ::1 /blog/index.php/Index/Api/sendMail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000462s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE `email` = '1076217644@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:52:09+08:00 ] ::1 /blog/index.php/Api/verify.html?0.44116015610375947
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000220s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000244s ]
+
+[ 2018-07-03T22:52:16+08:00 ] ::1 /blog/index.php/Index/Api/sendMail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE `email` = '1076217644@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:52:17+08:00 ] ::1 /blog/index.php/Index/Api/sendMail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE `email` = '1076217644@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:52:18+08:00 ] ::1 /blog/index.php/Index/Api/sendMail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0201s ]
+SQL: SELECT * FROM `blog_users` WHERE `email` = '1076217644@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:52:21+08:00 ] ::1 /blog/index.php/Index/Api/sendMail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000222s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000472s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0266s ]
+SQL: SELECT * FROM `blog_users` WHERE `email` = '1076217644@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-07-03T22:52:22+08:00 ] ::1 /blog/index.php/Index/Api/sendMail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE `email` = '1076217644@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:53:21+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000046s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003484s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003504s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000116s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000133s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000257s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000275s ]
+
+[ 2018-07-03T22:53:21+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000259s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000291s ]
+
+[ 2018-07-03T22:54:13+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000509s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2018-07-03T22:54:13+08:00 ] ::1 /blog/index.php/Api/verify.html?0.7507524046058722
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000254s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000283s ]
+
+[ 2018-07-03T22:54:20+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000045s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003651s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000171s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000207s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000226s ]
+
+[ 2018-07-03T22:54:20+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000282s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000315s ]
+
+[ 2018-07-03T22:54:30+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001822s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002222s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:54:30+08:00 ] ::1 /blog/index.php/Api/verify.html?0.6292665389682597
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000258s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000282s ]
+
+[ 2018-07-03T22:54:50+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000245s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000046s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008653s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008674s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000262s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000281s ]
+
+[ 2018-07-03T22:54:50+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000273s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000239s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2018-07-03T22:54:51+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000853s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0141s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000051s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008698s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008718s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000161s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000260s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000279s ]
+
+[ 2018-07-03T22:54:51+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000250s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000280s ]
+
+[ 2018-07-03T22:54:58+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000478s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0187s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:54:58+08:00 ] ::1 /blog/index.php/Api/verify.html?0.18662963125110954
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000253s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000281s ]
+
+[ 2018-07-03T22:55:16+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000502s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000052s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012303s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012324s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000223s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000242s ]
+
+[ 2018-07-03T22:55:16+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000229s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000274s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000307s ]
+
+[ 2018-07-03T22:55:17+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000507s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000047s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009149s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009169s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000221s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000240s ]
+
+[ 2018-07-03T22:55:17+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000267s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000298s ]
+
+[ 2018-07-03T22:55:22+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000216s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:55:22+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5232941224841696
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000267s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000296s ]
+
+[ 2018-07-03T22:55:23+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:55:23+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5232941224841696?0.9008323106885414
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000218s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000243s ]
+
+[ 2018-07-03T22:55:24+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:55:24+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5232941224841696?0.9008323106885414?0.7137519463090172
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000256s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000285s ]
+
+[ 2018-07-03T22:55:34+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_mail_verify` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `blog_mail_verify` WHERE `email` = '1076217644@qq.com' AND `type` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `blog_mail_verify` SET `verify`='8cf95f614fee4818654dd4ca7a8dc821',`email`='1076217644@qq.com',`date`='1530629734',`type`='2',`ip`='0.0.0.0' WHERE ( 17 ) [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:56:31+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2018-07-03T22:56:31+08:00 ] ::1 /blog/index.php/Api/verify.html?0.5232941224841696?0.9008323106885414?0.7137519463090172?0.04491010735619594
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000208s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000232s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000263s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000296s ]
+
+[ 2018-07-03T22:56:46+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000209s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_mail_verify` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_mail_verify` WHERE `email` = '1076217644@qq.com' AND `type` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `blog_mail_verify` SET `verify`='a5df7cfa24323229b17e5f05b5f126e6',`email`='1076217644@qq.com',`date`='1530629806',`type`='2',`ip`='0.0.0.0' WHERE ( 17 ) [ RunTime:0.0001s ]
+
+[ 2018-07-03T22:57:36+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000249s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_mail_verify` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `blog_mail_verify` WHERE `email` = '1076217644@qq.com' AND `type` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `blog_mail_verify` SET `verify`='b27f4f8fbade78004ba9b9027ac00457',`email`='1076217644@qq.com',`date`='1530629856',`type`='2',`ip`='0.0.0.0' WHERE ( 17 ) [ RunTime:0.0001s ]
+
+[ 2018-07-03T23:01:12+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000262s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000545s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_mail_verify` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `blog_mail_verify` WHERE `email` = '1076217644@qq.com' AND `type` = 2 LIMIT 1   [ RunTime:0.0001s ]
+SQL: UPDATE `blog_mail_verify` SET `verify`='acb680cafe0e99cf89d6b9c03a5145fe',`email`='1076217644@qq.com',`date`='1530630072',`type`='2',`ip`='0.0.0.0' WHERE ( 17 ) [ RunTime:0.0001s ]
+
+[ 2018-07-03T23:01:39+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000205s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000221s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_mail_verify` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `blog_mail_verify` WHERE `email` = '1076217644@qq.com' AND `type` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `blog_mail_verify` SET `verify`='e74de22c13137b5b1db5d010e12c5439',`email`='1076217644@qq.com',`date`='1530630095',`type`='2',`ip`='0.0.0.0' WHERE ( 17 ) [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant send_mail - assumed 'send_mail' F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 235 行.
+
+[ 2018-07-03T23:01:40+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000220s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000058s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009103s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009123s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000165s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000260s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000278s ]
+
+[ 2018-07-03T23:01:40+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000191s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000219s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000260s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000290s ]
+
+[ 2018-07-03T23:05:03+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_users` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_users` WHERE ( email='1076217644@qq.com' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `blog_mail_verify` [ RunTime:0.0151s ]
+SQL: SELECT * FROM `blog_mail_verify` WHERE `email` = '1076217644@qq.com' AND `type` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `blog_mail_verify` SET `verify`='fee62ac6aafe23e5bf70e4b10d04b9ed',`email`='1076217644@qq.com',`date`='1530630303',`type`='2',`ip`='0.0.0.0' WHERE ( 17 ) [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant send_mail - assumed 'send_mail' F:\phpstudy\WWW\blog\Application\Index\Controller\UserController.class.php 第 235 行.
+
+[ 2018-07-03T23:05:05+08:00 ] ::1 /blog/index.php/User/forgot.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000213s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000048s ]
+NOTIC: [8] Undefined variable: current F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+NOTIC: [8] Undefined variable: webcConfig F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\472392e59b726759e715ff7ce7d5aeaa.php 第 13 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004223s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004244s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000158s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000174s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000270s ]
+
+[ 2018-07-03T23:05:05+08:00 ] ::1 /blog/index.php/Api/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000218s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000520s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000359s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000396s ]
+
+[ 2018-07-03T23:07:29+08:00 ] ::1 /blog/index.php/Index/User/modify/token/e74de22c13137b5b1db5d010e12c5439.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000572s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000339s ]
+
+[ 2018-07-03T23:07:44+08:00 ] ::1 /blog/index.php/Index/User/modify/token/e74de22c13137b5b1db5d010e12c5439.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000176s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000224s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000230s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000492s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000275s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000296s ]
+
+[ 2018-07-03T23:08:05+08:00 ] ::1 /blog/index.php/Index/User/modify/token/e74de22c13137b5b1db5d010e12c5439.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000177s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000228s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0002s ]
+
+[ 2018-07-03T23:08:13+08:00 ] ::1 /blog/index.php/Index/User/modify/token/e74de22c13137b5b1db5d010e12c5439.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000274s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000295s ]
+
