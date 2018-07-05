@@ -6,7 +6,7 @@ Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : sticker
 
-Target Server Type    : MYSQL
+Target Server Type    :11
 Target Server Version : 50553
 File Encoding         : 65001
 
