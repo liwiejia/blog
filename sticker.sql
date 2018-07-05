@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : sticker
+
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : sticker
