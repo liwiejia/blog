@@ -15,11 +15,11 @@ class SearchController extends CommonController {
     public function index(){
         $search_word=I('get.q');
         $search_type=I('get.type');
-
+        $this->assign('current', "搜索");
         // 进行分页数据查询 注意page方法的参数的前面部分是当前的页数使用 $_GET[p]获取
         $nowPage = isset($_GET['p'])?$_GET['p']:1;
 
-        if (!$search_word)
+        if (!$search_word){}
             $this->display();
 
         $map="title like '%$search_word%'";
@@ -40,6 +40,7 @@ class SearchController extends CommonController {
             'cnt'=>'找到约'.$count.'条结果',
 
         );
+
         $this->assign('search', $assign);
         $this->display();
     }

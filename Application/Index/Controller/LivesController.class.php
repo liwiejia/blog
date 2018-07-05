@@ -1,8 +1,10 @@
 <?php
 namespace Index\Controller;
 use Think\Controller;
-class AndroidController extends CommonController {
+class LivesController extends CommonController {
     public function index(){
+
+        $this->assign('current', "讲堂");
         $this->display();
     }
 }

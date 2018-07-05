@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="alexaVerifyID" content="LkzCRJ7rPEUwt6fVey2vhxiw1vQ">
     <meta name="apple-itunes-app" content="app-id=958101793, app-argument=">
-    <title><?php echo ($current['title']); ?>-<?php echo ($webcConfig["sitename"]); ?></title>
+    <title><?php echo ($current); ?>-Liweijia Blog</title>
     <meta name="description" content="Liweijia-Blog ( blog.liweijia.site) 是开发者技术社区。 我希望为编程爱好者提供一个纯粹、高质的技术交流的平台， 与开发者一起学习、交流与成长，创造属于开发者的时代！">
     <meta name="keywords" content="Liweijia-Blog,Liweijia-Blog,IT技术社区,编程社区,技术问答,技术文章,技术笔记,技术活动,开发者,程序员,极客,编程,代码,开源">
     <link rel="shortcut icon" href="/blog/Public/Image/favicon.ico">

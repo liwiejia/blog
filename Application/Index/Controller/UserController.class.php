@@ -25,6 +25,7 @@ class UserController extends CommonController {
         $this->display();
     }
     public function login(){
+
         // 判断提交方式
         if (IS_POST) {
             $username = I('post.username');
@@ -70,6 +71,7 @@ class UserController extends CommonController {
                 )));
             }
         } else {
+            $this->assign('current', "登录");
             $this->display();
         }
     }
@@ -176,6 +178,7 @@ class UserController extends CommonController {
             }
 
         } else {
+            $this->assign('current', "注册");
             $this->display();
         }
     }
@@ -251,6 +254,7 @@ class UserController extends CommonController {
             }
 
         } else {
+            $this->assign('current', "忘记密码");
             $this->display();
         }
     }

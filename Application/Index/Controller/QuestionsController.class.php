@@ -1,8 +1,10 @@
 <?php
 namespace Index\Controller;
 use Think\Controller;
-class ProgrammerController extends CommonController {
+class QuestionsController extends CommonController {
     public function index(){
+
+        $this->assign('current', "最新的问题");
         $this->display();
     }
 }

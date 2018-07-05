@@ -14,10 +14,10 @@
                     <volist name="data" id="val">
                         <div class="news-item stream__item clearfix" data-id="1190000015212663">
                             <div class="news__item-from">来自标签 <a href="/t/%E5%89%8D%E7%AB%AF"><{$val['name']}></a></div>
-                            <div class="news__item-avatar"><a href="<{:U('User/Index',array('user'=>$val['pageurl']))}>"><img class="avatars-img" src="<{$val['head']}>"></a></div>
+                            <div class="news__item-avatar"><a href="<{:U('User/index',array('user'=>$val['pageurl']))}>"><img class="avatars-img" src="<{$val['head']}>"></a></div>
                             <div class="news__item-info">
                                 <div class="mb6">
-                                    <h4 class="news__item-title mt0"><a class="mr10" target="_blank" href="<{:U('Article/Index',array('id'=>$val['id']))}>"><{$val['title']}></a></h4>
+                                    <h4 class="news__item-title mt0"><a class="mr10" target="_blank" href="<{:U('Article/index',array('id'=>$val['id']))}>"><{$val['title']}></a></h4>
                                 </div>
                                 <p class="news__item-meta"><a href="/u/phoenixchan"><{$val['nickname']}></a> 发布于 <a href="/u/phoenixchan/articles">亚古的个人文章</a><span class="dot">·</span><span><{$val['date']|mdate}></span><span class="pull-right hidden-xs hidden-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i> <{$val['thumbs']}></span></p>
                             </div>

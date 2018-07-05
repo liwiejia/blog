@@ -33,7 +33,7 @@
                 <h3 class="h5 mt0 mb20 relatedObject-number relatedObject-number"> <{$search['cnt']}></h3>
                 <volist name="search['list']" id="vo">
                     <section class="widget-blog">
-                        <h2 class="h4"><a class="title" href="<{:U('Article/Index',array('id'=>$vo['id']))}>" target="_blank"><{$vo.title}></a><span class="text-muted"></span></h2>
+                        <h2 class="h4"><a class="title" href="<{:U('Article/index',array('id'=>$vo['id']))}>" target="_blank"><{$vo.title}></a><span class="text-muted"></span></h2>
                         <p class="excerpt mt10 content"><{$vo.content}></p>
                         <p class="excerpt mt10"><{$vo.thumbs}> 投票&nbsp;&nbsp;&nbsp;<{$vo.comment}> 评论 </p>
                     </section>
