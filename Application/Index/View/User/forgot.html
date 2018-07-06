@@ -79,7 +79,7 @@
                 }
 
             }else{
-                window.location.reload();
+                $("body").prepend(SAl("发送成功！请查收邮箱"));
             }
             $("#submit").prop("disabled", !1);
         })

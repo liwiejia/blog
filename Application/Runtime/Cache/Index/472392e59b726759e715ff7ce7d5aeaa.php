@@ -38,15 +38,22 @@
             <h3 class="panel-title">重置密码</h3>
         </div>
         <div class="panel-body sfModal-content login-modal">
-            <form class="form--forgot-password login-wrap mt15 mb15" action="<?php echo U('User/reset');?>" method="POST" id="user" role="form">
-                <div class="form-group">
-                    <label for="">新密码</label>
-                    <input type="password" class="form-control" id="password" name="password" required="" placeholder="不少于 6 位的密码">
-                    <input type="hidden" name="do" value="reset">
+            <form class="form--forgot-password login-wrap mt15 mb15" action="<?php echo U('User/forgot');?>" method="POST" id="user" role="form">
+                <div class="form-group" data-type="phone">
+                    <label class="control-label">Email</label>
+                    <div>
+                        <input type="email"  class=" form-control email" name="email" placeholder="Email"  required="">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <button type="submit" id="reset" class="btn btn-primary btn-block">提交</button>
+                <div class="captchaInput mb15 form-group">
+                    <input type="text" class="form-control" name="verify" placeholder="右侧的验证码" style="width: 50%;display: inline;margin-right: 15px;" id="cap-area" required="">
+                    <span class="mt10 ">
+                        <a id="loginReloadCaptcha" href="javascript:void(0)">
+                        <img src="<?php echo U('Api/verify');?>" onclick="this.src=this.src+'?'+Math.random()" class="captcha" width="135" height="34"></a>
+                    </span>
                 </div>
+                <button type="submit" id="submit" class="btn btn-primary btn-block">提交</button>
+
             </form>
         </div>
     </div>
@@ -74,15 +81,29 @@
             a.length=0;
         }
 
-        if(o.password.length<6){
-            $('[name="password"]').parent().append('<span class="help-block err">不少于6位密码</span>')
-            $('[name="password"]').parent().addClass("has-error");
-            a.push('password')
+        if(o.verify.length!=4){
+            $('[name="verify"]').parent().append('<span class="help-block err">图形验证码错误</span>')
+            $('[name="verify"]').parent().addClass("has-error");
+            a.push('verify')
             return false;
         }
 
         $("#submit").prop("disabled", !0);
-        $(this).submit();
+        $.post("<?php echo U('User/forgot');?>", o, function(e) {
+            e=JSON.parse(e);
+            if(e.status!=200){
+                $('.captcha').click();
+                for(i=0;i<e.cap.length;i++){
+                    !$('[name='+e.cap[i].name+']').siblings("[class='help-block err']").length ? $('[name='+e.cap[i].name+']').parent().append('<span class="help-block err">'+e.cap[i].value+'</span>'):$('[name='+e.cap[i].name+']').siblings("[class='help-block err']")[0].innerHTML = e.cap[i].value;
+                    $('[name='+e.cap[i].name+']').parent().addClass("has-error");
+                    a.push(e.cap[i].name);
+                }
+
+            }else{
+                $("body").prepend(SAl("发送成功！请查收邮箱"));
+            }
+            $("#submit").prop("disabled", !1);
+        })
     });
 </script>
 

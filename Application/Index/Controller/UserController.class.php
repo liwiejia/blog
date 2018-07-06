@@ -205,12 +205,12 @@ class UserController extends CommonController {
                 ));
             }
 
-            /*if($cap){
+            if($cap){
                 exit(json_encode(array(
                     'status'=> 404, // 格式错误
                     'cap'=>$cap  // 错误信息
                 )));
-            }*/
+            }
             $time = time();
 
             $token = createToken($user['username'],$user['password'],$time);
@@ -224,18 +224,16 @@ class UserController extends CommonController {
                 'type' => 2,
                 'ip' => get_client_ip(),
             );
-            if($user_verfy){
-                $update = M('mail_verify')->where($user_verfy['id'])->save($data);
-            }else{
-                $add = M('mail_verify')->add($data);
-            }
-            $str ="<div class='header' style='background-color: rgb(117, 212, 183); padding: 10px;'><span class='logo'><img src='http://blog.liweijia.site/Public/Image/logo.png' style='width: 150px;'></span></div><div style='font-size: 14px;padding: 2em;'><br><br>        您好  ".$user['nickname'].",<br><br><p>您正在通过邮箱重置<a href='http://blog.liweijia.site'>Liweijia_blog</a>的登录密码请点击下面的连接修改密码，如果邮箱不能直接跳转链接，请将该链接复制到浏览器的地址中：</p><h3 style='font-size: 20px; color: #f00; font-weight: bold;'><a href='http://blog.liweijia.site/index.php/Index/User/modify/token/".$token.".html'>http://blog.liweijia.site/index.php/Index/User/modify/token/".$token.".html</a></h3><p>该验证邮件有效期为30分钟，超时请重新发送邮件。</p></div><div style='font-size: 14px; padding: 2em;'>        Regards<br>        Your  Team<br>        ------------------------------------<br><a href=''>www.blog.liweijia.site</a><br><div style='color: #999;'><p>发件时间：<span id='stickerTimer' style='border-bottom: 1px dashed rgb(204, 204, 204); position: relative;'  times='".date("G").":".date("i")."' isout='0'>".date("Y")."/".date("m")."/".date("d")."</span>  ".date("G").":".date("i").":".date("s")."</p><p>此邮件为系统自动发出的，请勿直接回复。</p></div></div>";
 
-            if ($update || $add ) {
+            $str ="<div class='header' style='background-color: rgb(117, 212, 183); padding: 10px;'><span class='logo'><img src='http://blog.liweijia.site/Public/Image/logo.png' style='width: 150px;'></span></div><div style='font-size: 14px;padding: 2em;'><br><br>        您好  ".$user['nickname'].",<br><br><p>您正在通过邮箱重置<a href='http://blog.liweijia.site'>Liweijia_blog</a>的登录密码请点击下面的连接修改密码，如果邮箱不能直接跳转链接，请将该链接复制到浏览器的地址中：</p><h3 style='font-size: 20px; color: #f00; font-weight: bold;'><a href='http://blog.liweijia.site/index.php/Index/User/modify/token/".$token.".html'>http://blog.liweijia.site/index.php/Index/User/modify/token/".$token.".html</a></h3><p>该验证邮件有效期为1天，超时请重新发送邮件。</p></div><div style='font-size: 14px; padding: 2em;'>        Regards<br>        Your  Team<br>        ------------------------------------<br><a href=''>www.blog.liweijia.site</a><br><div style='color: #999;'><p>发件时间：<span id='stickerTimer' style='border-bottom: 1px dashed rgb(204, 204, 204); position: relative;'  times='".date("G").":".date("i")."' isout='0'>".date("Y")."/".date("m")."/".date("d")."</span>  ".date("G").":".date("i").":".date("s")."</p><p>此邮件为系统自动发出的，请勿直接回复。</p></div></div>";
 
-                send_mail($email,$email,'Blog-找回密码验证码',$str);
 
-                if(send_mail) {
+                if(send_mail($email,$email,'Blog-找回密码验证码',$str)) {
+                    if($user_verfy){
+                        M('mail_verify')->where($user_verfy['id'])->save($data);
+                    }else{
+                        M('mail_verify')->add($data);
+                    }
                     exit(json_encode(array(
                         'status' => 200, // 格式错误
                         'cap' => '发送成功！'  // 错误信息
@@ -246,12 +244,7 @@ class UserController extends CommonController {
                         'cap' => '网络不通畅，请稍后再试一下！'  // 错误信息
                     )));
                 }
-            } else {
-                exit(json_encode(array(
-                    'status' => 403, // 格式错误
-                    'cap' => '网络不通畅，请稍后再试一下！'  // 错误信息
-                )));
-            }
+
 
         } else {
             $this->assign('current', "忘记密码");
@@ -262,11 +255,11 @@ class UserController extends CommonController {
     public function modify(){
         $token = I('get.token');
         $verify = M('mail_verify')->where(array('verify' => $token,'type'=>2,'IsExpiried'=>1))->find();
-        if($verify){
+        if($verify || (time()-$verify['date'])< 60*60*24){
             session('modifyUserName', $verify['email']);
             redirect(U('User/reset'));
         }else{
-           // $this->error('链接错误或者已经失效...',U('Index/index'), 2);
+            $this->error('链接错误或者已经失效...',U('Index/index'), 2);
         }
     }
     public function reset(){
@@ -274,11 +267,24 @@ class UserController extends CommonController {
             $username = session('modifyUserName');
             $password = I('post.password');
 
-            echo createToken('1076217644@qq.com','c2a3yqCuHAqPHSRJOyLeZWWTiXe+Z9KZVfbtkTA+LFZVYUs','1530717410');
             if($username == null){
+                $this->error('请重新点击Mail中的连接。切记勿修改！若多次无效，请重新发送mail！',U('Index/index'), 2);
+                return;
+            }
+            $data = array(
+                'password'=> auth_code($password,"1"),
+                'lastip'=> get_client_ip(),
+            );
+            $modify = M('users')->where(array('username' => $username))->save($data);
 
+            if($modify){
+
+                M('mail_verify')->where("email = '".$username."'")->delete();
+                session(null);
+                $this->success('修改成功！请重新登录.',U('User/login'), 2);
             }
         }else{
+            $this->assign('current', "修改密码");
             $this->display();
         }
     }
