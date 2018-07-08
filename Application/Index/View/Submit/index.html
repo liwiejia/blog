@@ -1,0 +1,132 @@
+<include file="Public/head"/>
+<body  class="qa-ask ">
+<include file="Public/header"/>
+<link href="__PUBLIC__/Style/Index/qa.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/Style/Index/responsive.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/Plugin/build/build.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__PUBLIC__/Js/jquery.min.js"></script>
+<div class="wrap publish">
+    <div class="container">
+        <form id="question" method="POST" class="form">
+
+            <div class="form-group">
+                <label for="title" class="sr-only">笔记描述</label>
+                <input id="myTitle" type="text" name="title" required="" data-error="" autocomplete="off" class="form-control tagClose input-lg" placeholder="笔记描述" value="">
+            </div>
+            <div class="form-group">
+                <div class="editor">
+                    <textarea id="myEditor"></textarea>
+                </div>
+            </div>
+
+            <div class=" publish-footer">
+                <div class="container">
+                    <div class="operations clearfix">
+                        <div class="shareToWeibo checkbox pull-left mr10 mb0">
+                            <label for="shareToWeibo"><input type="checkbox" id="shareToWeibo"> 同步到新浪微博</label>
+                        </div>
+                        <div class="pull-right">
+                            <span class="text-muted hidden" id="editorStatus">已保存</span>
+                            <a id="dropIt" href="javascript:void(0);" class="mr10 hidden">[舍弃]</a>
+                            <button class="hide" type="button"></button>
+                            <button data-toggle="tooltip" data-placement="top" title="" type="button" data-type="question" id="publishIt" class="btn btn-primary ml10" data-id="" data-do="" data-url="" data-text="发布问题" data-name="" data-original-title="">
+                                保存笔记
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.container -->
+</div>
+<script>
+    d = function() {
+        $(".opts__item--message").removeClass("hide"),
+            $.get("/api/notifications", function(t) {
+                var n, a, i, o;
+                t.status || (t.data = null != (a = t.data) ? a : [],
+                    i = {
+                        data: t.data,
+                        unread: {
+                            general: _.filter(t.data.general, function(e) {
+                                return 0 === parseInt(e.viewed)
+                            }).length,
+                            ranked: _.filter(t.data.ranked, function(e) {
+                                return 0 === parseInt(e.viewed)
+                            }).length,
+                            followed: _.filter(t.data.followed, function(e) {
+                                return 0 === parseInt(e.viewed)
+                            }).length,
+                            comment: _.filter(t.data.comment, function(e) {
+                                return 0 === parseInt(e.viewed)
+                            }).length
+                        }
+                    },
+                    o = _.reduce(i.unread, function(e, t) {
+                        return e + t
+                    }, 0),
+                o > 0 && $(".opts__item--message .message-ingore-all").removeClass("hide"),
+                    $("#messageGeneral").html(_.template($("#messageGeneralTpl").html())(i.data)),
+                    $("#messageComment").html(_.template($("#messageCommentTpl").html())(i.data)),
+                    $("#messageRanked").html(_.template($("#messageRankedTpl").html())(i.data)),
+                    $("#messageFollowed").html(_.template($("#messageFollowedTpl").html())(i.data)),
+                    $(".opts__item--message-loading").remove(),
+                    n = {},
+                    $(".mCustomScrollbar-message").mCustomScrollbar({
+                        scrollInertia: 0,
+                        callbacks: {
+                            onScroll: function() {
+                                var t, a, i;
+                                if (i = this.mcs.topPct,
+                                        a = e(this).data("proto"),
+                                        n[a] = n[a] || 2,
+                                    i > 55 && n[a] !== -1) {
+                                    if (console.log(a, i, "ajax page " + n[a]),
+                                            t = "/api/notifications?type=" + a + "&page=" + n[a],
+                                        window.__api === t)
+                                        return;
+                                    return window.__api = t,
+                                        e.get(t, function(t) {
+                                            var i, o;
+                                            if (!t.status)
+                                                return i = t.data[a],
+                                                    i.length > 0 ? (o = _.template($("#item--" + a).html())(t.data),
+                                                            $(".tab-pane.active .mCSB_container").append(o),
+                                                            n[a]++) : n[a] = -1
+                                        })
+                                }
+                            }
+                        }
+                    }))
+            })
+    }
+    $(".dropdown-toggle-message").on("click", function(t) {
+        var n;
+        return t.preventDefault(),
+            n = $(".opts__item--message"),
+        "undefined" != typeof v && v.emit("read"),
+
+            "none" !== n.css("display") ? n.addClass("hide") : (d(),
+                    $.get("/api/notifications/viewed", function(t) {
+                        var n;
+                        if (n = null,
+                                !t.status)
+                            return _.each(t.data, function(t, a) {
+                                if (t)
+                                    return n ? (n = $(".notice-dot-" + a),
+                                            n.removeClass("hide"),
+                                            n.removeClass("notice-dot--special")) : (n = $(".notice-dot-" + a),
+                                            n.addClass("notice-dot--special"),
+                                            n.closest("a[role='tab']").trigger("click"))
+                            })
+                    }))
+    })
+    $("body").on("click", function(t) {
+        "none" !== $(".opts__item--message").css("display") && 0 === $(t.target).parents(".message").length && $(".opts__item--message").addClass("hide")
+    })
+</script>
+<script type="text/javascript" src="__PUBLIC__/Js/Index/ask.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Plugin/build/build.js"></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : sticker
+Source Server         : web
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : blog
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-05 20:13:21
+Date: 2018-07-08 19:41:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -118,7 +118,7 @@ CREATE TABLE `blog_admin` (
 -- ----------------------------
 -- Records of blog_admin
 -- ----------------------------
-INSERT INTO `blog_admin` VALUES ('1', 'admin', 'a66abb5684c45962d887564f08346e8d', 'admin', '/blog/Uploads/image/5b091d267355d.jpg', '0', '1529408224', '', '192.168.1.241', '31', '1076217644@qq.com', '18310009074', '0', '0', '1076217644', '0', '901036800');
+INSERT INTO `blog_admin` VALUES ('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '/blog/Uploads/image/5b091d267355d.jpg', '0', '1531047979', '', '0.0.0.0', '34', '1076217644@qq.com', '18310009074', '0', '0', '1076217644', '0', '901036800');
 
 -- ----------------------------
 -- Table structure for blog_atc_tag
@@ -126,10 +126,9 @@ INSERT INTO `blog_admin` VALUES ('1', 'admin', 'a66abb5684c45962d887564f08346e8d
 DROP TABLE IF EXISTS `blog_atc_tag`;
 CREATE TABLE `blog_atc_tag` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `tagid` int(16) NOT NULL COMMENT '分类id',
+  `pid` int(11) NOT NULL COMMENT '父标签id',
   `name` char(20) NOT NULL COMMENT '分类名字',
   `iconurl` char(50) NOT NULL COMMENT '分类图标',
-  `pid` int(11) NOT NULL COMMENT '父标签id',
   `pname` char(20) NOT NULL COMMENT '父标签名字',
   `total` int(10) NOT NULL DEFAULT '0' COMMENT '文章总数量',
   `regdate` int(10) NOT NULL COMMENT '加入时间',
@@ -207,7 +206,7 @@ CREATE TABLE `blog_menu` (
   `islink` int(1) NOT NULL DEFAULT '0',
   `tips` char(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog_menu
@@ -226,9 +225,9 @@ INSERT INTO `blog_menu` VALUES ('11', '7', 'Article/add', '新增文章', '15248
 INSERT INTO `blog_menu` VALUES ('12', '7', 'Article/edit', '编辑文章', '1524883073', 'menu-icon fa fa-caret-right', '0', '');
 INSERT INTO `blog_menu` VALUES ('13', '7', 'Article/update', '保存文章', '1524883135', 'menu-icon fa fa-caret-right', '0', '');
 INSERT INTO `blog_menu` VALUES ('14', '7', 'Article/del', '删除文章', '1524883151', '', '0', '');
-INSERT INTO `blog_menu` VALUES ('15', '7', 'Category/index', '分类管理', '1524883231', 'menu-icon fa fa-caret-right', '1', '');
-INSERT INTO `blog_menu` VALUES ('16', '7', 'Category/add', '新增分类', '1524883259', 'menu-icon fa fa-caret-righ', '1', '');
-INSERT INTO `blog_menu` VALUES ('17', '7', 'Category/edit', '编辑分类', '1524883286', 'menu-icon fa fa-caret-right', '0', '');
+INSERT INTO `blog_menu` VALUES ('15', '7', 'Channel/index', '技术频道', '1524883231', 'menu-icon fa fa-caret-right', '1', '');
+INSERT INTO `blog_menu` VALUES ('16', '15', 'Channel/add', '新增技术频道', '1524883259', 'menu-icon fa fa-caret-righ', '1', '');
+INSERT INTO `blog_menu` VALUES ('17', '7', 'Channel/edit', '编辑技术频道', '1524883286', 'menu-icon fa fa-caret-right', '0', '');
 INSERT INTO `blog_menu` VALUES ('8', '0', '', '其它功能', '1524883701', 'menu-icon fa fa-legal', '1', '');
 INSERT INTO `blog_menu` VALUES ('19', '8', 'Link/index', '友情链接', '1524883738', 'menu-icon fa fa-caret-right', '1', '');
 INSERT INTO `blog_menu` VALUES ('20', '8', 'Link/add', '增加链接', '1524883793', 'menu-icon fa fa-caret-right', '1', '');
@@ -238,6 +237,8 @@ INSERT INTO `blog_menu` VALUES ('23', '2', 'Database/backup', '数据库备份',
 INSERT INTO `blog_menu` VALUES ('24', '23', 'Database/recovery', '数据库还原', '1527159255', '', '0', '');
 INSERT INTO `blog_menu` VALUES ('26', '18', 'Logout/index', '退出', '1527159255', '', '1', '');
 INSERT INTO `blog_menu` VALUES ('25', '18', 'Personal/index', '信息管理', '1527159255', 'menu-icon fa fa-caret-right', '1', null);
+INSERT INTO `blog_menu` VALUES ('28', '7', 'Category/index', '文章分类', '1527159255', 'menu-icon fa fa-caret-right', '1', null);
+INSERT INTO `blog_menu` VALUES ('29', '7', 'Channel/add', '', '0', '', '0', null);
 
 -- ----------------------------
 -- Table structure for blog_users

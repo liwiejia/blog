@@ -11,10 +11,10 @@ use Think\Controller;
 
 
 
-class AskController extends PowerController {
+class RecordController extends PowerController {
     public function index(){
 
-        $this->assign('current', "提出问题");
+        $this->assign('current', "记笔记");
         $this->display();
     }
 

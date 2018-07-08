@@ -18,7 +18,7 @@
     <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<body  class="no-skin">
+<body  class="qa-ask ">
 <div class="global-nav blog-header blog-header--index publish">
     <div class="bottom-nav visible-xs visible-sm ">
         <div class="opts">
@@ -289,146 +289,132 @@
 
 
 <div class="in"></div>
-<div class="wrapper">
-
-
-    <div class="container mt30">
-        <div class="row">
-            <div class="col-md-2 left">
-                <div class="router-box">
-    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="<?php echo U('Index/index');?>">
-        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-        <span class="name">今日焦点</span>
-    </a>
-    <a class="router-box-item  SFLogin  <?php if(CONTROLLER_NAME== 'Feed'): ?>active<?php endif; ?>" href="<?php echo U('Feed/index');?>">
-        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-        <span class="name">为你推荐</span>
-    </a>
-    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Newest'): ?>active<?php endif; ?>" href="<?php echo U('Newest/index');?>">
-        <i class="fa fa-globe" aria-hidden="true"></i>
-        <span class="name">最新内容</span>
-    </a>
-
-</div>
-<div class="tech-square hidden-xs">
-    <h5 class="tech-square-title mt0 mb15">技术频道</h5>
-    <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><a class="tech-square-item <?php if($current == $category['name']): ?>active<?php endif; ?>" href="<?php echo U('Channel/'.$category['url']);?>">
-            <span class="tech-square-item-icon">
-              <img src="<?php echo ($category['iconurl']); ?>">
-            </span>
-            <span><?php echo ($category['name']); ?></span>
-        </a><?php endforeach; endif; else: echo "" ;endif; ?>
-
-
-    <a class="tech-square-item" href="<?php echo U('Tags');?>">
-            <span class="tech-square-item-icon">
-              <i class="fa fa-tags" aria-hidden="true"></i>
-            </span>
-        <span>更多标签</span>
-    </a>
-</div>
-            </div>
-            <div class="col-md-10 middle">
-                <div class="news-list">
-                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><div class="news-item stream__item clearfix" data-id="1190000015212663">
-                            <div class="news__item-from">来自标签 <a href="/t/%E5%89%8D%E7%AB%AF"><?php echo ($val['name']); ?></a></div>
-                            <div class="news__item-avatar"><a href="<?php echo U('User/index',array('user'=>$val['pageurl']));?>"><img class="avatars-img" src="<?php echo ($val['head']); ?>"></a></div>
-                            <div class="news__item-info">
-                                <div class="mb6">
-                                    <h4 class="news__item-title mt0"><a class="mr10" target="_blank" href="<?php echo U('Article/index',array('id'=>$val['id']));?>"><?php echo ($val['title']); ?></a></h4>
-                                </div>
-                                <p class="news__item-meta"><a href="/u/phoenixchan"><?php echo ($val['nickname']); ?></a> 发布于 <a href="/u/phoenixchan/articles">亚古的个人文章</a><span class="dot">·</span><span><?php echo (mdate($val['date'])); ?></span><span class="pull-right hidden-xs hidden-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i> <?php echo ($val['thumbs']); ?></span></p>
-                            </div>
-                        </div><?php endforeach; endif; else: echo "" ;endif; ?>
-
-                </div>
-                <div class="text-center">
-                    <ul class="pager">
-                        <li id="btn-load-more" class="hidden" style="pointer-events: none;"><a href="javascript:;">没数据了 (〒︿〒)</a></li>
-                        <li id="btn-loading" class=""><a href="javascript:;"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> 载入中</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<footer id="footer">
+<link href="/blog/Public/Style/Index/qa.css" rel="stylesheet" type="text/css">
+<link href="/blog/Public/Style/Index/responsive.css" rel="stylesheet" type="text/css">
+<link href="/blog/Public/Plugin/build/build.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
+<div class="wrap publish">
     <div class="container">
-        <div class="row hidden-xs">
+        <form id="question" method="POST" class="form">
 
-            <dl class="col-sm-2 site-link">
-                <dt>资源</dt>
-                <dd><a href="/weekly?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-weekly&amp;utm_term=每周精选">每周精选</a></dd>
-                <dd><a href="/users?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-users&amp;utm_term=用户排行榜">用户排行榜</a></dd>
-                <dd><a href="/badges?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-badges&amp;utm_term=徽章">徽章</a></dd>
-                <dd><a href="/faq?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-faq&amp;utm_term=帮助中心">帮助中心</a></dd>
-                <dd><a href="/repu?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-repu&amp;utm_term=声望与权限">声望与权限</a></dd>
-                <dd><a href="/community?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-community&amp;utm_term=社区服务中心">社区服务中心</a></dd>
-                <dd><a href="https://docs.segmentfault.com?utm_source=sf-footer&amp;utm_medium=footer-nav&amp;utm_campaign=resource&amp;utm_content=footer-links-docs&amp;utm_term=开发手册">开发手册</a></dd>
+            <div class="form-group">
+                <label for="title" class="sr-only">笔记描述</label>
+                <input id="myTitle" type="text" name="title" required="" data-error="" autocomplete="off" class="form-control tagClose input-lg" placeholder="笔记描述" value="">
+            </div>
+            <div class="form-group">
+                <div class="editor">
+                    <textarea id="myEditor"></textarea>
+                </div>
+            </div>
 
-
-            </dl>
-
-            <dl class="col-sm-2 site-link">
-                <dt>关于</dt>
-                <dd><a href="">关于我们</a></dd>
-                <dd><a href="">加入我们</a></dd>
-                <dd><a href="">联系我们</a></dd>
-            </dl>
-
-            <dl class="col-sm-2 site-link">
-                <dt>关注</dt>
-                <dd>
-                    <ul class="sn-inline">
-                        <li>
-                            <a class="entypo-wechart icon-sn-weixin weixin-popover-qrcode" data-toggle="popover" data-placement="top" data-content="" data-original-title="" title="">微信</a>
-                            <div class="popover fade top in" role="tooltip" id="popover192361" style="top: -80px; left: -31px; display: none;"><div class="arrow" style="left: 50%; pointer-events: all;"></div><h3 class="popover-title" style="display: none;"></h3><div class="popover-content"><div class="weixin-qrcode"></div><p class="text-center mb0">添加微信</p></div></div>
-                        </li>
-                        <li>
-                            <a href="tencent://message/?uin=1076217644&Site=http://liweijia.site&Menu=yes" target="_blank" class="entypo-weibo icon-sn-weibo">QQ</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/liwiejia/blog" target="_blank" class="entypo-facebook icon-sn-github">Github</a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/LIWEIJIAAA" target="_blank" class="entypo-twitter icon-sn-twitter">Twitter</a>
-                        </li>
-                    </ul>
-                </dd>
-            </dl>
-
-           <!-- <dl class="col-sm-2 site-link" id="license">
-                <dt>条款</dt>
-                <dd><a href="/tos">服务条款</a></dd>
-                <dd><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">内容许可</a></dd>
-                <dd>
-                    <a href="/app" class="clearfix mt10 block"><img src="https://static.segmentfault.com/v-5b112aa6/page/img/app/appQrcode.png" class="app-qrcode"></a>
-                    <div class="app-download-desc">
-                        <p>扫一扫下载 App</p>
+            <div class=" publish-footer">
+                <div class="container">
+                    <div class="operations clearfix">
+                        <div class="shareToWeibo checkbox pull-left mr10 mb0">
+                            <label for="shareToWeibo"><input type="checkbox" id="shareToWeibo"> 同步到新浪微博</label>
+                        </div>
+                        <div class="pull-right">
+                            <span class="text-muted hidden" id="editorStatus">已保存</span>
+                            <a id="dropIt" href="javascript:void(0);" class="mr10 hidden">[舍弃]</a>
+                            <button class="hide" type="button"></button>
+                            <button data-toggle="tooltip" data-placement="top" title="" type="button" data-type="question" id="publishIt" class="btn btn-primary ml10" data-id="" data-do="" data-url="" data-text="发布问题" data-name="" data-original-title="">
+                                保存笔记
+                            </button>
+                        </div>
                     </div>
-
-                </dd>
-            </dl>-->
-        </div>
-        <div class="copyright">
-            Copyright © 2017-2018 Liweijia-Blog. 当前呈现版本 V 1.01.01<br>
-            <a href="http://www.miibeian.gov.cn/" rel="nofollow">京ICP备 18019844号</a> &nbsp;
-           <!-- <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602002000" rel="nofollow">浙公网安备 33010602002000号</a>-->
-            <span class="ml5">李伟佳个人版权所有</span>
-
-        </div>
+                </div>
+            </div>
+        </form>
     </div>
-</footer>
-<div id="fixedTools" class="hidden-xs hidden-sm">
-    <a id="backtop" class="border-bottom" href="#">回顶部</a>
+    <!-- /.container -->
 </div>
 <script>
-    var verifyImg = '<?php echo U('Api/verify');?>';
+    d = function() {
+        $(".opts__item--message").removeClass("hide"),
+            $.get("/api/notifications", function(t) {
+                var n, a, i, o;
+                t.status || (t.data = null != (a = t.data) ? a : [],
+                    i = {
+                        data: t.data,
+                        unread: {
+                            general: _.filter(t.data.general, function(e) {
+                                return 0 === parseInt(e.viewed)
+                            }).length,
+                            ranked: _.filter(t.data.ranked, function(e) {
+                                return 0 === parseInt(e.viewed)
+                            }).length,
+                            followed: _.filter(t.data.followed, function(e) {
+                                return 0 === parseInt(e.viewed)
+                            }).length,
+                            comment: _.filter(t.data.comment, function(e) {
+                                return 0 === parseInt(e.viewed)
+                            }).length
+                        }
+                    },
+                    o = _.reduce(i.unread, function(e, t) {
+                        return e + t
+                    }, 0),
+                o > 0 && $(".opts__item--message .message-ingore-all").removeClass("hide"),
+                    $("#messageGeneral").html(_.template($("#messageGeneralTpl").html())(i.data)),
+                    $("#messageComment").html(_.template($("#messageCommentTpl").html())(i.data)),
+                    $("#messageRanked").html(_.template($("#messageRankedTpl").html())(i.data)),
+                    $("#messageFollowed").html(_.template($("#messageFollowedTpl").html())(i.data)),
+                    $(".opts__item--message-loading").remove(),
+                    n = {},
+                    $(".mCustomScrollbar-message").mCustomScrollbar({
+                        scrollInertia: 0,
+                        callbacks: {
+                            onScroll: function() {
+                                var t, a, i;
+                                if (i = this.mcs.topPct,
+                                        a = e(this).data("proto"),
+                                        n[a] = n[a] || 2,
+                                    i > 55 && n[a] !== -1) {
+                                    if (console.log(a, i, "ajax page " + n[a]),
+                                            t = "/api/notifications?type=" + a + "&page=" + n[a],
+                                        window.__api === t)
+                                        return;
+                                    return window.__api = t,
+                                        e.get(t, function(t) {
+                                            var i, o;
+                                            if (!t.status)
+                                                return i = t.data[a],
+                                                    i.length > 0 ? (o = _.template($("#item--" + a).html())(t.data),
+                                                            $(".tab-pane.active .mCSB_container").append(o),
+                                                            n[a]++) : n[a] = -1
+                                        })
+                                }
+                            }
+                        }
+                    }))
+            })
+    }
+    $(".dropdown-toggle-message").on("click", function(t) {
+        var n;
+        return t.preventDefault(),
+            n = $(".opts__item--message"),
+        "undefined" != typeof v && v.emit("read"),
+
+            "none" !== n.css("display") ? n.addClass("hide") : (d(),
+                    $.get("/api/notifications/viewed", function(t) {
+                        var n;
+                        if (n = null,
+                                !t.status)
+                            return _.each(t.data, function(t, a) {
+                                if (t)
+                                    return n ? (n = $(".notice-dot-" + a),
+                                            n.removeClass("hide"),
+                                            n.removeClass("notice-dot--special")) : (n = $(".notice-dot-" + a),
+                                            n.addClass("notice-dot--special"),
+                                            n.closest("a[role='tab']").trigger("click"))
+                            })
+                    }))
+    })
+    $("body").on("click", function(t) {
+        "none" !== $(".opts__item--message").css("display") && 0 === $(t.target).parents(".message").length && $(".opts__item--message").addClass("hide")
+    })
 </script>
-
-<script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
-<script type="text/javascript" src="/blog/Public/Js/Index/index.min.js"></script>
-
+<script type="text/javascript" src="/blog/Public/Js/Index/ask.js"></script>
+<script type="text/javascript" src="/blog/Public/Plugin/build/build.js"></script>
 </body>
 </html>
