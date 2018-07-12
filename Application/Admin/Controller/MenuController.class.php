@@ -8,7 +8,7 @@
 
 namespace Admin\Controller;
 use Think\Controller;
-
+use Vendor\TreeData;
 
 
 class MenuController extends CommonController {
@@ -17,8 +17,12 @@ class MenuController extends CommonController {
         $count = $m->count();
 
         $list = $m->order('id asc')->select();
-        $list = $this->getMenu($list);
-        $this->assign('list', $list);
+        $tree=new TreeData("id","pid","children");
+        $tree->load($list);
+        $treelist=$tree->DeepTree();//所有分类树结构
+
+
+        $this->assign('list', $treelist);
 
         $this->display();
 

@@ -8,6 +8,8 @@
 
 namespace Admin\Controller;
 use Think\Controller;
+use Vendor\TreeData;
+
 
 class CommonController extends Controller {
     /* 定义用户id */
@@ -45,9 +47,14 @@ class CommonController extends Controller {
 
             //获取列表
             $menu = M('menu')->field('id,title,pid,name,icon')->where("islink=1")->order('id ASC')->select();
-            $menu = $this->getMenu($menu);
 
-            $this->assign('menu', $menu);
+            $tree=new TreeData("id","pid","children");
+            $tree->load($menu);
+            $treelist=$tree->DeepTree();//所有分类树结构
+
+            //$menu = $this->getMenu($menu);
+
+            $this->assign('menu', $treelist);
 
         } else {
             $this->error('对不起,您还没有登录,正跳转至登录面...', U('Login/login'));
