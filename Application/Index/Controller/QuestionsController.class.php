@@ -7,4 +7,9 @@ class QuestionsController extends CommonController {
         $this->assign('current', "最新的问题");
         $this->display();
     }
+    public function page($id){
+
+        $this->assign('current', "最新的问题");
+        $this->display();
+    }
 }

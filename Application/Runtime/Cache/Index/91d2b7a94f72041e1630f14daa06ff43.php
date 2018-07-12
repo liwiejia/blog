@@ -20,7 +20,7 @@
 
 <link href="/blog/Public/Style/Index/user.css" rel="stylesheet" type="text/css">
 <body  class="no-skin">
-<div class="global-nav blog-header blog-header--index">
+<div class="global-nav blog-header blog-header--index publish">
     <div class="bottom-nav visible-xs visible-sm ">
         <div class="opts">
             <a class="opts-group <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="<?php echo U('Index/index');?>">

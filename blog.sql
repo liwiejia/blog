@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-08 19:41:07
+Date: 2018-07-11 23:33:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -118,7 +118,28 @@ CREATE TABLE `blog_admin` (
 -- ----------------------------
 -- Records of blog_admin
 -- ----------------------------
-INSERT INTO `blog_admin` VALUES ('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '/blog/Uploads/image/5b091d267355d.jpg', '0', '1531047979', '', '0.0.0.0', '34', '1076217644@qq.com', '18310009074', '0', '0', '1076217644', '0', '901036800');
+INSERT INTO `blog_admin` VALUES ('1', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '/blog/Uploads/image/5b091d267355d.jpg', '0', '1531394598', '', '127.0.0.1', '37', '1076217644@qq.com', '18310009074', '0', '0', '1076217644', '0', '901036800');
+
+-- ----------------------------
+-- Table structure for blog_ask
+-- ----------------------------
+DROP TABLE IF EXISTS `blog_ask`;
+CREATE TABLE `blog_ask` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` char(150) NOT NULL COMMENT '标题',
+  `tag` char(100) NOT NULL COMMENT '分类',
+  `content` varchar(255) NOT NULL COMMENT '内容',
+  `userid` int(11) NOT NULL DEFAULT '1' COMMENT '发布用户id',
+  `date` int(11) NOT NULL COMMENT '发布日期',
+  `ip` char(15) NOT NULL COMMENT '发布ip',
+  `thumbs` int(255) NOT NULL DEFAULT '0' COMMENT '点赞量',
+  `comment` int(11) NOT NULL DEFAULT '0' COMMENT '评论量',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of blog_ask
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for blog_atc_tag
@@ -128,16 +149,113 @@ CREATE TABLE `blog_atc_tag` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pid` int(11) NOT NULL COMMENT '父标签id',
   `name` char(20) NOT NULL COMMENT '分类名字',
-  `iconurl` char(50) NOT NULL COMMENT '分类图标',
-  `pname` char(20) NOT NULL COMMENT '父标签名字',
+  `iconurl` char(100) NOT NULL COMMENT '分类图标',
   `total` int(10) NOT NULL DEFAULT '0' COMMENT '文章总数量',
   `regdate` int(10) NOT NULL COMMENT '加入时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=102 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog_atc_tag
 -- ----------------------------
+INSERT INTO `blog_atc_tag` VALUES ('3', '0', '开发语言', '', '0', '1531375051');
+INSERT INTO `blog_atc_tag` VALUES ('4', '0', '平台框架', '', '0', '1531394633');
+INSERT INTO `blog_atc_tag` VALUES ('5', '0', '服务器', '', '0', '1531394752');
+INSERT INTO `blog_atc_tag` VALUES ('6', '0', '数据库和缓存', '', '0', '1531394764');
+INSERT INTO `blog_atc_tag` VALUES ('7', '0', '开发工具', '', '0', '1531394773');
+INSERT INTO `blog_atc_tag` VALUES ('8', '0', '系统设备', '', '0', '1531394781');
+INSERT INTO `blog_atc_tag` VALUES ('9', '0', '其它', '', '0', '1531394789');
+INSERT INTO `blog_atc_tag` VALUES ('10', '3', 'javascript', '', '0', '1531394809');
+INSERT INTO `blog_atc_tag` VALUES ('11', '3', 'php', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('12', '3', 'css', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('13', '3', 'html', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('14', '3', 'java', 'http://www.liweijia.site/blog/Public/Image/868271510-54cb382abb7a1_small.png', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('15', '3', 'html5', 'http://www.liweijia.site/blog/Public/Image/1025005915-54cb538538eea_small.png', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('16', '3', 'python', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('17', '3', 'node.js', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('18', '3', 'c++', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('19', '3', 'c', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('20', '3', 'objecttive-c', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('21', '3', 'golang', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('22', '3', 'shell', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('23', '3', 'swift', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('24', '3', 'c#', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('25', '3', 'typescript', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('26', '3', 'rudy', 'http://www.liweijia.site/blog/Public/Image/3367608758-54cb53ca5a132_small.png', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('27', '3', 'bash', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('28', '3', 'sass', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('29', '3', 'asp.net', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('30', '3', 'less', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('31', '3', 'lua', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('32', '3', 'scala', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('33', '3', 'coffeescript', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('34', '3', 'actionscript', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('35', '3', 'erlang', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('36', '3', 'perl', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('37', '3', 'rust', '', '0', '1531394907');
+INSERT INTO `blog_atc_tag` VALUES ('38', '4', 'laravel', '', '0', '1531395230');
+INSERT INTO `blog_atc_tag` VALUES ('39', '4', 'spring', '', '0', '1531395230');
+INSERT INTO `blog_atc_tag` VALUES ('40', '4', 'django', '', '0', '1531395230');
+INSERT INTO `blog_atc_tag` VALUES ('41', '4', 'express', '', '0', '1531395230');
+INSERT INTO `blog_atc_tag` VALUES ('42', '4', 'flask', '', '0', '1531395230');
+INSERT INTO `blog_atc_tag` VALUES ('43', '4', 'yii', '', '0', '1531395230');
+INSERT INTO `blog_atc_tag` VALUES ('44', '4', 'ruby-on-rails', '', '0', '1531395230');
+INSERT INTO `blog_atc_tag` VALUES ('45', '4', 'tomado', '', '0', '1531395230');
+INSERT INTO `blog_atc_tag` VALUES ('46', '4', 'struts', '', '0', '1531395230');
+INSERT INTO `blog_atc_tag` VALUES ('47', '5', 'linux', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('48', '5', 'nginx', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('49', '5', 'apache', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('50', '5', 'docker', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('51', '5', 'ubuntu', 'http://www.liweijia.site/blog/Public/Image/3351090335-569f0f26a2a86_small.png', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('52', '5', 'oentos', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('53', '5', 'tomcat', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('54', '5', '缓存', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('55', '5', '负载均衡', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('56', '5', 'unix', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('57', '5', 'hadoop', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('58', '5', 'windows-server', '', '0', '1531395480');
+INSERT INTO `blog_atc_tag` VALUES ('59', '6', 'mysql', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('60', '6', 'redis', '', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('61', '6', 'sql', '', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('62', '6', 'mongodb', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('63', '6', 'pracle', '', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('64', '6', 'nosql', '', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('65', '6', 'memcached', '', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('66', '6', 'sqlserver', '', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('67', '6', 'sqlite', '', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('68', '6', 'postgresql', '', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('69', '7', 'git', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('70', '7', 'github', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('71', '7', 'vim', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('72', '7', 'sublime-text', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('73', '7', 'xcode', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('74', '7', 'visual-studio-code', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('75', '7', 'intellij-idea', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('76', '7', 'eclipse', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('77', '7', 'maven', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('78', '7', 'svn', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('79', '7', 'ide', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('80', '7', 'atom', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('81', '7', 'visual-studio', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('82', '7', 'emacs', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('83', '7', 'hg', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('84', '7', 'textmate', '', '0', '1531395906');
+INSERT INTO `blog_atc_tag` VALUES ('85', '8', 'android', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('87', '8', 'ios', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('88', '8', 'chrome', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('89', '8', 'windows', '', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('90', '8', 'iphone', '', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('91', '8', 'firefox', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('92', '8', 'internet-explorer', '', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('93', '8', 'safari', '', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('94', '8', 'ipad', '', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('95', '8', 'opera', '', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('96', '8', 'apple-watch', '', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('97', '9', 'html5', 'http://www.liweijia.site/blog/Public/Image/1025005915-54cb538538eea_small.png', '0', '1531396165');
+INSERT INTO `blog_atc_tag` VALUES ('98', '9', 'react.js', '', '0', '1531396165');
+INSERT INTO `blog_atc_tag` VALUES ('99', '9', '搜索引擎', '', '0', '1531396165');
+INSERT INTO `blog_atc_tag` VALUES ('100', '9', 'virtualenv', '', '0', '1531396165');
+INSERT INTO `blog_atc_tag` VALUES ('101', '9', 'lucene', '', '0', '1531396165');
 
 -- ----------------------------
 -- Table structure for blog_category
@@ -156,7 +274,7 @@ CREATE TABLE `blog_category` (
   `iconUrl` varchar(100) NOT NULL,
   `lastdate` int(10) NOT NULL COMMENT '最后修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog_category
@@ -206,7 +324,7 @@ CREATE TABLE `blog_menu` (
   `islink` int(1) NOT NULL DEFAULT '0',
   `tips` char(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog_menu
@@ -225,9 +343,9 @@ INSERT INTO `blog_menu` VALUES ('11', '7', 'Article/add', '新增文章', '15248
 INSERT INTO `blog_menu` VALUES ('12', '7', 'Article/edit', '编辑文章', '1524883073', 'menu-icon fa fa-caret-right', '0', '');
 INSERT INTO `blog_menu` VALUES ('13', '7', 'Article/update', '保存文章', '1524883135', 'menu-icon fa fa-caret-right', '0', '');
 INSERT INTO `blog_menu` VALUES ('14', '7', 'Article/del', '删除文章', '1524883151', '', '0', '');
-INSERT INTO `blog_menu` VALUES ('15', '7', 'Channel/index', '技术频道', '1524883231', 'menu-icon fa fa-caret-right', '1', '');
-INSERT INTO `blog_menu` VALUES ('16', '15', 'Channel/add', '新增技术频道', '1524883259', 'menu-icon fa fa-caret-righ', '1', '');
-INSERT INTO `blog_menu` VALUES ('17', '7', 'Channel/edit', '编辑技术频道', '1524883286', 'menu-icon fa fa-caret-right', '0', '');
+INSERT INTO `blog_menu` VALUES ('15', '7', '', '技术频道', '1527159255', 'menu-icon fa fa-caret-right', '1', '');
+INSERT INTO `blog_menu` VALUES ('16', '15', 'Channel/add', '新增频道', '1524883259', 'menu-icon fa fa-caret-righ', '1', '');
+INSERT INTO `blog_menu` VALUES ('17', '15', 'Channel/edit', '编辑', '1524883286', 'menu-icon fa fa-caret-right', '0', '');
 INSERT INTO `blog_menu` VALUES ('8', '0', '', '其它功能', '1524883701', 'menu-icon fa fa-legal', '1', '');
 INSERT INTO `blog_menu` VALUES ('19', '8', 'Link/index', '友情链接', '1524883738', 'menu-icon fa fa-caret-right', '1', '');
 INSERT INTO `blog_menu` VALUES ('20', '8', 'Link/add', '增加链接', '1524883793', 'menu-icon fa fa-caret-right', '1', '');
@@ -237,8 +355,11 @@ INSERT INTO `blog_menu` VALUES ('23', '2', 'Database/backup', '数据库备份',
 INSERT INTO `blog_menu` VALUES ('24', '23', 'Database/recovery', '数据库还原', '1527159255', '', '0', '');
 INSERT INTO `blog_menu` VALUES ('26', '18', 'Logout/index', '退出', '1527159255', '', '1', '');
 INSERT INTO `blog_menu` VALUES ('25', '18', 'Personal/index', '信息管理', '1527159255', 'menu-icon fa fa-caret-right', '1', null);
-INSERT INTO `blog_menu` VALUES ('28', '7', 'Category/index', '文章分类', '1527159255', 'menu-icon fa fa-caret-right', '1', null);
-INSERT INTO `blog_menu` VALUES ('29', '7', 'Channel/add', '', '0', '', '0', null);
+INSERT INTO `blog_menu` VALUES ('28', '7', '', '文章分类', '1527159257', 'menu-icon fa fa-caret-right', '1', '');
+INSERT INTO `blog_menu` VALUES ('33', '28', 'Category/add', '编辑分类', '1527159256', '', '0', null);
+INSERT INTO `blog_menu` VALUES ('30', '15', 'Channel/index', '频道列表', '1524883258', 'menu-icon fa fa-caret-righ', '1', null);
+INSERT INTO `blog_menu` VALUES ('31', '28', 'Category/index', '分类列表', '1527159256', '', '1', null);
+INSERT INTO `blog_menu` VALUES ('32', '28', 'Category/add', '新增分类', '1527159256', '', '1', null);
 
 -- ----------------------------
 -- Table structure for blog_users

@@ -103,4 +103,98 @@ class ApiController
 
     }
 
+    /*
+    功能： 取得 URL 页面上的 <title> 内容
+
+    参数：$_POST['url']
+    */
+    public function getUrlTitle(){
+        $url = I('post.url');
+
+        // 设置最长执行的秒数
+        ini_set ("expect.timeout", 90);
+        set_time_limit(90);
+
+        // 检查 URL
+        if(!isset($url) || $url == ''){
+            exit(json_encode(array(
+                'status' => 404, // 格式错误
+                "message" => "URL 错误"
+            )));
+        }
+
+
+        /* 取得 URL 页面数据 */
+        // 初始化 CURL
+        $ch = curl_init();
+
+        // 设置 URL
+        curl_setopt($ch, CURLOPT_URL, $url);
+        // 让 curl_exec() 获取的信息以数据流的形式返回，而不是直接输出。
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
+        // 在发起连接前等待的时间，如果设置为0，则不等待
+        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 0);
+        // 设置 CURL 最长执行的秒数
+        curl_setopt ($ch, CURLOPT_TIMEOUT, 60);
+
+        // 尝试取得文件内容
+        $store = curl_exec ($ch);
+
+
+        // 检查文件是否正确取得
+        if (curl_errno($ch)){
+            exit(json_encode(array(
+                'status' => 400, // 格式错误
+                "message" => "无法取得 URL 数据：".curl_error($ch)
+            )));
+        }
+
+        // 关闭 CURL
+        curl_close($ch);
+
+
+        // 解析 HTML 的 <head> 区段
+        preg_match("/<head.*>(.*)<\/head>/smUi",$store, $htmlHeaders);
+        if(!count($htmlHeaders)){
+            exit(json_encode(array(
+                'status' => 400, // 格式错误
+                "message" => "无法解析数据中的 <head> 区段"
+            )));
+        }
+
+        // 取得 <head> 中 meta 设置的编码格式
+        if(preg_match("/<meta[^>]*http-equiv[^>]*charset=(.*)(\"|')/Ui",$htmlHeaders[1], $results)){
+            $charset = $results[1];
+        }else{
+            $charset = "None";
+        }
+
+        // 取得 <title> 中的文字
+        if(preg_match("/<title>(.*)<\/title>/Ui",$htmlHeaders[1], $htmlTitles)){
+            if(!count($htmlTitles)){
+                exit(json_encode(array(
+                    'status' => 400, // 格式错误
+                    "message" => "无法解析 <title> 的内容"
+                )));
+            }
+
+            // 将 <title> 的文字编码格式转成 UTF-8
+            if($charset == "None"){
+                $title=$htmlTitles[1];
+            }else{
+                $title=iconv($charset, "UTF-8", $htmlTitles[1]);
+            }
+            exit(json_encode(array(
+                'status' => 200, // 格式错误
+                'data' => array(
+                    'url' => $url,
+                    'title' => $title,
+                ),// 错误信息
+                "message" => ""
+            )));
+        }
+
+
+    }
+
 }

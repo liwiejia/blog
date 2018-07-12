@@ -305,8 +305,9 @@
                 <div class="form-group ">
                     <label for="tags" class="sr-only">标签：至少1个，最多5个</label>
                     <input class="tagsInput form-control hidden" data-init="null" name="tags" type="text" placeholder="标签，如：php 可使用逗号,分号;分隔" data-role="tagsinput">
+                    <input class="hidden" data-init="null" name="userid" type="text"  value="<?php echo ($info["id"]); ?>">
                     <div class="sf-typeHelper sf-typeHelper--fortags">
-                        <input type="text" data-role="sf_typeHelper-input" class="sf-typeHelper-input" placeholder="标签，如：php 可使用逗号,分号;分隔" style="width: 20em;">
+                        <input type="text" data-role="sf_typeHelper-input" class="sf-typeHelper-input blog_tag" placeholder="标签，如：php 可使用逗号,分号;分隔" style="width: 20em;">
                         <ul class="sf-typeHelper-list dropdown-menu" style="display: none;"></ul>
                     </div>
                 </div>
@@ -828,21 +829,21 @@
             </div>
             <div class="form-group">
                 <div class="editor">
-                    <textarea id="myEditor"></textarea>
+                    <textarea id="myEditor" name="content"></textarea>
                 </div>
             </div>
 
             <div class=" publish-footer">
                 <div class="container">
                     <div class="operations clearfix">
-                        <div class="shareToWeibo checkbox pull-left mr10 mb0">
+                       <!-- <div class="shareToWeibo checkbox pull-left mr10 mb0">
                             <label for="shareToWeibo"><input type="checkbox" id="shareToWeibo"> 同步到新浪微博</label>
-                        </div>
+                        </div>-->
                         <div class="pull-right">
-                            <span class="text-muted hidden" id="editorStatus">已保存</span>
+                           <!-- <span class="text-muted hidden" id="editorStatus">已保存</span>
                             <a id="dropIt" href="javascript:void(0);" class="mr10 hidden">[舍弃]</a>
-                            <button class="hide" type="button"></button>
-                            <button data-toggle="tooltip" data-placement="top" title="" type="button" data-type="question" id="publishIt" class="btn btn-primary ml10" data-id="" data-do="" data-url="" data-text="发布问题" data-name="" data-original-title="">
+                            <button class="hide" type="button"></button>-->
+                            <button data-toggle="tooltip" data-placement="top" title="" type="submit" data-type="question" id="publishIt" class="btn btn-primary ml10" data-id="" data-do="" data-url="" data-text="发布问题" data-name="" data-original-title="">
                                 发布问题
                             </button>
                         </div>
@@ -854,7 +855,6 @@
     <!-- /.container -->
 </div>
 <script>
-
     d = function() {
         $(".opts__item--message").removeClass("hide"),
             $.get("/api/notifications", function(t) {
@@ -936,9 +936,7 @@
                             })
                     }))
     })
-    $("body").on("click", function(t) {
-        "none" !== $(".opts__item--message").css("display") && 0 === $(t.target).parents(".message").length && $(".opts__item--message").addClass("hide")
-    })
+
 </script>
 <script type="text/javascript" src="/blog/Public/Js/Index/ask.js"></script>
 <script type="text/javascript" src="/blog/Public/Plugin/build/build.js"></script>

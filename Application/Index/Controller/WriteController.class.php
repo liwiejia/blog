@@ -11,31 +11,25 @@ use Think\Controller;
 
 
 
-class SubmitController extends PowerController {
+class WriteController extends PowerController {
     public function index(){
-
         if(IS_POST){
-            $url =I('post.url');
-            $type =I('post.type');
             $title =I('post.title');
             $tags =I('post.tags');
-            $description =I('post.description');
+            $content =I('post.content');
             $userid =I('post.userid');
 
             $data=array(
-                'url'=>$url,
-                'type'=>$type,
                 'title'=>$title,
-                'tags'=>$tags,
-                'description'=>$description,
+                'tag'=>$tags,
+                'content'=>$content,
                 'userid'=>$userid,
                 'date'=>time(),
                 'ip'=>get_client_ip(),
              );
 
-
-            if ($id= M('headline')->add($data)) {
-                redirect(U('submit/page',array('id'=>$id)));
+            if ($id= M('ask')->add($data)) {
+                redirect(U('Questions/page',array('id'=>$id)));
             }
 
         }else{
