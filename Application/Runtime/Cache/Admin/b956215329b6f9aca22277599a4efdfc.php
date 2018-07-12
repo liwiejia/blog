@@ -625,7 +625,6 @@
                                             <?php if($val["islink"] == 1): ?><span class="label label-sm label-success">显示</span>
                                                 <?php else: ?>
                                                 <span class="label label-sm label-inverse arrowed-in">隐藏</span><?php endif; ?>
-
                                         </td>
 
                                         <td>
@@ -684,7 +683,7 @@
                                                 </td>
 
                                                 <td>
-                                                    <a href="#">┗━<?php echo ($v["title"]); ?></a>
+                                                    <a href="#">&ensp;┗━<?php echo ($v["title"]); ?></a>
                                                 </td>
                                                 <td><?php echo ($v["name"]); ?></td>
                                                 <td><?php echo ($v["tips"]); ?></td>
@@ -744,7 +743,77 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                            </tr><?php endforeach; endif; else: echo "" ;endif; endif; endforeach; endif; else: echo "" ;endif; ?>
+                                            </tr>
+                                            <?php if(!empty($v["children"])): if(is_array($v["children"])): $i = 0; $__LIST__ = $v["children"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$cc): $mod = ($i % 2 );++$i;?><tr>
+                                                        <td class="center">
+                                                            <label class="pos-rel">
+                                                                <input type="checkbox" class="ace" name="ids[]" value="<?php echo ($cc['id']); ?>" />
+                                                                <span class="lbl"></span>
+                                                            </label>
+                                                        </td>
+
+                                                        <td>
+                                                            <a href="#">&ensp;&ensp;├<?php echo ($cc["title"]); ?></a>
+                                                        </td>
+                                                        <td><?php echo ($cc["name"]); ?></td>
+                                                        <td><?php echo ($cc["tips"]); ?></td>
+                                                        <td class="hidden-480"><i class="<?php echo ($cc["icon"]); ?>"></i></td>
+                                                        <td><?php echo (date('Y-m-d H:i:s',$ccv["lastdate"])); ?></td>
+
+                                                        <td class="hidden-480">
+                                                            <?php if($cc["islink"] == 1): ?><span class="label label-sm label-success">显示</span>
+                                                                <?php else: ?>
+                                                                <span class="label label-sm label-inverse arrowed-in">隐藏</span><?php endif; ?>
+
+                                                        </td>
+
+                                                        <td>
+                                                            <div class="hidden-sm hidden-xs action-buttons">
+
+                                                                <a class="green" href="<?php echo U('edit',array('id'=>$cc['id']));?>">
+                                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                                </a>
+
+                                                                <a class="red" href="#">
+                                                                    <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                                </a>
+                                                            </div>
+
+                                                            <div class="hidden-md hidden-lg">
+                                                                <div class="inline pos-rel">
+                                                                    <button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                                                        <i class="ace-icon fa fa-caret-down icon-only bigger-120"></i>
+                                                                    </button>
+
+                                                                    <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+                                                                        <li>
+                                                                            <a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																				<span class="blue">
+																					<i class="ace-icon fa fa-search-plus bigger-120"></i>
+																				</span>
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <a href="<?php echo U('edit',array('id'=>$val['id']));?>" class="tooltip-success" data-rel="tooltip" title="Edit">
+																				<span class="green">
+																					<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+																				</span>
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                            <a href="<?php echo U('del',array('ids'=>$val['id']));?>" class="tooltip-error" data-rel="tooltip" title="Delete">
+																				<span class="red">
+																					<i class="ace-icon fa fa-trash-o bigger-120"></i>
+																				</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr><?php endforeach; endif; else: echo "" ;endif; endif; endforeach; endif; else: echo "" ;endif; endif; endforeach; endif; else: echo "" ;endif; ?>
                             </tbody>
                         </table>
                     </div>

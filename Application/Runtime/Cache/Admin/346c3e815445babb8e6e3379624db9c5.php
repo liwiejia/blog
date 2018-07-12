@@ -411,7 +411,7 @@
                         >
                         <a href="<?php if(empty($vv["children"])): echo U($vv['name']);?>
                         <?php else: ?>
-                        #<?php endif; ?>"
+                        <?php echo U($vv['name']); endif; ?>"
                         <?php if(!empty($vv["children"])): ?>class="dropdown-toggle"<?php endif; ?>
                         >
                         <i class="<?php echo ($vv["icon"]); ?>"></i>
@@ -571,125 +571,52 @@
     </div><!-- /.ace-settings-box -->
 </div><!-- /.ace-settings-container -->
                 <div class="row">
-                    <form class="form-horizontal form" role="form" id="form" method="post" action="<?php echo U('update');?>">
-                        <input name="id" id="id" value="<?php echo ($currentcategory["id"]); ?>" type="hidden">
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="type"> 栏目类型 </label>
-                            <div class="col-sm-9">
-                                <select id="type" name="type" class="col-xs-10 col-sm-5">
-                                    <option value="0"
-                                    <?php if($currentcategory['type'] == 0): ?>selected="selected"<?php endif; ?>
-                                    >普通栏目</option>
-                                    <option value="1"
-                                    <?php if($currentcategory['type'] == 1): ?>selected="selected"<?php endif; ?>
-                                    >单页栏目</option>
-                                    <option value="2"
-                                    <?php if($currentcategory['type'] == 2): ?>selected="selected"<?php endif; ?>
-                                    >外链栏目</option>
-                                </select>
-
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">栏目类型。</span>
-											</span>
-                            </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="pid"> 父类 </label>
-                            <div class="col-sm-9">
-                                <select id="pid" name="pid" class="col-xs-10 col-sm-5">
-                                    <option value="0">顶级分类</option>
-                                    <?php echo ($category); ?>
-                                </select>
-
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">选择所属分类。</span>
-											</span>
-                            </div>
-                        </div>
-
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="name"> 分类名称 </label>
-                            <div class="col-sm-9">
-                                <input type="text" name="name" id="name" placeholder="分类名称"
-                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["name"]); ?>">
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">分类名称，不能为空。</span>
-											</span>
-                            </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="url"> 链接 </label>
-                            <div class="col-sm-9">
-                                <input type="text" name="url" id="url" placeholder="链接，如：Index/index"
-                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["url"]); ?>">
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">如果不填写则为默认链接。</span>
-											</span>
-                            </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="iconUrl"> ICON图标 </label>
-                            <div class="col-sm-9">
-                                <input type="text" name="iconUrl" id="iconUrl" placeholder="链接，如：Index/index"
-                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["iconUrl"]); ?>">
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle"></span>
-											</span>
-                            </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
-                                SEO标题 </label>
-                            <div class="col-sm-9">
-                                <input type="text" name="seotitle" id="seotitle" placeholder="SEO标题"
-                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["seotitle"]); ?>">
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">请填写SEO标题利于SEO优化</span>
-											</span>
-                            </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="keywords"> 关键词 </label>
-                            <div class="col-sm-9">
-                                <input type="text" name="keywords" id="keywords" placeholder="关键词"
-                                       class="col-xs-10 col-sm-5" value="<?php echo ($currentcategory["keywords"]); ?>">
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">SEO关键词，建议用","隔开。</span>
-											</span>
-                            </div>
-                        </div>
-                        <div class="space-4"></div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label no-padding-right" for="content"> 栏目描述 </label>
-                            <div class="col-sm-9">
-                                    <textarea name="content" id="content" placeholder="栏目描述"
-                                              class="col-xs-10 col-sm-5"
-                                              rows="5"><?php echo ($currentcategory["content"]); ?></textarea>
-                                <span class="help-inline col-xs-12 col-sm-7">
-												<span class="middle">栏目描述。</span>
-											</span>
-                            </div>
-                        </div>
-                        <div class="space-4"></div>
-
-                        <div class="col-md-offset-2 col-md-9">
-                            <button class="btn btn-info submit" type="submit">
-                                <i class="icon-ok bigger-110"></i>
-                                提交
-                            </button>
-
-                            &nbsp; &nbsp; &nbsp;
-                            <button class="btn" type="reset">
-                                <i class="icon-undo bigger-110"></i>
-                                重置
-                            </button>
-                        </div>
+                    <!--新增按钮-->
+                    <div class="cf">
+                        <a id="export" class="btn btn-info" href="javascript:;" autocomplete="off">立即备份</a>
+                        <a id="optimize" class="btn btn-info" href="<?php echo U('Database/optimize');?>">优化表</a>
+                        <a id="repair" class="btn btn-info" href="<?php echo U('Database/repair');?>">修复表</a>
+                        <a class="btn btn-info" href="<?php echo U('Database/recovery');?>">数据还原</a>
+                    </div>
+                    <br>
+                    <form id="export-form" method="post" action="<?php echo U('export');?>">
+                        <table id="dynamic-table" class="table table-striped table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th width="48">
+                                    <label class="pos-rel">
+                                        <input class="check-all" checked="chedked" type="checkbox" value="">
+                                        <span class="lbl"></span>
+                                    </label>
+                                </th>
+                                <th width="100">表名</th>
+                                <th width="100">数据量</th>
+                                <th width="100">数据大小</th>
+                                <th width="100">创建时间</th>
+                                <th width="100">备份状态</th>
+                                <th width="100">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$table): $mod = ($i % 2 );++$i;?><tr>
+                                    <td class="num">
+                                        <input class="ids" checked="chedked" type="checkbox" name="tables[]"
+                                               value="<?php echo ($table["name"]); ?>">
+                                    </td>
+                                    <td><?php echo ($table["name"]); ?></td>
+                                    <td><?php echo ($table["rows"]); ?></td>
+                                    <td><?php echo (format_bytes($table["data_length"])); ?></td>
+                                    <td><?php echo ($table["create_time"]); ?></td>
+                                    <td class="info">未备份</td>
+                                    <td class="action">
+                                        <a class="ajax-get no-refresh"
+                                           href="<?php echo U('Database/optimize?tables='.$table['name']);?>">优化表</a>&nbsp;
+                                        <a class="ajax-get no-refresh"
+                                           href="<?php echo U('Database/repair?tables='.$table['name']);?>">修复表</a>
+                                    </td>
+                                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                            </tbody>
+                        </table>
                     </form>
                 </div>
             </div>
@@ -748,5 +675,116 @@
 
 
 
+<script src="/blog/Public/Js/bootbox.js"></script>
+<script>
+    (function ($) {
+        //全选的实现
+        $(".check-all").click(function () {
+            $(".ids").prop("checked", this.checked);
+        });
+        $(".ids").click(function () {
+            var option = $(".ids");
+            option.each(function (i) {
+                if (!this.checked) {
+                    $(".check-all").prop("checked", false);
+                    return false;
+                } else {
+                    $(".check-all").prop("checked", true);
+                }
+            });
+        });
+        var $form = $("#export-form"), $export = $("#export"), tables
+        $optimize = $("#optimize"), $repair = $("#repair");
+        $optimize.add($repair).click(function () {
+            $.post(this.href, $form.serialize(), function (data) {
+                if (data.status) {
+                    bootbox.dialog({
+                        message: data.info,
+                        buttons: {
+                            "success": {
+                                "label": "确定",
+                                "className": "btn-sm btn-primary"
+                            }
+                        }
+                    });
+                } else {
+                    bootbox.dialog({
+                        message: data.info,
+                        buttons: {
+                            "success": {
+                                "label": "确定",
+                                "className": "btn-danger"
+                            }
+                        }
+                    });
+                }
+                setTimeout(function () {
+                    $('#top-alert').find('button').click();
+                    $(this).removeClass('disabled').prop('disabled', false);
+                }, 1500);
+            }, "json");
+            return false;
+        });
+        $export.click(function () {
+           // $export.parent().children().addClass("disabled");
+            $export.html("正在发送备份请求...");
+            $.post(
+                $form.attr("action"),
+                $form.serialize(),
+                function (data) {
+                    if (data.status) {
+                        tables = data.tables;
+                        $export.html(data.info + "开始备份，请不要关闭本页面！");
+                        backup(data.tab);
+                        window.onbeforeunload = function () {
+                            return "正在备份数据库，请不要关闭！"
+                        }
+                    } else {
+                        alert(data.info, 'alert-error');
+                        $export.parent().children().removeClass("disabled");
+                        $export.html("立即备份");
+                        setTimeout(function () {
+                            $('#top-alert').find('button').click();
+                            $(that).removeClass('disabled').prop('disabled', false);
+                        }, 1500);
+                    }
+                },
+                "json"
+            );
+            return false;
+        });
+
+        function backup(tab, status) {
+            status && showmsg(tab.id, "开始备份...(0%)");
+            $.get($form.attr("action"), tab, function (data) {
+                if (data.status) {
+                    showmsg(tab.id, data.info);
+
+                    if (!$.isPlainObject(data.tab)) {
+                        $export.parent().children().removeClass("disabled");
+                        $export.html("备份完成，点击重新备份");
+                        window.onbeforeunload = function () {
+                            return null
+                        }
+                        return;
+                    }
+                    backup(data.tab, tab.id != data.tab.id);
+                } else {
+                    alert(data.info, 'alert-error');
+                    $export.parent().children().removeClass("disabled");
+                    $export.html("立即备份");
+                    setTimeout(function () {
+                        $('#top-alert').find('button').click();
+                        $(that).removeClass('disabled').prop('disabled', false);
+                    }, 1500);
+                }
+            }, "json");
+
+        }
+        function showmsg(id, msg) {
+            $form.find("input[value=" + tables[id] + "]").closest("tr").find(".info").html(msg);
+        }
+    })(jQuery);
+</script>
 </body>
 </html>

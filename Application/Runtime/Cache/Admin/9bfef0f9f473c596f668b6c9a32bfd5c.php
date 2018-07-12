@@ -589,9 +589,8 @@
                                     </label>
                                 </th>
                                 <th>分类名称</th>
-                                <th>SEO 标题</th>
-                                <th>SEO 关键字</th>
                                 <th>ICON</th>
+                                <th>文章数量</th>
                                 <th>
                                     <i class="ace-icon fa fa-clock-o bigger-110 hidden-480"></i>
                                     修改时间
@@ -613,13 +612,10 @@
                                         <?php echo ($val["name"]); ?>
                                     </td>
                                     <td>
-                                        <?php echo ($val["seotitle"]); ?>
-                                    </td>
-                                    <td>
-                                        <?php echo ($val["keywords"]); ?>
-                                    </td>
-                                    <td>
                                         <img src="<?php echo ($val["iconurl"]); ?>">
+                                    </td>
+                                    <td>
+                                        <?php echo ($val["total"]); ?>
                                     </td>
                                     <td>
                                        <?php echo (date('Y-m-d H:i:s',$val["lastdate"])); ?>
@@ -644,14 +640,12 @@
                                             <td>
                                                 &nbsp;&nbsp;┗━ <?php echo ($v["name"]); ?>
                                             </td>
-                                            <td>
-                                                <?php echo ($v["seotitle"]); ?>
-                                            </td>
-                                            <td>
-                                                <?php echo ($v["keywords"]); ?>
-                                            </td>
+
                                             <td>
                                                 <img src="<?php echo ($v["iconurl"]); ?>">
+                                            </td>
+                                            <td>
+                                                <?php echo ($v["total"]); ?>
                                             </td>
                                             <td>
                                                 <?php echo (date('Y-m-d H:i:s',$val["lastdate"])); ?>
@@ -736,7 +730,7 @@
                     bAutoWidth: false,
                     "aoColumns": [
                         {"bSortable": false},
-                        null, null, null, null, null,
+                        null, null, null, null,
                         {"bSortable": false}
                     ],
                     language: {//语言设置
@@ -759,7 +753,7 @@
                     //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
                     //you may want to wrap the table inside a "div.dataTables_borderWrap" element
 
-                    //"iDisplayLength": 50
+                    "iDisplayLength": 50,
 
 
                     select: {
