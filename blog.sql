@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : web
+Source Server         : sticker
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : blog
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-12 23:11:47
+Date: 2018-07-13 20:03:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -21,7 +21,7 @@ SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS `blog_act`;
 CREATE TABLE `blog_act` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `sid` int(11) NOT NULL COMMENT '分类id',
+  `pid` char(100) NOT NULL COMMENT '父类id',
   `title` char(100) NOT NULL COMMENT '标题',
   `content` varchar(255) NOT NULL COMMENT '内容',
   `date` int(11) NOT NULL COMMENT '加入时间',
@@ -31,64 +31,70 @@ CREATE TABLE `blog_act` (
   `keywords` char(100) NOT NULL COMMENT '关键词',
   `description` varchar(255) NOT NULL COMMENT '文章摘要',
   `thumbnail` varchar(255) NOT NULL COMMENT '缩略图',
-  `thumbs` int(255) NOT NULL DEFAULT '0' COMMENT '点赞量',
-  `usersid` int(11) NOT NULL DEFAULT '1' COMMENT '发布用户id',
+  `thumbs` int(10) NOT NULL DEFAULT '0' COMMENT '点赞量',
+  `userid` int(11) NOT NULL DEFAULT '1' COMMENT '发布用户id',
+  `type` int(1) NOT NULL DEFAULT '1' COMMENT '1原创 2转载 3翻译',
+  `url` varchar(255) DEFAULT NULL COMMENT '如果type是2 必须要url',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1527150218 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1527150222 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog_act
 -- ----------------------------
-INSERT INTO `blog_act` VALUES ('2', '2', '2222', '<p><img src=\"Uploads/image/2018/05/31/1527758719236158.png\" style=\"\" title=\"1527758719236158.png\"/></p><p><img src=\"Uploads/image/2018/05/31/1527758720106938.png\" style=\"\" title=\"1527758720106938.png\"/></p><p>&lt;img src=&quot;Uploads/image/2018/05/31/152', '1527760607', '0', '0', '色哦标题', '关键字', '摘要', '/blog/./Uploads/image/2018/05/31/5b0fc6d7a0506.png', '0', '1');
-INSERT INTO `blog_act` VALUES ('3', '3', '3', '3', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('4', '4', '4', '4', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('5', '5', '5', '5', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('6', '6', '6', '6', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('7', '7', '7', '7', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('8', '8', '8', '8', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('9', '9', '9', '9', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('10', '10', '10', '10', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('11', '10', '11', '11', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('12', '1', '12', '12', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('13', '2', '13', '13', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('14', '3', '14', '14', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('15', '4', '15', '15', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('16', '5', '16', '16', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('17', '6', '17', '17', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('18', '7', '18', '18', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('19', '8', '19', '19', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('20', '8', '20', '20', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('21', '9', '你好', '21', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('22', '1', '标题', '<p>内容</p>', '1527150211', '0', '0', '标题', '关键词', '摘要', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('23', '1', '标题1', '<p>内容&nbsp;&nbsp;</p>', '1527754676', '0', '0', '标题', '关键词', '摘要', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('24', '1', '24', '24', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('25', '8', '25', '25', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('26', '9', '26', '26', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('27', '4', '27', '27', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('28', '5', '28', '28', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('29', '6', '29', '29', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('30', '7', '30', '30', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('31', '8', '31', '31', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('32', '9', '32', '34', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('33', '1', '33', '33', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('34', '2', '34', '34', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('35', '9', '35', '35', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('36', '4', '36', '36', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('37', '5', '37', '37', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('38', '6', '38', '38', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('39', '7', '39', '39', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('40', '8', '40', '40', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('41', '9', '41', '41', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('42', '1', '42', '42', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('43', '2', '43', '43', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('44', '5', '44', '44', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('45', '3', '45', '45', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('46', '4', '46', '46', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('47', '6', '47', '47', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('48', '8', '48', '48', '1527150211', '0', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('49', '7', '49', '49', '1528435544', '500', '0', '标题', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('1527150216', '0', '', '', '0', '0', '0', '', '', '', '', '0', '1');
-INSERT INTO `blog_act` VALUES ('1527150217', '0', '', '', '0', '0', '0', '', '', '', '', '0', '1');
+INSERT INTO `blog_act` VALUES ('2', '2', '2222', '<p><img src=\"Uploads/image/2018/05/31/1527758719236158.png\" style=\"\" title=\"1527758719236158.png\"/></p><p><img src=\"Uploads/image/2018/05/31/1527758720106938.png\" style=\"\" title=\"1527758720106938.png\"/></p><p>&lt;img src=&quot;Uploads/image/2018/05/31/152', '1527760607', '0', '0', '色哦标题', '关键字', '摘要', '/blog/./Uploads/image/2018/05/31/5b0fc6d7a0506.png', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('3', '3', '3', '3', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('4', '4', '4', '4', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('5', '5', '5', '5', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('6', '6', '6', '6', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('7', '7', '7', '7', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('8', '8', '8', '8', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('9', '9', '9', '9', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('10', '10', '10', '10', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('11', '10', '11', '11', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('12', '1', '12', '12', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('13', '2', '13', '13', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('14', '3', '14', '14', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('15', '4', '15', '15', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('16', '5', '16', '16', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('17', '6', '17', '17', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('18', '7', '18', '18', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('19', '8', '19', '19', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('20', '8', '20', '20', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('21', '9', '你好', '21', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '0', null);
+INSERT INTO `blog_act` VALUES ('22', '1', '标题', '<p>内容</p>', '1527150211', '0', '0', '标题', '关键词', '摘要', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('23', '1', '标题1', '<p>内容&nbsp;&nbsp;</p>', '1527754676', '0', '0', '标题', '关键词', '摘要', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('24', '1', '24', '24', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('25', '8', '25', '25', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('26', '9', '26', '26', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('27', '4', '27', '27', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('28', '5', '28', '28', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('29', '6', '29', '29', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('30', '7', '30', '30', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('31', '8', '31', '31', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('32', '9', '32', '34', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('33', '1', '33', '33', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('34', '2', '34', '34', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('35', '9', '35', '35', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('36', '4', '36', '36', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('37', '5', '37', '37', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('38', '6', '38', '38', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('39', '7', '39', '39', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('40', '8', '40', '40', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('41', '9', '41', '41', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('42', '1', '42', '42', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('43', '2', '43', '43', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('44', '5', '44', '44', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('45', '3', '45', '45', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('46', '4', '46', '46', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('47', '6', '47', '47', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('48', '8', '48', '48', '1527150211', '0', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('49', '7', '49', '49', '1528435544', '500', '0', '标题', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('1527150216', '0', '', '', '0', '0', '0', '', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('1527150217', '0', '', '', '0', '0', '0', '', '', '', '', '0', '1', '1', null);
+INSERT INTO `blog_act` VALUES ('1527150218', '20', '2222222222222', '33333333333333333333333333333', '1531482110', '0', '0', '', '', '', '', '0', '1', '2', null);
+INSERT INTO `blog_act` VALUES ('1527150219', '11', '11111111111111111111111111', '11111111111111111111111111111111111111111111112222222222222222222222222222', '1531482183', '0', '0', '', '', '', '', '0', '1', '2', null);
+INSERT INTO `blog_act` VALUES ('1527150220', '11,26,12,17,30,', '2222222222222222222', '1111111111111111111111111111111111111111111111222222222222222222222222222222', '1531482354', '0', '0', '', '', '', '', '0', '1', '2', '111111111111111111111111111111');
+INSERT INTO `blog_act` VALUES ('1527150221', '11,12,22,35,', '22222222222222222', '2222222222222222222222222222222244444444444444444444444444444444444444444444444', '1531482543', '0', '0', '', '', '', '', '0', '25', '3', '');
 
 -- ----------------------------
 -- Table structure for blog_admin
@@ -214,10 +220,10 @@ INSERT INTO `blog_atc_tag` VALUES ('55', '5', '负载均衡', '', '0', '15313954
 INSERT INTO `blog_atc_tag` VALUES ('56', '5', 'unix', '', '0', '1531395480');
 INSERT INTO `blog_atc_tag` VALUES ('57', '5', 'hadoop', '', '0', '1531395480');
 INSERT INTO `blog_atc_tag` VALUES ('58', '5', 'windows-server', '', '0', '1531395480');
-INSERT INTO `blog_atc_tag` VALUES ('59', '6', 'mysql', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('59', '6', 'mysql', 'http://www.liweijia.site/blog/Public/Image/9498447-54cb56e325a72_small.png', '0', '1531395644');
 INSERT INTO `blog_atc_tag` VALUES ('60', '6', 'redis', '', '0', '1531395644');
 INSERT INTO `blog_atc_tag` VALUES ('61', '6', 'sql', '', '0', '1531395644');
-INSERT INTO `blog_atc_tag` VALUES ('62', '6', 'mongodb', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531395644');
+INSERT INTO `blog_atc_tag` VALUES ('62', '6', 'mongodb', 'http://www.liweijia.site/blog/Public/Image/1838168166-54cb5552ef5de_small.png', '0', '1531395644');
 INSERT INTO `blog_atc_tag` VALUES ('63', '6', 'pracle', '', '0', '1531395644');
 INSERT INTO `blog_atc_tag` VALUES ('64', '6', 'nosql', '', '0', '1531395644');
 INSERT INTO `blog_atc_tag` VALUES ('65', '6', 'memcached', '', '0', '1531395644');
@@ -240,12 +246,12 @@ INSERT INTO `blog_atc_tag` VALUES ('81', '7', 'visual-studio', '', '0', '1531395
 INSERT INTO `blog_atc_tag` VALUES ('82', '7', 'emacs', '', '0', '1531395906');
 INSERT INTO `blog_atc_tag` VALUES ('83', '7', 'hg', '', '0', '1531395906');
 INSERT INTO `blog_atc_tag` VALUES ('84', '7', 'textmate', '', '0', '1531395906');
-INSERT INTO `blog_atc_tag` VALUES ('85', '8', 'android', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531396069');
-INSERT INTO `blog_atc_tag` VALUES ('87', '8', 'ios', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531396069');
-INSERT INTO `blog_atc_tag` VALUES ('88', '8', 'chrome', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('85', '8', 'android', 'http://www.liweijia.site/blog/Public/Image/287281599-5a263edae47e9_small.png', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('87', '8', 'ios', 'http://www.liweijia.site/blog/Public/Image/3001919899-5488009eb028c_small.png', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('88', '8', 'chrome', 'http://www.liweijia.site/blog/Public/Image/2812096638-54cb55083b2cc_small.png', '0', '1531396069');
 INSERT INTO `blog_atc_tag` VALUES ('89', '8', 'windows', '', '0', '1531396069');
 INSERT INTO `blog_atc_tag` VALUES ('90', '8', 'iphone', '', '0', '1531396069');
-INSERT INTO `blog_atc_tag` VALUES ('91', '8', 'firefox', 'http://www.liweijia.site/blog/Public/Image/', '0', '1531396069');
+INSERT INTO `blog_atc_tag` VALUES ('91', '8', 'firefox', 'http://www.liweijia.site/blog/Public/Image/334705769-54cb552688a94_small.png', '0', '1531396069');
 INSERT INTO `blog_atc_tag` VALUES ('92', '8', 'internet-explorer', '', '0', '1531396069');
 INSERT INTO `blog_atc_tag` VALUES ('93', '8', 'safari', '', '0', '1531396069');
 INSERT INTO `blog_atc_tag` VALUES ('94', '8', 'ipad', '', '0', '1531396069');
@@ -279,7 +285,7 @@ CREATE TABLE `blog_category` (
 -- ----------------------------
 -- Records of blog_category
 -- ----------------------------
-INSERT INTO `blog_category` VALUES ('16', '0', '0', '开发语言', '', '', '', '', '', '', '0');
+INSERT INTO `blog_category` VALUES ('1', '0', '0', '人工智能', '人工智能', '人工智能', '', '人工智能', 'AI', 'http://www.liweijia.site/blog/Public/Image/1940304143-5a72802e507db_small.png', '0');
 INSERT INTO `blog_category` VALUES ('2', '0', '0', '区块链', '区块链', '区块链', '', '', 'Bc', 'http://www.liweijia.site/blog/Public/Image/950262627-5a7048175cdc9_small.png', '1527150211');
 INSERT INTO `blog_category` VALUES ('3', '0', '0', '前端', '前端', '前端', '', '', 'Frontend', 'http://www.liweijia.site/blog/Public/Image/3997397795-5a6edc1c3167f_small.png', '1527150211');
 INSERT INTO `blog_category` VALUES ('4', '0', '0', '后端', '后端', '后端', '', 'yyy', 'Backend', 'http://www.liweijia.site/blog/Public/Image/1998904068-5a6edc3e40de1_small.png', '1527150211');
@@ -302,15 +308,15 @@ CREATE TABLE `blog_headline` (
   `tags` char(100) NOT NULL COMMENT '标签',
   `description` varchar(255) NOT NULL COMMENT '内容',
   `userid` int(11) NOT NULL COMMENT '用户id',
-  `date` datetime NOT NULL COMMENT '发布时间',
+  `date` int(11) NOT NULL COMMENT '发布时间',
   `ip` char(15) NOT NULL COMMENT '发布ip',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog_headline
 -- ----------------------------
-INSERT INTO `blog_headline` VALUES ('1', 'https://segmentfault.com/', 'SegmentFault 思否', '1490000006201502,1490000010688683,', '1040000000089571,1040000000089669,1040000000089449,', 'https://segmentfault.com/p/1210000015619499', '25', '0000-00-00 00:00:00', '0.0.0.0');
+INSERT INTO `blog_headline` VALUES ('2', 'https://segmentfault.com/', 'SegmentFault 思否', '1490000006201502,1490000010688683,', '1040000000089571,1040000000089669,1040000000089449,', 'https://segmentfault.com/p/1210000015619499', '25', '0', '0.0.0.0');
 
 -- ----------------------------
 -- Table structure for blog_mail_verify

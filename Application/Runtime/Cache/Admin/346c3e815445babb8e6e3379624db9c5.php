@@ -411,7 +411,7 @@
                         >
                         <a href="<?php if(empty($vv["children"])): echo U($vv['name']);?>
                         <?php else: ?>
-                        <?php echo U($vv['name']); endif; ?>"
+                        #<?php endif; ?>"
                         <?php if(!empty($vv["children"])): ?>class="dropdown-toggle"<?php endif; ?>
                         >
                         <i class="<?php echo ($vv["icon"]); ?>"></i>

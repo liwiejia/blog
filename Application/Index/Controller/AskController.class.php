@@ -8,7 +8,7 @@
 
 namespace Index\Controller;
 use Think\Controller;
-
+use Vendor\TreeData;
 
 
 class AskController extends PowerController {
@@ -33,6 +33,15 @@ class AskController extends PowerController {
             }
 
         }else{
+            $m = M("atc_tag");
+
+            $list = $m->order('id asc')->select();
+            $tree=new TreeData("id","pid","children");
+            $tree->load($list);
+            $treelist=$tree->DeepTree();//所有分类树结构
+
+
+            $this->assign('list', $treelist);
             $this->assign('current', "提出问题");
             $this->display();
         }

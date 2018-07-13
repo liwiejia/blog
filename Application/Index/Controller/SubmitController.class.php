@@ -8,7 +8,7 @@
 
 namespace Index\Controller;
 use Think\Controller;
-
+use Vendor\TreeData;
 
 
 class SubmitController extends PowerController {
@@ -39,7 +39,19 @@ class SubmitController extends PowerController {
             }
 
         }else{
-            $this->assign('current', "提出问题");
+            $a = M("atc_tag");
+            $c = M("category");
+
+            $list = $a->order('id asc')->select();
+            $tree=new TreeData("id","pid","children");
+            $tree->load($list);
+            $treelist=$tree->DeepTree();//所有分类树结构
+
+            $category=$c->order('id asc')->select();
+
+            $this->assign('category', $category);
+            $this->assign('list', $treelist);
+            $this->assign('current', "发头条");
             $this->display();
         }
     }

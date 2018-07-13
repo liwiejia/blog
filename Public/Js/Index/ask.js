@@ -1,8 +1,6 @@
 /**
  * Created by Administrator on 2018/7/7.
  */
-
-
 function addTag(elm,tag,velm) {
     var tag = JSON.parse(tag);
     var str="";
@@ -11,7 +9,7 @@ function addTag(elm,tag,velm) {
     $("[name="+velm+"]").val($("[name="+velm+"]").val()+tag.id+",")
     if(tag.iconUrl)
         str+='<img src="'+tag.iconUrl+'">';
-    str =tag.name+'<span data-role="remove" onclick="remoTag($(this),\''+velm+'\')">×</span>';
+    str +=tag.name+'<span data-role="remove" onclick="remoTag($(this),\''+velm+'\')">×</span>';
     $(elm).before('<span class="sf-typeHelper-item  ">'+str+'</span>')
 
 }
@@ -30,6 +28,9 @@ function remoTag(ele,velm) {
     $("[name="+velm+"]").val(arr.join(","));
 }
 $(".blog_tag").focus(function(){
+    if($("[role='tablist']").find(".active").length>1)
+    $("[role='tablist']>li").eq(0).trigger("click");
+
     $(".techTags-panel").show();
 });
 $(".blog_tag,.blog_tag1").blur(function(){
@@ -55,11 +56,10 @@ $(document).keydown(function(e){
         return;
    if(e.keyCode == 8){
         if(!$(".blog_tag").val()){
-            remoTag("tags","tags")
+            remoTag("","tags")
         }
    }
 });
-
 var a =new Array();
 if($('#question').length)
 $('#question')[0].addEventListener('submit',function(t){
@@ -103,8 +103,6 @@ $('#question')[0].addEventListener('submit',function(t){
     $('[type="submit"]').prop("disabled", !0);
     $(this).submit();
 });
-
-
 function WAl(AlertStr) {
     return   $AlertL=$('<div id="myAlert" class="alert alert-warning"><a href="#" class="close" data-dismiss="alert" onclick="$(this).parent().remove()">&times;</a><strong>警告！</strong>'+AlertStr+'</div>');
 };
@@ -257,6 +255,90 @@ if($('#write').length)
         }
         if(o.content.length<10){
             $('body').prepend( WAl('建议内容再写多一些哦！'))
+            return false;
+        }
+
+        $('[type="submit"]').prop("disabled", !0);
+        $(this).submit();
+    });
+$("[data-type='set_type']>li").on("click",function () {
+    var size = $("[data-type='set_type']>li").index(this)
+    if(size==1){
+        $(".modal").show();
+        str= '<div class="sfModal-content">为了保证文章内容的持续更新，我们不建议大面积转载别人的内容到自己的专栏里；我们推荐使用头条发布该文章的链接，来保证原作者与读者的有效沟通。</div>';
+        $(".modal-body").html(str);
+        $(".modal-footer ").removeClass("hidden");
+        $(".modal-footer ").html('<button type="button" class="btn btn-default" data-dismiss="modal" onclick=" $(\'.modal\').hide();$(\'.in\').removeClass(\'modal-backdrop\');">继续转载</button><button type="button" class="btn btn-primary done-btn" onclick="top.location.href=\'/blog/submit/index.html\'">用头条发布</button>');
+        $(".in").addClass("modal-backdrop");
+        $(".modal-title").html("转载建议");
+
+        $("[name='url']").parent().removeClass("hide")
+    }else{
+        $("[name='url']").parent().addClass("hide")
+    }
+    $('[name="type"]').val(size+1);
+    $(".blog__type-toggle>span").eq(0)[0].innerHTML=$(this).children('a')[0].innerHTML;
+})
+$(".close").on("click", function(e) {
+    $(".modal").hide();
+    $(".in").removeClass("modal-backdrop");
+
+})
+if($('#write').length)
+    $('#write')[0].addEventListener('submit',function(t){
+        t.preventDefault();
+        var o = {},
+            r = $(this).closest("form").find("[name]");
+        r.each(function() {
+            var t = $(this)
+                , n = t.attr("name")
+                , a = t.val();
+            o[n] = a
+        });
+
+
+
+        if(a.length>0){
+            for(i=0;i<a.length;i++){
+                $('[name='+a[i]+']').parent().removeClass("has-error")
+                $('[name='+a[i]+']').siblings("[class='help-block err']").remove();
+                if(a[i]=="title"){
+                    $('[name='+a[i]+']').parent().parent().removeClass("has-error")
+                    $('[name='+a[i]+']').parent().siblings("[class='help-block err']").remove();
+                }
+            }
+            a.length=0;
+        }
+
+
+        if(o.title.length<8){
+            $('[name="title"]').parent().parent().append('<span class="help-block err">最少填写八个字符</span>');
+            $('[name="title"]').parent().parent().addClass("has-error");
+            a.push('title')
+            return false;
+        }
+        if(o.type == 2){
+            if( o.url ==''){
+                $('[name="url"]').parent().parent().append('<span class="help-block err">URL 不能为空</span>');
+                $('[name="url"]').parent().parent().addClass("has-error");
+                a.push('url')
+            }else if(!IsURL(o.url)){
+                $('[name="url"]').parent().parent().append('<span class="help-block err">URL 不正确</span>');
+                $('[name="url"]').parent().parent().addClass("has-error");
+                a.push('url')
+            }
+        }
+        if(o.tags==''){
+            $('[name="tags"]').parent().append('<span class="help-block err">至少选择一个标签</span>');
+            $('[name="tags"]').parent().addClass("has-error");
+            a.push('tags')
+            return false;
+        }
+
+        if(o.content.length<10){
+            $('[name="content"]').parent().append('<span class="help-block err">再描述详细点哦！</span>')
+            $('[name="content"]').parent().addClass("has-error");
+            a.push('description')
             return false;
         }
 

@@ -10,9 +10,9 @@ class IndexController extends CommonController {
 
         $data = M('act')->field("{$prefix}act.*,{$prefix}category.name,{$prefix}users.nickname,{$prefix}users.head,{$prefix}users.pageurl")
             ->order("id desc")
-            ->join("{$prefix}users ON {$prefix}users.id = {$prefix}act.usersid")
-            ->join("{$prefix}category ON {$prefix}category.id = {$prefix}act.sid")
-            ->limit(0,30)
+            ->join("{$prefix}users ON {$prefix}users.id = {$prefix}act.userid")
+            ->join("{$prefix}category ON {$prefix}category.id = {$prefix}act.pid")
+            ->limit(0,300)
             ->select();
 
         $this->assign('current', "首页");
