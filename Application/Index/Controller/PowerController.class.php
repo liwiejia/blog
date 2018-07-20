@@ -20,6 +20,8 @@ class PowerController extends Controller {
             $this->Iuserid = session('Iuid');
 
             $info = M('users')->where(array('id' => $this->Iuserid))->find();
+            $category = M('category')->select();
+            $this->assign('category', $category);
             $this->assign('info', $info);
         }else{
             $this->error('对不起,您还没有登录,正跳转至登录面...', U('User/login'));

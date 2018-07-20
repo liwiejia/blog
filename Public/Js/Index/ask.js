@@ -345,3 +345,43 @@ if($('#write').length)
         $('[type="submit"]').prop("disabled", !0);
         $(this).submit();
     });
+$("#publishIt2,#publishIt").on("click",function (t) {
+    t.preventDefault();
+    var o = {},
+        r = $(this).closest("form").find("[name]");
+    r.each(function() {
+        var t = $(this)
+            , n = t.attr("name")
+            , a = t.val();
+        o[n] = a
+    });
+    if(a.length>0){
+        for(i=0;i<a.length;i++){
+            $('[name='+a[i]+']').parent().removeClass("has-error")
+            $('[name='+a[i]+']').siblings("[class='help-block err']").remove();
+            if(a[i]=="title"){
+                $('[name='+a[i]+']').parent().parent().removeClass("has-error")
+                $('[name='+a[i]+']').parent().siblings("[class='help-block err']").remove();
+            }
+        }
+        a.length=0;
+    }
+    if(o.title.length < 8){
+        $('[name="title"]').parent().append('<span class="help-block err">标题至少8个字符</span>');
+        $('[name="title"]').parent().addClass("has-error");
+        a.push('title')
+        return false;
+    }
+    if(o.content.length < 20){
+        $('[name="content"]').parent().append('<span class="help-block err">内容至少20个字符</span>');
+        $('[name="content"]').parent().addClass("has-error");
+        a.push('content')
+        return false;
+    }
+    if(t.currentTarget.id=="publishIt2"){
+        o['type']=2;
+    }else{
+        o['type']=1;
+    }
+    $(this).closest("form").submit ();
+})

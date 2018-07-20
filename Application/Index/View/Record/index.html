@@ -15,22 +15,19 @@
             </div>
             <div class="form-group">
                 <div class="editor">
-                    <textarea id="myEditor"></textarea>
+                    <textarea id="myEditor" name="content"></textarea>
                 </div>
             </div>
 
             <div class=" publish-footer">
                 <div class="container">
                     <div class="operations clearfix">
-                        <div class="shareToWeibo checkbox pull-left mr10 mb0">
-                            <label for="shareToWeibo"><input type="checkbox" id="shareToWeibo"> 同步到新浪微博</label>
-                        </div>
                         <div class="pull-right">
-                            <span class="text-muted hidden" id="editorStatus">已保存</span>
-                            <a id="dropIt" href="javascript:void(0);" class="mr10 hidden">[舍弃]</a>
-                            <button class="hide" type="button"></button>
-                            <button data-toggle="tooltip" data-placement="top" title="" type="button" data-type="question" id="publishIt" class="btn btn-primary ml10" data-id="" data-do="" data-url="" data-text="发布问题" data-name="" data-original-title="">
-                                保存笔记
+                            <button type="button" data-toggle="tooltip" data-placement="top" title="" data-type="note" id="publishIt2" class="btn btn-default ml10" data-id="" data-do="add" data-url="" data-text="保存私密笔记" data-name="" data-original-title="私密笔记不会被搜索到，且仅对知道 URL 的人可见">
+                                保存私密笔记
+                            </button>
+                            <button data-toggle="tooltip" data-placement="top" title="" type="button" data-type="note" id="publishIt" class="btn btn-primary ml10" data-id="" data-do="add" data-url="" data-text="保存公开笔记" data-name="" data-original-title="公开后无法再设置为私密">
+                                保存公开笔记
                             </button>
                         </div>
                     </div>

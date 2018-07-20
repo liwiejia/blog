@@ -18,8 +18,8 @@ class ArticleController extends CommonController {
 
         $data = M('act')->field("{$prefix}act.*,{$prefix}category.name,{$prefix}users.nickname,{$prefix}users.head,{$prefix}users.pageurl")
             ->where("{$prefix}act.id= $id")
-            ->join("{$prefix}users ON {$prefix}users.id = {$prefix}act.usersid")
-            ->join("{$prefix}category ON {$prefix}category.id = {$prefix}act.sid")
+            ->join("{$prefix}users ON {$prefix}users.id = {$prefix}act.userid")
+            ->join("{$prefix}category ON {$prefix}category.id = {$prefix}act.pid")
             ->find();
         if(!$data){
             header('Location: http://liweijia.site/404/index.html');
