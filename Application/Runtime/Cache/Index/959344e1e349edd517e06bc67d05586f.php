@@ -298,11 +298,11 @@
                 <div class="router-box">
     <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="<?php echo U('Index/index');?>">
         <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-        <span class="name">今日焦点</span>
+        <span class="name">为你推荐</span>
     </a>
     <a class="router-box-item  SFLogin  <?php if(CONTROLLER_NAME== 'Feed'): ?>active<?php endif; ?>" href="<?php echo U('Feed/index');?>">
         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-        <span class="name">为你推荐</span>
+        <span class="name">近期热门</span>
     </a>
     <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Newest'): ?>active<?php endif; ?>" href="<?php echo U('Newest/index');?>">
         <i class="fa fa-globe" aria-hidden="true"></i>

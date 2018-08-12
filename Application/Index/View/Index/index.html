@@ -1,4 +1,5 @@
 <include file="Public/head"/>
+<meta name="referrer" content="never">
 <body  class="no-skin">
 <include file="Public/header"/>
 <div class="wrapper">
@@ -10,16 +11,51 @@
                 <include file="Public/left"/>
             </div>
             <div class="col-md-10 middle">
+                <div class="ad-wrapper" id="mm_124884735_33830642_184038395">
+                    <div class="loading">
+                        <i class="fa fa-spinner fa-spin fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div id="carousel-example-generic" class="carousel slide mb5" data-ride="carousel">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+
+                                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+
+                                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+
+                                <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
+
+                                <li data-target="#carousel-example-generic" data-slide-to="4" class=""></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <volist name="slideData" id="slide">
+                                    <a  target="_blank" href="<{:U('Article/index',array('id'=>$slide['id']))}>" class="item " style="background:url(<{$slide['content']|substr_img}>); background-size: cover; background-size: cover">
+                                        <div class="carousel-caption">
+                                            <h3 class="title"><{$slide['title']}></h3>
+
+                                        </div>
+                                    </a>
+                                </volist>
+
+                            </div>
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                </div>
+                <div class="feed-option">
+                    <h5 class=""> <{$current}></h5>
+                </div>
                 <div class="news-list">
                     <volist name="data" id="val">
-                        <div class="news-item stream__item clearfix" data-id="1190000015212663">
-                            <div class="news__item-from">来自标签 <a href="/t/%E5%89%8D%E7%AB%AF"><{$val['name']}></a></div>
+                        <div class="news-item stream__item clearfix" data-id="<{$val['id']}>">
+                            <div class="news__item-from">来自标签 <a href="<{:U('Tag/index',array('type'=>$val['name']))}>"><{$val['name']}></a></div>
                             <div class="news__item-avatar"><a href="<{:U('User/index',array('user'=>$val['pageurl']))}>"><img class="avatars-img" src="<{$val['head']}>"></a></div>
                             <div class="news__item-info">
                                 <div class="mb6">
                                     <h4 class="news__item-title mt0"><a class="mr10" target="_blank" href="<{:U('Article/index',array('id'=>$val['id']))}>"><{$val['title']}></a></h4>
                                 </div>
-                                <p class="news__item-meta"><a href="/u/phoenixchan"><{$val['nickname']}></a> <span class="dot">·</span><span><{$val['date']|mdate}></span><span class="pull-right hidden-xs hidden-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i> <{$val['thumbs']}></span></p>
+                                <p class="news__item-meta"><a href="<{:U('User/index',array('user'=>$val['pageurl']))}>"><{$val['nickname']}></a><span class="dot">·</span><span><{$val['date']|mdate}></span><span class="pull-right hidden-xs hidden-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i> <{$val['thumbs']}></span></p>
                             </div>
                         </div>
                     </volist>
@@ -39,5 +75,9 @@
 <include file="Public/footer"/>
 
 <include file="Public/footerjs"/>
+<script type="text/javascript" src="__PUBLIC__/Js/Index/date.js"></script>
+<script>
+    $(".carousel-inner>a").eq(0).addClass("active")
+</script>
 </body>
 </html>

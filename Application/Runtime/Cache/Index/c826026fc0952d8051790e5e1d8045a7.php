@@ -18,6 +18,7 @@
     <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
+<meta name="referrer" content="never">
 <body  class="no-skin">
 <div class="global-nav blog-header blog-header--index publish">
     <div class="bottom-nav visible-xs visible-sm ">
@@ -298,11 +299,11 @@
                 <div class="router-box">
     <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="<?php echo U('Index/index');?>">
         <i class="fa fa-newspaper-o" aria-hidden="true"></i>
-        <span class="name">今日焦点</span>
+        <span class="name">为你推荐</span>
     </a>
     <a class="router-box-item  SFLogin  <?php if(CONTROLLER_NAME== 'Feed'): ?>active<?php endif; ?>" href="<?php echo U('Feed/index');?>">
         <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-        <span class="name">为你推荐</span>
+        <span class="name">近期热门</span>
     </a>
     <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Newest'): ?>active<?php endif; ?>" href="<?php echo U('Newest/index');?>">
         <i class="fa fa-globe" aria-hidden="true"></i>
@@ -329,7 +330,58 @@
 </div>
             </div>
             <div class="col-md-10 middle">
+                <div class="ad-wrapper" id="mm_124884735_33830642_184038395">
+                    <div class="loading">
+                        <i class="fa fa-spinner fa-spin fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div id="carousel-example-generic" class="carousel slide mb5" data-ride="carousel">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 
+                                <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+
+                                <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+
+                                <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
+
+                                <li data-target="#carousel-example-generic" data-slide-to="4" class=""></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <?php if(is_array($slideData)): $i = 0; $__LIST__ = $slideData;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$slide): $mod = ($i % 2 );++$i;?><a  target="_blank" href="<?php echo U('Article/index',array('id'=>$slide['id']));?>" class="item " style="background:url(<?php echo (substr_img($slide['content'])); ?>); background-size: cover; background-size: cover">
+                                        <div class="carousel-caption">
+                                            <h3 class="title"><?php echo ($slide['title']); ?></h3>
+
+                                        </div>
+                                    </a><?php endforeach; endif; else: echo "" ;endif; ?>
+
+                            </div>
+                        </div>
+                        <div class="mask"></div>
+                    </div>
+                </div>
+                <div class="feed-option">
+                    <h5 class=""> <?php echo ($current); ?></h5>
+                </div>
+                <div class="news-list">
+                    <?php if(is_array($data)): $i = 0; $__LIST__ = $data;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><div class="news-item stream__item clearfix" data-id="<?php echo ($val['id']); ?>">
+                            <div class="news__item-from">来自标签 <a href="<?php echo U('Tag/index',array('type'=>$val['name']));?>"><?php echo ($val['name']); ?></a></div>
+                            <div class="news__item-avatar"><a href="<?php echo U('User/index',array('user'=>$val['pageurl']));?>"><img class="avatars-img" src="<?php echo ($val['head']); ?>"></a></div>
+                            <div class="news__item-info">
+                                <div class="mb6">
+                                    <h4 class="news__item-title mt0"><a class="mr10" target="_blank" href="<?php echo U('Article/index',array('id'=>$val['id']));?>"><?php echo ($val['title']); ?></a></h4>
+                                </div>
+                                <p class="news__item-meta"><a href="<?php echo U('User/index',array('user'=>$val['pageurl']));?>"><?php echo ($val['nickname']); ?></a><span class="dot">·</span><span><?php echo (mdate($val['date'])); ?></span><span class="pull-right hidden-xs hidden-sm"><i class="fa fa-thumbs-up" aria-hidden="true"></i> <?php echo ($val['thumbs']); ?></span></p>
+                            </div>
+                        </div><?php endforeach; endif; else: echo "" ;endif; ?>
+
+                </div>
+                <div class="text-center">
+                    <ul class="pager">
+                        <li id="btn-load-more" class="hidden" style="pointer-events: none;"><a href="javascript:;">没数据了 (〒︿〒)</a></li>
+                        <li id="btn-loading" class=""><a href="javascript:;"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i> 载入中</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -408,8 +460,13 @@
 <script>
     var verifyImg = '<?php echo U('Api/verify');?>';
 </script>
+
 <script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
 <script type="text/javascript" src="/blog/Public/Js/Index/index.min.js"></script>
 
+<script type="text/javascript" src="/blog/Public/Js/Index/date.js"></script>
+<script>
+    $(".carousel-inner>a").eq(0).addClass("active")
+</script>
 </body>
 </html>

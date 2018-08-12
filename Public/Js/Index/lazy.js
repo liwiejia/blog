@@ -16,7 +16,15 @@ window.onscroll = function() {
     for (var i = n; i < len; i++) {
         if (aImg[i].offsetTop < seeHeight + scrollTop) {
             if (aImg[i].getAttribute('src') == 'http://www.liweijia.site/blog/Public/Image/squares.svg') {
-                aImg[i].src = aImg[i].getAttribute('data-src');
+                src = aImg[i].getAttribute('data-src');
+                if(src.indexOf("http://segmentfault.com") == -1 && src.indexOf("http") == -1)
+                {
+                    if(src.indexOf("https") == -1){
+                        src = "http://segmentfault.com"+src;
+                    }
+
+                }
+                aImg[i].src = src;
             }
             n = i + 1;
             console.log('n = ' + n);

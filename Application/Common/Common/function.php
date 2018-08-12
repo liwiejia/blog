@@ -476,7 +476,12 @@ function substr_img($body,$img='src')
     $allPics = count($thePics[0]);
     preg_match('/<img data-src=\"(.+?)\".*?>/',$thePics[0][0],$match);
     if( $allPics> 0 ){
-        return $match[1];//获取的图片名称
+        if(strpos($match[1],'http://') !== false || strpos($match[1],'https://') !== false){
+            return $match[1];//获取的图片名称
+        }else{
+            return "http://segmentfault.com". $match[1];//获取的图片名称
+        }
+
     }
     else {
         return "没有图片";
