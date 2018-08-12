@@ -15,8 +15,8 @@ class ArticleController extends CommonController {
     {
         $id = intval($id);
         $prefix = C('DB_PREFIX');
-
-        $data = M('act')->field("{$prefix}act.*,{$prefix}category.name,{$prefix}users.nickname,{$prefix}users.head,{$prefix}users.pageurl")
+        $act = M('act');
+        $data = $act->field("{$prefix}act.*,{$prefix}category.name,{$prefix}users.nickname,{$prefix}users.head,{$prefix}users.pageurl")
             ->where("{$prefix}act.id= $id")
             ->join("{$prefix}users ON {$prefix}users.id = {$prefix}act.userid")
             ->join("{$prefix}category ON {$prefix}category.id = {$prefix}act.pid")
@@ -24,7 +24,8 @@ class ArticleController extends CommonController {
         if(!$data){
             header('Location: http://liweijia.site/404/index.html');
         }
-        $this->assign('current', "文章");
+        $act->where("id=$id")-> setInc('view',1);
+        $this->assign('current', $data['title']);
         $this->assign('data', $data);
         $this->display();
     }
