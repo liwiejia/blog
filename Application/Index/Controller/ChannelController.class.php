@@ -32,7 +32,7 @@ class ChannelController extends CommonController {
                 )));
             }
         }else {
-            $slideData = M('act')->where("{$prefix}act.pid = 1")->order("thumbs desc")->limit(0,5)->select();
+            $slideData = M('act')->field('id,title,content')->where("{$prefix}act.pid = 1")->order("thumbs desc")->limit(0,5)->select();
 
             $this->assign('slideData', $slideData);
             $this->assign('current', "人工智能");

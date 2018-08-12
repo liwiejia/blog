@@ -464,6 +464,24 @@ function substr_html($body, $size, $format = NULL) {
     }
     return $summary_string;
 }
+/* 截取html代码 生成img src 摘要
+* @param (string) $body  // 正文
+* @param (string) $img   // 图片的src| 其他属性
+*/
+function substr_img($body,$img='src')
+{
+
+    $soImages = "/<img.*\>/isU";
+    preg_match_all( $soImages, $body, $thePics );
+    $allPics = count($thePics[0]);
+    preg_match('/<img data-src=\"(.+?)\".*?>/',$thePics[0][0],$match);
+    if( $allPics> 0 ){
+        return $match[1];//获取的图片名称
+    }
+    else {
+        return "没有图片";
+    }
+}
 
 function rand_int($len = 4){
     $chars = array(
