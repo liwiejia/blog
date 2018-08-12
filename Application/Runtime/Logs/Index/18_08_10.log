@@ -1,0 +1,134 @@
+[ 2018-08-10T14:49:45+08:00 ] 192.168.1.241 /blog/index.php/Article/index/id/1527151474.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001001s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.011001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.014001s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0660s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `blog_act` [ RunTime:0.0420s ]
+SQL: SELECT blog_act.*,blog_category.name,blog_users.nickname,blog_users.head,blog_users.pageurl FROM `blog_act` INNER JOIN blog_users ON blog_users.id = blog_act.userid INNER JOIN blog_category ON blog_category.id = blog_act.pid  WHERE ( blog_act.id= 1527151474 ) LIMIT 1   [ RunTime:0.0500s ]
+SQL: UPDATE `blog_act` SET `view`=view+1 WHERE ( id=1527151474 ) [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined variable: search F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\cf8f315f1b956b3e9fd9250eef4bad6a.php 第 112 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.010001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.010001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018001s ]
+
+[ 2018-08-10T15:10:29+08:00 ] 192.168.1.241 /blog/index.php/Article/index/id/1527151474.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_act` [ RunTime:0.0130s ]
+SQL: SELECT blog_act.*,blog_category.name,blog_users.nickname,blog_users.head,blog_users.pageurl FROM `blog_act` INNER JOIN blog_users ON blog_users.id = blog_act.userid INNER JOIN blog_category ON blog_category.id = blog_act.pid  WHERE ( blog_act.id= 1527151474 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `blog_act` SET `view`=view+1 WHERE ( id=1527151474 ) [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: search F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\cf8f315f1b956b3e9fd9250eef4bad6a.php 第 112 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-10T16:03:26+08:00 ] 192.168.1.241 /blog/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_act` [ RunTime:0.0070s ]
+SQL: SELECT blog_act.id,blog_act.title,blog_act.date,blog_act.thumbs,blog_category.name,blog_users.nickname,blog_users.head,blog_users.pageurl FROM `blog_act` INNER JOIN blog_users ON blog_users.id = blog_act.userid INNER JOIN blog_category ON blog_category.id = blog_act.pid  ORDER BY id desc LIMIT 0,20   [ RunTime:0.7540s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: search F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\5f343310d4a83e1c2f6d4e5a6181e90a.php 第 111 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-08-10T16:03:28+08:00 ] 192.168.1.241 /blog/index.php/Article/index/id/1527154869.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `blog_act` [ RunTime:0.0090s ]
+SQL: SELECT blog_act.*,blog_category.name,blog_users.nickname,blog_users.head,blog_users.pageurl FROM `blog_act` INNER JOIN blog_users ON blog_users.id = blog_act.userid INNER JOIN blog_category ON blog_category.id = blog_act.pid  WHERE ( blog_act.id= 1527154869 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `blog_act` SET `view`=view+1 WHERE ( id=1527154869 ) [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: search F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\cf8f315f1b956b3e9fd9250eef4bad6a.php 第 112 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-08-10T16:09:34+08:00 ] 192.168.1.241 /blog/index.php/Article/index/id/1527154869.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `blog_category` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `blog_category`  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `blog_act` [ RunTime:0.0060s ]
+SQL: SELECT blog_act.*,blog_category.name,blog_users.nickname,blog_users.head,blog_users.pageurl FROM `blog_act` INNER JOIN blog_users ON blog_users.id = blog_act.userid INNER JOIN blog_category ON blog_category.id = blog_act.pid  WHERE ( blog_act.id= 1527154869 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `blog_act` SET `view`=view+1 WHERE ( id=1527154869 ) [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: search F:\phpstudy\WWW\blog\Application\Runtime\Cache\Index\cf8f315f1b956b3e9fd9250eef4bad6a.php 第 112 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

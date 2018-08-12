@@ -11,12 +11,15 @@ class ChannelController extends CommonController {
         $offset = $pagesize * ($p - 1);//计算记录偏移量
 
         $data = M('act')->field("{$prefix}act.id,{$prefix}act.title,{$prefix}act.date,{$prefix}act.thumbs,{$prefix}category.name,{$prefix}users.nickname,{$prefix}users.head,{$prefix}users.pageurl")
-            ->order("id desc")
+            ->order("date desc")
             ->where("{$prefix}act.pid = 1")
             ->join("{$prefix}users ON {$prefix}users.id = {$prefix}act.userid")
             ->join("{$prefix}category ON {$prefix}category.id = {$prefix}act.pid")
             ->limit($offset,$pagesize)
             ->select();
+
+
+
         if (IS_POST){
             if(count($data)>0){
                 exit(json_encode(array(
@@ -29,6 +32,9 @@ class ChannelController extends CommonController {
                 )));
             }
         }else {
+            $slideData = M('act')->where("{$prefix}act.pid = 1")->order("thumbs desc")->limit(0,5)->select();
+
+            $this->assign('slideData', $slideData);
             $this->assign('current', "人工智能");
             $this->assign('data', $data);
             $this->display('index');
