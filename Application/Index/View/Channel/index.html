@@ -29,13 +29,14 @@
                             </ol>
                             <div class="carousel-inner" role="listbox">
                                 <volist name="slideData" id="slide">
-                                    <a href="<{:U('Article/index',array('id'=>$slide['id']))}>" class="item <if condition="$slide['id'] eq ''">active</if>" style="background:url(https://sfault-image.b0.upaiyun.com/134/654/1346542332-5b503ad43e6bb); background-size: cover; background-size: cover">
+                                    <a  target="_blank" href="<{:U('Article/index',array('id'=>$slide['id']))}>" class="item " style="background:url(<{$slide['content']|substr_img}>); background-size: cover; background-size: cover">
                                         <div class="carousel-caption">
                                             <h3 class="title"><{$slide['title']}></h3>
 
                                         </div>
                                     </a>
                                 </volist>
+
                             </div>
                         </div>
                         <div class="mask"></div>
@@ -71,5 +72,8 @@
 
 <include file="Public/footer"/>
 <include file="Public/footerjs"/>
+<script>
+    $(".carousel-inner>a").eq(0).addClass("active")
+</script>
 </body>
 </html>

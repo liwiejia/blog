@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e666c61f-656c-426c-8d39-9880e4711e20" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/blog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Common/Common/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Common/Common/function.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Index/Controller/ChannelController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Index/Controller/ChannelController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Index/View/Channel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Index/View/Channel/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Index/View/Index/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Index/View/Index/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Public/Js/Index/index.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Public/Js/Index/index.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog.sql" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,14 +42,105 @@
     <favorites_list name="Blog" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Index/View/Channel/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="31" column="149" selection-start-line="31" selection-start-column="149" selection-end-line="31" selection-end-column="149" />
+            <state relative-caret-position="19">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
               <folding>
                 <element signature="n#ol#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" />
+                <element signature="n#style#0;n#a#0;n#volist#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="function.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="798">
+              <caret line="476" column="70" selection-start-line="476" selection-start-column="3" selection-end-line="476" selection-end-column="70" />
+              <folding>
+                <element signature="e#97#208#0#PHP" />
+                <element signature="n#verify_check#0;n#!!top" />
+                <element signature="e#340#420#0#PHP" />
+                <element signature="n#test#0;n#!!top" />
+                <element signature="e#447#552#0#PHP" />
+                <element signature="e#558#635#0#PHP" />
+                <element signature="n#send_mail#0;n#!!top" />
+                <element signature="e#2183#2336#0#PHP" />
+                <element signature="e#2227#2329#0#PHP" />
+                <element signature="e#2393#2794#0#PHP" />
+                <element signature="n#make_qrcode#0;n#!!top" />
+                <element signature="e#3219#3901#0#PHP" />
+                <element signature="e#3760#3894#0#PHP" />
+                <element signature="e#4180#4550#0#PHP" />
+                <element signature="n#isMobile#0;n#!!top" />
+                <element signature="e#4768#4871#0#PHP" />
+                <element signature="n#isPassword#0;n#!!top" />
+                <element signature="e#4984#5058#0#PHP" />
+                <element signature="n#isEmail#0;n#!!top" />
+                <element signature="e#5205#5296#0#PHP" />
+                <element signature="n#isUserName#0;n#!!top" />
+                <element signature="e#5419#5524#0#PHP" />
+                <element signature="n#isIdCard#0;n#!!top" />
+                <element signature="e#5574#5626#0#PHP" />
+                <element signature="e#5641#5872#0#PHP" />
+                <element signature="e#6359#6447#0#PHP" />
+                <element signature="e#6501#6605#0#PHP" />
+                <element signature="e#6572#6605#0#PHP" />
+                <element signature="e#6608#6748#0#PHP" />
+                <element signature="n#out#0;n#!!top" />
+                <element signature="e#6858#6998#0#PHP" />
+                <element signature="e#7021#7142#0#PHP" />
+                <element signature="e#7147#7247#0#PHP" />
+                <element signature="e#7251#7357#0#PHP" />
+                <element signature="n#auth_code#0;n#!!top" />
+                <element signature="e#8076#8168#0#PHP" />
+                <element signature="e#8174#8343#0#PHP" />
+                <element signature="e#8349#8629#0#PHP" />
+                <element signature="e#8635#8999#0#PHP" />
+                <element signature="e#8672#8913#0#PHP" />
+                <element signature="e#8873#8913#0#PHP" />
+                <element signature="e#8920#8999#0#PHP" />
+                <element signature="n#substr_html#0;n#!!top" />
+                <element signature="e#9284#9363#0#PHP" />
+                <element signature="e#9420#9502#0#PHP" />
+                <element signature="e#9524#9611#0#PHP" />
+                <element signature="e#9691#9927#0#PHP" />
+                <element signature="e#9996#12924#0#PHP" />
+                <element signature="e#10042#10082#0#PHP" />
+                <element signature="e#10136#11867#0#PHP" />
+                <element signature="e#10261#11867#0#PHP" />
+                <element signature="e#10322#11793#0#PHP" />
+                <element signature="e#10531#11568#0#PHP" />
+                <element signature="e#10698#11550#0#PHP" />
+                <element signature="e#10859#11550#0#PHP" />
+                <element signature="e#11068#11528#0#PHP" />
+                <element signature="e#11313#11528#0#PHP" />
+                <element signature="e#11676#11793#0#PHP" />
+                <element signature="e#11803#11867#0#PHP" />
+                <element signature="e#11914#12918#0#PHP" />
+                <element signature="e#11942#12106#0#PHP" />
+                <element signature="e#12119#12283#0#PHP" />
+                <element signature="e#12296#12460#0#PHP" />
+                <element signature="e#12473#12637#0#PHP" />
+                <element signature="e#12650#12814#0#PHP" />
+                <element signature="e#12827#12908#0#PHP" />
+                <element signature="e#12930#13590#0#PHP" />
+                <element signature="e#12993#13124#0#PHP" />
+                <element signature="e#13200#13584#0#PHP" />
+                <element signature="e#13355#13574#0#PHP" />
+                <element signature="e#13476#13574#0#PHP" />
+                <element signature="n#rand_int#0;n#!!top" />
+                <element signature="n#format_bytes#0;n#!!top" />
+                <element signature="n#UpImage#0;n#!!top" />
+                <element signature="n#mdate#0;n#!!top" />
+                <element signature="n#num2tring#0;n#!!top" />
+                <element signature="n#pinyin#0;n#!!top" />
+                <element signature="n#createToken#0;n#!!top" />
+                <element signature="n#decodeToken#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -65,7 +149,7 @@
       <file leaf-file-name="ChannelController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Index/Controller/ChannelController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
+            <state relative-caret-position="665">
               <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
@@ -74,17 +158,22 @@
       <file leaf-file-name="CommonController.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Index/Controller/CommonController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="28" column="76" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="76" />
+            <state relative-caret-position="76">
+              <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="index.min.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/Js/Index/index.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="334" column="50" lean-forward="true" selection-start-line="334" selection-start-column="50" selection-end-line="334" selection-end-column="50" />
+            <state relative-caret-position="6346">
+              <caret line="334" column="50" selection-start-line="334" selection-start-column="50" selection-end-line="334" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -102,8 +191,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>usersid</find>
-      <find>post</find>
       <find>o</find>
       <find>val</find>
       <find>$val[</find>
@@ -132,6 +219,8 @@
       <find>pull-right hidden-xs hidden-sm</find>
       <find>date</find>
       <find>item active</find>
+      <find>bla</find>
+      <find>temp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -186,11 +275,11 @@
         <option value="$PROJECT_DIR$/Application/Index/Controller/IndexController.class.php" />
         <option value="$PROJECT_DIR$/Application/Index/Controller/PowerController.class.php" />
         <option value="$PROJECT_DIR$/Application/Index/View/Index/index.html" />
-        <option value="$PROJECT_DIR$/Application/Common/Common/function.php" />
-        <option value="$PROJECT_DIR$/Application/Index/Controller/ChannelController.class.php" />
         <option value="$PROJECT_DIR$/Public/Js/Index/index.min.js" />
         <option value="$PROJECT_DIR$/Public/Js/Index/index.min.js" />
         <option value="$PROJECT_DIR$/Application/Index/View/Channel/index.html" />
+        <option value="$PROJECT_DIR$/Application/Common/Common/function.php" />
+        <option value="$PROJECT_DIR$/Application/Index/Controller/ChannelController.class.php" />
       </list>
     </option>
   </component>
@@ -248,7 +337,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,6 +420,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -446,12 +535,15 @@
       <workItem from="1532179763088" duration="50000" />
       <workItem from="1532182789919" duration="14000" />
       <workItem from="1532182852493" duration="649000" />
-      <workItem from="1532244204685" duration="16472000" />
+      <workItem from="1532244204685" duration="17130000" />
+      <workItem from="1532350607842" duration="6197000" />
+      <workItem from="1533967463008" duration="622000" />
+      <workItem from="1534052027467" duration="305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="659268000" />
+    <option name="totallyTimeSpent" value="667050000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -474,7 +566,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="运行" order="7" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.32980332" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.32302773" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3304904" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32980332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -511,13 +603,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="61" selection-start-column="61" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/View/Public/footerjs.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -540,7 +625,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../ThinkPHP/Library/Vendor/TreeData.class.php" />
+    <entry file="file://$PROJECT_DIR$/../Thinkphp/Library/Vendor/TreeData.class.php" />
     <entry file="file://$PROJECT_DIR$/Application/Admin/View/Public/breadcrumbs.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -751,16 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="337" column="32" lean-forward="true" selection-start-line="337" selection-start-column="32" selection-end-line="337" selection-end-column="32" />
-          <folding>
-            <element signature="e#129#136#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="529" column="24" lean-forward="true" selection-start-line="529" selection-start-column="24" selection-end-line="529" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -787,33 +862,125 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Public/Js/Index/index.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6346">
+          <caret line="334" column="50" selection-start-line="334" selection-start-column="50" selection-end-line="334" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/Controller/CommonController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="28" column="76" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="76" />
+        <state relative-caret-position="76">
+          <caret line="9" column="21" lean-forward="true" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="476" column="70" selection-start-line="476" selection-start-column="3" selection-end-line="476" selection-end-column="70" />
+          <folding>
+            <element signature="e#97#208#0#PHP" />
+            <element signature="n#verify_check#0;n#!!top" />
+            <element signature="e#340#420#0#PHP" />
+            <element signature="n#test#0;n#!!top" />
+            <element signature="e#447#552#0#PHP" />
+            <element signature="e#558#635#0#PHP" />
+            <element signature="n#send_mail#0;n#!!top" />
+            <element signature="e#2183#2336#0#PHP" />
+            <element signature="e#2227#2329#0#PHP" />
+            <element signature="e#2393#2794#0#PHP" />
+            <element signature="n#make_qrcode#0;n#!!top" />
+            <element signature="e#3219#3901#0#PHP" />
+            <element signature="e#3760#3894#0#PHP" />
+            <element signature="e#4180#4550#0#PHP" />
+            <element signature="n#isMobile#0;n#!!top" />
+            <element signature="e#4768#4871#0#PHP" />
+            <element signature="n#isPassword#0;n#!!top" />
+            <element signature="e#4984#5058#0#PHP" />
+            <element signature="n#isEmail#0;n#!!top" />
+            <element signature="e#5205#5296#0#PHP" />
+            <element signature="n#isUserName#0;n#!!top" />
+            <element signature="e#5419#5524#0#PHP" />
+            <element signature="n#isIdCard#0;n#!!top" />
+            <element signature="e#5574#5626#0#PHP" />
+            <element signature="e#5641#5872#0#PHP" />
+            <element signature="e#6359#6447#0#PHP" />
+            <element signature="e#6501#6605#0#PHP" />
+            <element signature="e#6572#6605#0#PHP" />
+            <element signature="e#6608#6748#0#PHP" />
+            <element signature="n#out#0;n#!!top" />
+            <element signature="e#6858#6998#0#PHP" />
+            <element signature="e#7021#7142#0#PHP" />
+            <element signature="e#7147#7247#0#PHP" />
+            <element signature="e#7251#7357#0#PHP" />
+            <element signature="n#auth_code#0;n#!!top" />
+            <element signature="e#8076#8168#0#PHP" />
+            <element signature="e#8174#8343#0#PHP" />
+            <element signature="e#8349#8629#0#PHP" />
+            <element signature="e#8635#8999#0#PHP" />
+            <element signature="e#8672#8913#0#PHP" />
+            <element signature="e#8873#8913#0#PHP" />
+            <element signature="e#8920#8999#0#PHP" />
+            <element signature="n#substr_html#0;n#!!top" />
+            <element signature="e#9284#9363#0#PHP" />
+            <element signature="e#9420#9502#0#PHP" />
+            <element signature="e#9524#9611#0#PHP" />
+            <element signature="e#9691#9927#0#PHP" />
+            <element signature="e#9996#12924#0#PHP" />
+            <element signature="e#10042#10082#0#PHP" />
+            <element signature="e#10136#11867#0#PHP" />
+            <element signature="e#10261#11867#0#PHP" />
+            <element signature="e#10322#11793#0#PHP" />
+            <element signature="e#10531#11568#0#PHP" />
+            <element signature="e#10698#11550#0#PHP" />
+            <element signature="e#10859#11550#0#PHP" />
+            <element signature="e#11068#11528#0#PHP" />
+            <element signature="e#11313#11528#0#PHP" />
+            <element signature="e#11676#11793#0#PHP" />
+            <element signature="e#11803#11867#0#PHP" />
+            <element signature="e#11914#12918#0#PHP" />
+            <element signature="e#11942#12106#0#PHP" />
+            <element signature="e#12119#12283#0#PHP" />
+            <element signature="e#12296#12460#0#PHP" />
+            <element signature="e#12473#12637#0#PHP" />
+            <element signature="e#12650#12814#0#PHP" />
+            <element signature="e#12827#12908#0#PHP" />
+            <element signature="e#12930#13590#0#PHP" />
+            <element signature="e#12993#13124#0#PHP" />
+            <element signature="e#13200#13584#0#PHP" />
+            <element signature="e#13355#13574#0#PHP" />
+            <element signature="e#13476#13574#0#PHP" />
+            <element signature="n#rand_int#0;n#!!top" />
+            <element signature="n#format_bytes#0;n#!!top" />
+            <element signature="n#UpImage#0;n#!!top" />
+            <element signature="n#mdate#0;n#!!top" />
+            <element signature="n#num2tring#0;n#!!top" />
+            <element signature="n#pinyin#0;n#!!top" />
+            <element signature="n#createToken#0;n#!!top" />
+            <element signature="n#decodeToken#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/Controller/ChannelController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
+        <state relative-caret-position="665">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/Js/Index/index.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="334" column="50" lean-forward="true" selection-start-line="334" selection-start-column="50" selection-end-line="334" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Index/View/Channel/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="31" column="149" selection-start-line="31" selection-start-column="149" selection-end-line="31" selection-end-column="149" />
+        <state relative-caret-position="19">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="n#ol#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" />
+            <element signature="n#style#0;n#a#0;n#volist#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
