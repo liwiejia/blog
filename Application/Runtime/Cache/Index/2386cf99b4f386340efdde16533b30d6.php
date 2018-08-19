@@ -18,7 +18,6 @@
     <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<meta name="referrer" content="never">
 <body  class="no-skin">
 <div class="global-nav blog-header blog-header--index publish">
     <div class="bottom-nav visible-xs visible-sm ">
@@ -290,78 +289,51 @@
 
 
 <div class="in"></div>
-<div class="wrap" data-blogid="1200000000665411">
-    <div class="container mt30" style="position:relative">
+<div class="wrapper">
+
+
+    <div class="container mt30">
         <div class="row">
-            <div class="col-xs-12 col-md-9 main ">
-                <div class="post-topheader custom- pt0">
-                    <div class="mb20">
-                        <div class="block-for-right-border">
-                            <div class="row">
-                                <div class="col-md-12article__author col-sm-12 col-xs-12">
-                                    <div class="post-topheader__info" data-username="hightopo" data-userslug="hightopo" data-useravatar="<?php echo ($data["head"]); ?>">
-                                        <div>
-                                            <div class="article__author">
-                                                <a href="<?php echo U('User/index',array('user'=>$data['pageurl']));?>" class="inline-block pull-left pr10">
-                                                    <img class="avatar-40" src="<?php echo ($data["head"]); ?>" alt="hightopo">
-                                                </a>
-                                                <div style="display: inline">
-                                                    <a href="<?php echo U('User/index',array('user'=>$data['pageurl']));?>" class="mr5 "><strong><?php echo ($data["nickname"]); ?></strong></a>
-                                                    发布于
-                                                    <a href="<?php echo U('Blog/index',array('user'=>$data['pageurl']));?>"><?php echo ($data["nickname"]); ?></a>
-                                                    <span class="hidden-xs">
-                                                        <button type="button" class="btn btn-xs btn-success follow-article ml10" data-do="follow" data-type="blog" data-id="1200000000665411">关注专栏（缺功能）
-                                                       </button>
-                                                    </span>
-                                                </div>
-                                                <span style="display: block">
-                                                    <?php echo (mdate($data['date'])); ?>
-                                                    &nbsp;·&nbsp;
-                                                     <?php echo ($data['view']); ?> 次阅读
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <h1 class="h1 post-topheader__info--title" id="articleTitle" data-id="1190000015824025">
-                                            <a href="<?php echo U('Article/index',array('id'=>$data['id']));?>"> <?php echo ($data["title"]); ?></a>
-                                        </h1>
-                                        <div class="content__tech blog-type-common blog-type-<?php echo ($data['type']); ?>-before hidden-xs">
-                                            <ul class="taglist--inline inline-block article__title--tag mr10">
-                                                <li class="tagPopup mb5">
-                                                    <a class="tag" href="<?php echo U('Tag/index',array('type'=>$data['name']));?>" data-toggle="popover" data-img="" data-placement="top" data-original-title="<?php echo ($data["name"]); ?>" data-id="1040000004198395">
-                                                        <?php echo ($data["name"]); ?>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="article fmt article__content" id="article__content">
-                    <?php echo ($data["content"]); ?>
-                </div>
-                <!--PC和WAP自适应版-->
-                <div id="SOHUCS" sid="<?php echo ($data["id"]); ?>" ></div>
+            <div class="col-md-2 left">
+                <div class="router-box">
+    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Index'): ?>active<?php endif; ?>" href="<?php echo U('Index/index');?>">
+        <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+        <span class="name">今日焦点</span>
+    </a>
+    <a class="router-box-item  SFLogin  <?php if(CONTROLLER_NAME== 'Feed'): ?>active<?php endif; ?>" href="<?php echo U('Feed/index');?>">
+        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+        <span class="name">为你推荐</span>
+    </a>
+    <a class="router-box-item  <?php if(CONTROLLER_NAME== 'Newest'): ?>active<?php endif; ?>" href="<?php echo U('Newest/index');?>">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        <span class="name">最新内容</span>
+    </a>
 
-            </div><!-- /.main -->
-            <div class="col-md-3 side hidden-sm hidden-xs" style="">
+</div>
+<div class="tech-square hidden-xs">
+    <h5 class="tech-square-title mt0 mb15">技术频道</h5>
+    <?php if(is_array($category)): $i = 0; $__LIST__ = $category;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><a class="tech-square-item <?php if($current == $category['name']): ?>active<?php endif; ?>" href="<?php echo U('Channel/'.$category['url']);?>">
+            <span class="tech-square-item-icon">
+              <img src="<?php echo ($category['iconurl']); ?>">
+            </span>
+            <span><?php echo ($category['name']); ?></span>
+        </a><?php endforeach; endif; else: echo "" ;endif; ?>
 
-            </div><!-- /.side -->
+
+    <a class="tech-square-item" href="<?php echo U('Tags');?>">
+            <span class="tech-square-item-icon">
+              <i class="fa fa-tags" aria-hidden="true"></i>
+            </span>
+        <span>更多标签</span>
+    </a>
+</div>
+            </div>
+            <div class="col-md-10 middle">
+
+            </div>
         </div>
     </div>
 </div>
-
-
-<script type="text/javascript">
-    (function(){
-        var appid = 'cytDWt1Hd';
-        var conf = 'prod_c5637d98dcf1a2fdc51b2918f1bafbbd';
-        var width = window.innerWidth || document.documentElement.clientWidth;
-        if (width < 960) {
-            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
-</script>
 
 <footer id="footer">
     <div class="container">
@@ -436,20 +408,8 @@
 <script>
     var verifyImg = '<?php echo U('Api/verify');?>';
 </script>
-<script type="text/javascript" src="/blog/Public/Js/Index/lazy.js"></script>
 <script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
 <script type="text/javascript" src="/blog/Public/Js/Index/index.min.js"></script>
 
-<style>
-    #SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w div.post-wrap-main{
-        background-image:url('');
-    }
-    #SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .post-wrap-main div.wrap-area-w .area-textarea-e .textarea-fw, #SOHUCS #SOHU_MAIN .module-cmt-list .wrap-issue-gw .issue-wrap-gw{
-        color:#777 ;
-     }
-    #SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .post-wrap-main div.wrap-area-w .area-textarea-e .textarea-fw, #SOHUCS #SOHU_MAIN .module-cmt-list .wrap-issue-gw .issue-wrap-gw{
-        color: #0a0a0a;
-    }
-</style>
 </body>
 </html>

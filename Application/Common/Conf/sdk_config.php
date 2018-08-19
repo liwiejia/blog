@@ -9,7 +9,7 @@
 // | sdk_config.php 2015-12-01
 // +----------------------------------------------------------------------
 //定义回调URL通用的URL
-define('URL_CALLBACK', 'http://' . $_SERVER['SERVER_NAME'] . '?s=/User/Index/callback');
+define('URL_CALLBACK', 'http://blog.liweijia.site/User/callback/type/');
 return array(
     //支付宝登录
     'THINK_SDK_ALIPAY' => array(
@@ -25,9 +25,9 @@ return array(
     ),
     //腾讯QQ登录配置
     'THINK_SDK_QQ' => array(
-        'APP_KEY' => '111111', //应用注册成功后分配的 APP ID
-        'APP_SECRET' => '111111', //应用注册成功后分配的KEY
-        'CALLBACK' => URL_CALLBACK . 'qq',
+        'APP_KEY' => '101497958', //应用注册成功后分配的 APP ID
+        'APP_SECRET' => '63d2c7341d7b12b5ea5ad84ec159ab0d', //应用注册成功后分配的KEY
+        'CALLBACK' => URL_CALLBACK . 'qq.html',
     ),
     //腾讯微博配置
     'THINK_SDK_TENCENT' => array(
@@ -37,9 +37,9 @@ return array(
     ),
     //新浪微博配置
     'THINK_SDK_SINA' => array(
-        'APP_KEY' => '', //应用注册成功后分配的 APP ID
-        'APP_SECRET' => '', //应用注册成功后分配的KEY
-        'CALLBACK' => URL_CALLBACK . 'sina',
+        'APP_KEY' => '1631390292', //应用注册成功后分配的 APP ID
+        'APP_SECRET' => '7cccdd411ca51cbd33bdfb1f07c3d475', //应用注册成功后分配的KEY
+        'CALLBACK' => URL_CALLBACK . 'sina.html',
     ),
     //网易微博配置
     'THINK_SDK_T163' => array(

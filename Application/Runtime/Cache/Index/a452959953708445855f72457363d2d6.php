@@ -18,7 +18,7 @@
     <link href="/blog/Public/Plugin/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
 
-<meta name="referrer" content="never">
+<link href="/blog/Public/Style/Index/user.css" rel="stylesheet" type="text/css">
 <body  class="no-skin">
 <div class="global-nav blog-header blog-header--index publish">
     <div class="bottom-nav visible-xs visible-sm ">
@@ -290,78 +290,75 @@
 
 
 <div class="in"></div>
-<div class="wrap" data-blogid="1200000000665411">
-    <div class="container mt30" style="position:relative">
-        <div class="row">
-            <div class="col-xs-12 col-md-9 main ">
-                <div class="post-topheader custom- pt0">
-                    <div class="mb20">
-                        <div class="block-for-right-border">
-                            <div class="row">
-                                <div class="col-md-12article__author col-sm-12 col-xs-12">
-                                    <div class="post-topheader__info" data-username="hightopo" data-userslug="hightopo" data-useravatar="<?php echo ($data["head"]); ?>">
-                                        <div>
-                                            <div class="article__author">
-                                                <a href="<?php echo U('User/index',array('user'=>$data['pageurl']));?>" class="inline-block pull-left pr10">
-                                                    <img class="avatar-40" src="<?php echo ($data["head"]); ?>" alt="hightopo">
-                                                </a>
-                                                <div style="display: inline">
-                                                    <a href="<?php echo U('User/index',array('user'=>$data['pageurl']));?>" class="mr5 "><strong><?php echo ($data["nickname"]); ?></strong></a>
-                                                    发布于
-                                                    <a href="<?php echo U('Blog/index',array('user'=>$data['pageurl']));?>"><?php echo ($data["nickname"]); ?></a>
-                                                    <span class="hidden-xs">
-                                                        <button type="button" class="btn btn-xs btn-success follow-article ml10" data-do="follow" data-type="blog" data-id="1200000000665411">关注专栏（缺功能）
-                                                       </button>
-                                                    </span>
-                                                </div>
-                                                <span style="display: block">
-                                                    <?php echo (mdate($data['date'])); ?>
-                                                    &nbsp;·&nbsp;
-                                                     <?php echo ($data['view']); ?> 次阅读
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <h1 class="h1 post-topheader__info--title" id="articleTitle" data-id="1190000015824025">
-                                            <a href="<?php echo U('Article/index',array('id'=>$data['id']));?>"> <?php echo ($data["title"]); ?></a>
-                                        </h1>
-                                        <div class="content__tech blog-type-common blog-type-<?php echo ($data['type']); ?>-before hidden-xs">
-                                            <ul class="taglist--inline inline-block article__title--tag mr10">
-                                                <li class="tagPopup mb5">
-                                                    <a class="tag" href="<?php echo U('Tag/index',array('type'=>$data['name']));?>" data-toggle="popover" data-img="" data-placement="top" data-original-title="<?php echo ($data["name"]); ?>" data-id="1040000004198395">
-                                                        <?php echo ($data["name"]); ?>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="profile">
+
+        <header class="profile__heading">
+            <div class="container">
+                <div class="row" style="position: relative;">
+                    <div class="col-md-2 col-sm-3 col-xs-3">
+                        <div class="profile__heading--avatar-warp"><a href="<?php echo U('User/index',array('user'=>$infor['pageurl']));?>"><img class="profile__heading--avatar avatar-160" src="<?php echo ($infor['head']); ?>" alt="<?php echo ($infor['pageurl']); ?>"></a>
+                            <input type="file" id="avatarFile" name="avatar" class="file hide">
+                        </div>
+                       <!-- <div class="profile__heading&#45;&#45;social">
+                            <ul class="sn-inline profile__heading&#45;&#45;social-item">
+                                <li><a href="https://github.com/callmedadaxin" class="icon-sn-github" target="_blank"></a></li>
+                            </ul>
+                        </div>-->
+                    </div>
+                    <div class="col-md-5 col-sm-9 col-xs-9">
+                        <h2 class="profile__heading--name"> <?php echo ($infor['nickname']); ?> <small class="ml15"><a href="<?php echo U('User/about',array('user'=>$infor['pageurl']));?>">查看完整档案</a></small></h2>
+                        <div class="profile__heading--award"><a class="profile__rank-btn" href="/u/athon/rank"><span class="h4">1040</span><span class="profile__rank-btn-text">声望</span></a>
+                            <div class="profile__heading--award-badge"><span class="badge badge--o badge--sf badge--gold"><i class="badge__icon"></i></span><span class="profile__heading--award-badge-count">0</span><span class="badge badge--o badge--sf badge--silver"><i class="badge__icon"></i></span><span class="profile__heading--award-badge-count">1</span><span class="badge badge--o badge--sf badge--bronze"><i class="badge__icon"></i></span><span class="profile__heading--award-badge-count">5</span></div>
+                        </div>
+                        <div class="profile__heading--other"><script type="text/template" class="tpl__city--form"><form class="form form--profile form-inline form__city"
+                        data-action="/api/user/homepage/city/edit"><div class="form-group"><input placeholder="现居城市       " name="city" data-city="<%- city %>"
+                                                                                                  class="input-sm tagsInput form-control mr10"><button type="button" class="btn btn-sm btn-primary js-submit">保存</button></div></form></script><script type="text/template" class="tpl__city--content"><%- city.name %><span class="profile__heading-edit btn btn-xs" data-type="city"><i class="fa fa-pencil"
+                                                                                                                                                                                                                                                                                                                                                                                          aria-hidden="true"></i>编辑</span></script><span class="profile__heading--other-item hide"><i class="fa fa-map-marker"></i><span class="profile__city">北京<span class="profile__heading-edit   btn btn-xs " data-type="city"><i class="fa fa-pencil " aria-hidden="true"></i>编辑</span></span></span><script type="text/template" class="tpl__school--form"><form class="form form--profile form-inline form__school"
+                        data-action="/api/user/homepage/school/edit"><div class="form-group"><input placeholder="院校名称       " name="name"
+                                                                                                    class="input-sm tagsInput form-control mr10"
+                                                                                                    data-school="<%- school[0]%>"><input placeholder="所学专业" name="department"
+                                                                                                                                         class="input-sm tagsInput form-control mr10" value="<%- school[1]%>"><button type="button" class="btn btn-sm btn-primary js-submit">保存</button></div></form></script><script type="text/template" class="tpl__school--content"><%= school[0] %><span
+                                class="profile__heading--other-item-fgx">&nbsp;&nbsp;|&nbsp;&nbsp;</span><%= school[1] %><span class="profile__heading-edit btn btn-xs" data-type="school"><i class="fa fa-pencil"
+                                                                                                                                                                                              aria-hidden="true"></i>编辑</span></script><span class="profile__heading--other-item "><i class="fa fa-graduation-cap" aria-hidden="true"></i><span class="profile__school">北京科技大学<span class="profile__heading--other-item-fgx ">&nbsp;&nbsp;|&nbsp;&nbsp;</span>计算机科学与技术 <span class="profile__heading-edit   btn btn-xs " data-type="school"><i class="fa fa-pencil " aria-hidden="true"></i>编辑</span></span></span><script type="text/template" class="tpl__company--form"><form class="form form--profile form-inline form__company"
+                        data-action="/api/user/homepage/company/edit"><div class="form-group"><input placeholder="公司/组织名称" name="name"
+                                                                                                     class="tagsInput form-control mr10 input-sm" value="<%- company[0]%>"><input placeholder="职位头衔" name="role"
+                                                                                                                                                                                  class="tagsInput form-control mr10 input-sm" value="<%- company[1]%>"><button type="button" class="btn btn-primary btn-sm js-submit">保存</button></div></form></script><script type="text/template" class="tpl__company--content"><%= company[0]%><span
+                                class="profile__heading--other-item-fgx">&nbsp;&nbsp;|&nbsp;&nbsp;</span><%= company[1] %><span class="profile__heading-edit btn btn-xs" data-type="company"><i class="fa fa-pencil"
+                                                                                                                                                                                                aria-hidden="true"></i>编辑</span></script><span class="profile__heading--other-item "><i class="fa fa-briefcase" aria-hidden="true"></i><span class="profile__company">Threatbook<span class="profile__heading--other-item-fgx ">&nbsp;&nbsp;|&nbsp;&nbsp;</span>前端开发工程师 <span class="profile__heading-edit   btn btn-xs " data-type="company"><i class="fa fa-pencil " aria-hidden="true"></i>编辑</span></span></span><script type="text/template" class="tpl__site--form"><form class="form form--profile form-inline form__site"
+                        data-action="/api/user/homepage/site/edit"><div class="form-group"><input placeholder="个人网站" name="site"
+                                                                                                  onkeypress="stopSubmit(event)"
+                                                                                                  class="tagsInput form-control mr10 input-sm" value="<%- site %>"><button type="button" class="btn btn-sm btn-primary js-submit">保存</button></div></form></script><script>
+                            stopSubmit = function (e) {
+                                if(e.keyCode == 13){
+                                    e.preventDefault();
+                                }
+
+                            }</script><script type="text/template" class="tpl__site--content"><a class="profile__heading--other-item-link" target="_blank" href="<%- site %>"
+                        target="_blank"><%- siteWithoutScheme %></a><span class="profile__heading-edit btn btn-xs" data-type="site"><i class="fa fa-pencil"
+                                                                                                                                       aria-hidden="true"></i>编辑</span></script><span class="profile__heading--other-item "><i class="fa fa-link"></i><span class="profile__site"><a class="profile__heading--other-item-link" target="_blank" href="http://callmedadaxin.github.io/"> callmedadaxin.github.io/ </a><span class="profile__heading-edit  btn btn-xs " data-type="site"><i class="fa fa-pencil " aria-hidden="true"></i>编辑</span></span></span></div>
+                    </div>
+                    <div class="profile__heading--desc col-md-5 col-sm-12 col-xs-12">
+                        <div class="profile__heading--desc-heading"><span class="profile__heading--desc-heading-dot-warp"><span class="profile__heading-dot profile__heading-dot--red"></span><span class="profile__heading-dot profile__heading-dot--yellow"></span><span class="profile__heading-dot profile__heading-dot--green"></span></span>
+                            <div class="pull-right"><span data-type="desc" class="profile__heading-edit   btn btn-xs profile__heading--desc-heading-edit"><i class="fa fa-pencil" aria-hidden="true"></i>编辑</span></div>
+                        </div>
+                        <div class="profile__heading--desc-body"><script type="text/template" class="tpl__desc--form"><form class="form form--profile form__desc"
+                        data-action="/api/user/homepage/description/edit"><div class="form-group"><textarea class="form-control" name="description" rows="4"><%= description %></textarea></div><div class="text-right"><button type="button" class="btn btn-default js-cancel mr10">取消</button><button type="button" class="btn btn-primary js-submit">保存</button></div></form></script><script type="text/template" class="tpl__desc--content"><% if(parsedText){ %><%= parsedText %><% }else{ %><div style="white-space: pre"> _
+                            | |__ _ _ __ _
+                            | '_ \| | | |/ _` |
+                            | |_) | |_| | (_| |
+                            |_.__/ \__,_|\__, |
+                            |___/ 该用户太懒什么也没留下
+                        </div><% } %></script>
+                            <div class="profile__desc">
+                                <p>前端coder,热爱前端开发，mac爱好者</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="article fmt article__content" id="article__content">
-                    <?php echo ($data["content"]); ?>
-                </div>
-                <!--PC和WAP自适应版-->
-                <div id="SOHUCS" sid="<?php echo ($data["id"]); ?>" ></div>
+            </div>
+        </header>
 
-            </div><!-- /.main -->
-            <div class="col-md-3 side hidden-sm hidden-xs" style="">
-
-            </div><!-- /.side -->
-        </div>
     </div>
-</div>
-
-
-<script type="text/javascript">
-    (function(){
-        var appid = 'cytDWt1Hd';
-        var conf = 'prod_c5637d98dcf1a2fdc51b2918f1bafbbd';
-        var width = window.innerWidth || document.documentElement.clientWidth;
-        if (width < 960) {
-            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })();
-</script>
 
 <footer id="footer">
     <div class="container">
@@ -436,20 +433,8 @@
 <script>
     var verifyImg = '<?php echo U('Api/verify');?>';
 </script>
-<script type="text/javascript" src="/blog/Public/Js/Index/lazy.js"></script>
 <script type="text/javascript" src="/blog/Public/Js/jquery.min.js"></script>
 <script type="text/javascript" src="/blog/Public/Js/Index/index.min.js"></script>
 
-<style>
-    #SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w div.post-wrap-main{
-        background-image:url('');
-    }
-    #SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .post-wrap-main div.wrap-area-w .area-textarea-e .textarea-fw, #SOHUCS #SOHU_MAIN .module-cmt-list .wrap-issue-gw .issue-wrap-gw{
-        color:#777 ;
-     }
-    #SOHUCS #SOHU_MAIN .module-cmt-box .post-wrap-w .post-wrap-main div.wrap-area-w .area-textarea-e .textarea-fw, #SOHUCS #SOHU_MAIN .module-cmt-list .wrap-issue-gw .issue-wrap-gw{
-        color: #0a0a0a;
-    }
-</style>
 </body>
 </html>
