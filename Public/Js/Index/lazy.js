@@ -3,6 +3,7 @@
  */
 var aImg = document.querySelectorAll('img');
 var len = aImg.length;
+var Bookmark =Array() ;
 var n = 0;//存储图片加载到的位置，避免每次都从第一张图片开始遍历
 for(var i = n; i < len; i++){
     if (aImg[i].getAttribute('src') == 'https://static.segmentfault.com/v-5b4c6359/global/img/squares.svg') {
@@ -11,6 +12,13 @@ for(var i = n; i < len; i++){
 
 }
 window.onscroll = function() {
+    $(".col-md-3\.side\.hidden-sm\.hidden-xs").attr("style","height:"+ $(".col-xs-12\.col-md-9\.main")[0].offsetHeight+"px");
+    panelElem = document.getElementsByClassName("blogTitle");
+    Bookmark =Array();
+    for(i=0; i<panelElem.length; i++){
+        var offsetTop = panelElem[i].offsetTop;
+        Bookmark.push(offsetTop);
+    }
     var seeHeight = document.documentElement.clientHeight;
     var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
     for (var i = n; i < len; i++) {
@@ -27,7 +35,21 @@ window.onscroll = function() {
                 aImg[i].src = src;
             }
             n = i + 1;
-            console.log('n = ' + n);
+        }
+    }
+
+    for(var i = 0; i < Bookmark.length; i++){
+        if (Bookmark[i] < (scrollTop-80) && Bookmark[i+1] > (scrollTop-80) || (i==(Bookmark.length-1) &&Bookmark[i]<scrollTop )) {
+            $(".articleIndex>.active").attr("class","");
+            $(".articleIndex>").eq(i).attr("class","active")
+            t = $(".articleIndex>").eq(i)[0].offsetTop;
+            h = $(".articleIndex>").eq(i)[0].offsetHeight;
+            if(t>350 ){
+                $(".nav-body").attr("style","top:-"+(t-350)+"px")
+            }else if($(".nav-body")[0].style.top!='' && t<350){
+                $(".nav-body").attr("style","")
+            }
+            $(".nav-body>.highlight-title").attr("style","top:"+t+"px;height:"+h+"px")
         }
     }
 };
@@ -128,7 +150,7 @@ var BlogDirectory = {
     mt 和 st 分别表示主标题和次级标题的标签名称（如 H2、H3，大写或小写都可以！），
     interval 表示移动的速度
     */
-    createBlogDirectory:function (id, mt, st, interval){
+    createBlogDirectory:function (id, mt, lt, st, interval){
         //获取博文正文div容器
         var elem = document.getElementById(id);
         if(!elem) return false;
@@ -137,28 +159,40 @@ var BlogDirectory = {
         //创建博客目录的div容器
         var divSideBar = document.createElement('DIV');
         divSideBar.className = 'panel panel-default widget-outline';
-        divSideBar.setAttribute('id', 'sideBar');
         var divSideBarTab = document.createElement('DIV');
         divSideBarTab.className="panel-heading";
-        divSideBarTab.innerHTML="导航";
+        divSideBarTab.innerHTML="目录";
         divSideBar.appendChild(divSideBarTab);
 
         var divSideBarContents = document.createElement('DIV');
-        divSideBarContents.setAttribute('id', 'sideBarContents');
         divSideBarContents.className="panel-body";
+
+
+        var divNavBody = document.createElement('div');
+        divNavBody.className="nav-body";
+
+        var divHighlight = document.createElement('div');
+        divHighlight.setAttribute("style","display:none");
+        divHighlight.className="highlight-title";
+        divNavBody.appendChild(divHighlight);
+        var dlist = document.createElement("ul");
+        dlist.setAttribute("class","articleIndex");
+        divNavBody.appendChild(dlist);
+        divSideBarContents.appendChild(divNavBody);
+
 
 
         divSideBar.appendChild(divSideBarContents);
         //创建自定义列表
-        var dlist = document.createElement("dl");
-        divSideBarContents.appendChild(dlist);
+
         var num = 0;//统计找到的mt和st
         mt = mt.toUpperCase();//转化成大写
+        lt = lt.toUpperCase();//转化成大写
         st = st.toUpperCase();//转化成大写
         //遍历所有元素结点
         for(var i=0; i<nodes.length; i++)
         {
-            if(nodes[i].nodeName == mt|| nodes[i].nodeName == st)
+            if(nodes[i].nodeName == mt || nodes[i].nodeName == lt || nodes[i].nodeName == st)
             {
                 //获取标题文本
                 var nodetext = nodes[i].innerHTML.replace(/<\/?[^>]+>/g,"");//innerHTML里面的内容可能有HTML标签，所以用正则表达式去除HTML的标签
@@ -166,11 +200,13 @@ var BlogDirectory = {
                 nodetext = BlogDirectory.htmlDecode(nodetext);
                 //插入锚
                 nodes[i].setAttribute("id", "blogTitle" + num);
+                nodes[i].setAttribute("class", "blogTitle");
                 var item;
                 switch(nodes[i].nodeName)
                 {
                     case mt:    //若为主标题
-                        item = document.createElement("dt");
+                    case lt:    //若为主标题
+                        item = document.createElement("li");
                         break;
                     case st:    //若为子标题
                         item = document.createElement("dd");
@@ -179,7 +215,10 @@ var BlogDirectory = {
 
                 //创建锚链接
                 var itemtext = document.createTextNode(nodetext);
-                item.appendChild(itemtext);
+                var itemA = document.createElement("a");
+                itemA.setAttribute("href","");
+                itemA.appendChild(itemtext);
+                item.appendChild(itemA);
                 item.setAttribute("name", num);
                 item.onclick = function(){        //添加鼠标点击触发函数
                     var pos = BlogDirectory.getElementPosition(document.getElementById("blogTitle" + this.getAttribute("name")));
@@ -193,21 +232,22 @@ var BlogDirectory = {
         }
 
         if(num == 0) return false;
-        /*鼠标进入时的事件处理*/
-        divSideBarTab.onmouseenter = function(){
-            divSideBarContents.style.display = 'block';
-        }
-        /*鼠标离开时的事件处理*/
-        divSideBar.onmouseleave = function() {
-            divSideBarContents.style.display = 'none';
-        }
 
-        $('.col-md-3\.side\.hidden-sm\.hidden-xs')[0].appendChild(divSideBar);
+        panel = num;
+
+
+        $('.post-nav\.hidden-xs\.side-outline\.hidden-sm')[0].appendChild(divSideBar);
+        $(".col-md-3\.side\.hidden-sm\.hidden-xs").attr("style","height:"+ $(".col-xs-12\.col-md-9\.main")[0].offsetHeight+"px")
     }
 
 };
 
 window.onload=function(){
     /*页面加载完成之后生成博客目录*/
-    BlogDirectory.createBlogDirectory("article__content","h2","h3",20);
+    BlogDirectory.createBlogDirectory("article__content","h1","h2","h3",20);
+    panelElem = document.getElementsByClassName("blogTitle");
+    for(i=0; i<panelElem.length; i++){
+        var offsetTop = panelElem[i].offsetTop;
+        Bookmark.push(offsetTop);
+    }
 }
